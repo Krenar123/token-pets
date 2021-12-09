@@ -1,0 +1,55 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer utilities {
+    .text-theme-gray-300 {
+        color: rgba(255, 255, 255, 0.8);
+      }
+  
+      .shapiro-extd {
+        font-family: 'Shapiro 97 Air Extd';
+      }
+      .shapiro-65 {
+        font-family: 'Shapiro 65 Light Heavy Wide';
+      }
+      .shapiro-85 {
+        font-family: 'Shapiro 85 Super Heavy Extd';
+      }
+      .font-22 {
+          font-size: 22px;
+          line-height: 30px;
+      }
+        .font-26 {
+          font-size: 26px;
+      }
+      @media screen and (max-width: 1279px){
+        .font-62 {
+            font-size: 40px;
+            line-height: 50px;
+        }
+      }
+      .text-lg {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+      .font-light {
+          font-weight: 300;
+      }
+      .opacity-70 {
+          opacity: 0.7;
+      }
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        width: calc(100% - 80px);
+        height: 100%;
+        z-index: 20;
+        background: black;
+        top: 0px;
+        left: 0px;
+        padding: 50px 15px;
+        transform: translateX(-800px);
+        transition: 0.5s;
+      }
+}
