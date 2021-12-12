@@ -110,10 +110,6 @@ export default function Home() {
       <section className="train-player pb-20 lg:pt-20 lg:pb-14 relative">
         <div className="container">
           <div className="lg:grid grid-cols-12">
-            
-            <div className="col-span-8 ">
-              <img alt="" className="ml-auto aos-init aos-animate" data-aos="fade-left" data-aos-duration="800" src="/images/players.png" />
-            </div>
             <div style={{width: "100%"}} className="col-span-4">
               <h1 className="first-para text-blue shapiro-85 font-82 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800"> FIND
               TRAIN
@@ -125,6 +121,9 @@ export default function Home() {
               MetaSoccer is the first soccer metaverse where you can manage your own club and generate income
               while you play
               </p>
+            </div>
+            <div className="col-span-8 ">
+              <img alt="" className="ml-auto aos-init aos-animate" data-aos="fade-left" data-aos-duration="800" src="/images/players.png" />
             </div>
           </div>
           <div className="drop-band">
