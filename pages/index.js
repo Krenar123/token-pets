@@ -94,6 +94,7 @@ export default function Home() {
           <a className="hidden md:inline-block text-blue  font-Montserrat  text-sm  font-bold anchor-change uppercase  " href="https://msu.metasoccer.com/" target="_blank">MTF TOKEN</a>
           <a href="#"> <img style={{width: '100px'}} alt="" src="/images/logo.jpeg" /></a>
           <a className="hidden md:inline-block text-blue  font-Montserrat  text-sm  font-bold anchor-change uppercase  " href="https://whitepaper.metasoccer.com/" target="_blank">WHITEPAPER</a>
+          <button style={{display: 'none'}} class="menu"><img src="/images/menu.svg" /></button>
           <a className=" hidden md:inline-block text-blue  font-Montserrat  text-sm  font-bold anchor-change uppercase " href="/MetaSoccer_Deck.pdf?ts=1637949828" target="_blank">PITCH DECK</a>
         </div>
       </header>
@@ -258,10 +259,13 @@ export default function Home() {
                 <div className="text-right">
                   <p className="m-0  font-Montserrat  text-lg font-light ">
                   </p><p className="m-0 custom-text-black font-Montserrat  text-lg font-light">
-                  The introduction of new players into the ecosystem (minting) falls on them. Each Youth Scout
-                  has a set of specific skills, some are better in attack, others in defense… The type of
-                  players they find will depend on these attributes, as well as their quality. Youth Scouts
-                  also improve their skills over the time and they age.
+                  The full simulation experience with high-end developments.
+
+Experience the closest thing to being a real manager by taking charge of the world’s greatest sport teams and playing the beautiful games your way.
+
+ 
+
+MetaFootball is a living, breathing game world for the metaverse, unparalleled realism and achieves sports authenticity that other sports games can only aspire to.
                   </p>
                   <p></p>
                   <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className=" inline-btn  text-grey text-base shapiro-65 " href="https://whitepaper.metasoccer.com/game-assets/youth-scout" target="_blank">
@@ -338,7 +342,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="investor py-8 xl:py-16">
+      <section style={{marginBottom: "40px"}} className="investor py-8 xl:py-16">
         <div  className="container relative ">
           <h2 className="text-blue font-62 shapiro-85 mb-16 xl:mb-28 aos-init" data-aos="fade-up" data-aos-duration="400" data-aos-offset="-300">
           BUY/SELL
@@ -456,6 +460,11 @@ export default function Home() {
     }
     .opacity-70 {
         opacity: 0.7;
+    }
+    @media screen and (max-width: 767px){
+      .mobile-menu {
+          display: block;
+      }
     }
     .mobile-menu {
       display: none;
@@ -839,6 +848,35 @@ export default function Home() {
       .last-join-us {
         display: none;
       }
+    }
+    .menu {
+      display:none;
+    }
+    @media screen and (max-width: 767px){
+      .menu {
+          display: inline-block;
+      }
+    }
+    .mobile-menu.show {
+      transform: translateX(0px);
+    }
+    @media screen and (max-width: 767px){
+      .mobile-menu {
+          display: block;
+      }
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      width: calc(100% - 80px);
+      height: 100%;
+      z-index: 20;
+      background: black;
+      top: 0px;
+      left: 0px;
+      padding: 50px 15px;
+      transform: translateX(-800px);
+      transition: 0.5s;
     }
     @media screen and (max-width: 900px){
       .font-62 {
