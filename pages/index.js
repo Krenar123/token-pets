@@ -8,9 +8,11 @@ import { FaDiscord } from 'react-icons/fa';
 import { FaPoo } from 'react-icons/fa';
 import { AiOutlineAreaChart } from 'react-icons/ai';
 import { AiOutlineCopy } from 'react-icons/ai';
+import { Clipboard } from 'clipboard/dist/clipboard';
 
 export default function Home() {
   const [effect, setEffect] = useState(false);
+
   const handleClick = (tabs) => {
     let tab1 = document.getElementById("tab1");
     let tab2 = document.getElementById("tab2");
@@ -69,6 +71,12 @@ export default function Home() {
     /* Copy the text inside the text field */
     navigator.clipboard.writeText(address.value);
     setEffect(true);
+    address.blur();
+    document.getElementById("custom-tooltip").style.display = "inline";
+    setTimeout( function() {
+        document.getElementById("custom-tooltip").style.display = "none";
+    }, 1000);
+    
   };
 
   return (
@@ -136,12 +144,17 @@ export default function Home() {
               MetaFootball will be one of the most comprehensive football management games ever created, designed as a play-to-earn game for everyone who loves football and wants to earn token reflections and NFT while managing his own football team
               </p>
               <div className="btn-group" style={{marginTop: '15px'}}>
-                <button style={{background: '#3f4b95', marginRight: '15px'}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                  BUY $MFT
-                </button>
-                <button style={{border: '2px solid #3f4b95'}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                  <AiOutlineAreaChart style={{float: 'left', marginRight: '5px', position: 'relative', top: '4px'}} /> CHART
-                </button>
+                <div style={{ display: "flex", justifyContent: "space-between"}}>
+                  <div>
+                    <button style={{background: '#3f4b95', marginRight: '15px'}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                      BUY $MFT
+                    </button>
+                    <button style={{border: '2px solid #3f4b95'}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                      <AiOutlineAreaChart style={{float: 'left', marginRight: '5px', position: 'relative', top: '4px'}} /> CHART
+                    </button>
+                  </div>
+                  <span id="custom-tooltip">Copied</span>
+                </div>
               </div>
               <div className="btn-group col-span-12" style={{marginTop: '15px', display: "flex"}}>
                 <div className="col-span-8" style={{width: '292px'}} id="input-div-span">
@@ -504,7 +517,19 @@ MetaFootball's professional world will be meticulously modeled and reconstructed
       </footer>
 <style jsx>
   {
-    `
+    `#custom-tooltip {
+      display: none;
+      padding: 5px 12px;
+      padding-bottom: 5px;
+      background-color: #F3D250;
+      border-radius: 4px;
+      font-weight: bold;
+      color: #000000;
+      max-height: 35px;
+      margin-right: 80px;
+      position:relative;
+      top: 8px;
+    }
     .team-box {
       background: rgb(63,75,149);
       background: linear-gradient(0deg, rgba(63,75,149,1) 0%, rgba(41,48,94,1) 45%, rgba(0,0,0,1) 100%);
@@ -866,10 +891,11 @@ MetaFootball's professional world will be meticulously modeled and reconstructed
         margin-bottom: 25px;
       }
       #copy-address-button {
-        font-size: 8px;
+        font-size: 15px;
+        width: 163px;
       }
       #copy-address {
-        font-size: 13px;
+        font-size: 12px;
       }
       .player_img {
         margin-top: 40px;
@@ -933,6 +959,9 @@ MetaFootball's professional world will be meticulously modeled and reconstructed
       }
       .change-on-small {
         font-size: 10px;
+      }
+      #custom-tooltip {
+        margin-right: 0px;
       }
     }
     @media screen and (max-width: 767px){
@@ -1055,6 +1084,7 @@ MetaFootball's professional world will be meticulously modeled and reconstructed
   }
 </style>
 <script src="dist/main.js"></script>
+<script src="dist/clipboard.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
       AOS.init()
