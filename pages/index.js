@@ -157,10 +157,10 @@ export default function Home() {
                 </div>
               </div>
               <div className="btn-group col-span-12" style={{marginTop: '15px', display: "flex"}}>
-                <div className="col-span-8" style={{width: '292px'}} id="input-div-span">
+                <div style={{width: '50%'}} id="input-div-span">
                   <input id="copy-address" style={{pointerEvents: 'none', background: 'transparent', border: '2px solid #3f4b95', borderTopRightRadius: "0px", borderBottomRightRadius: "0px", maxWidth: "312px", overflow: "hidden", width: "100%"}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" defaultValue="0xd024ac1195762f6f13f8cfdf3cdd2c97b33b248b" />
                 </div>
-                <div className="col-span-4">
+                <div style={{width: '50%'}} >
                   <button id="copy-address-button" onClick={() => { handleCopy(); }} style={{display: 'flex', alignItems: 'center', background: '#3f4b95', borderTopLeftRadius: "0px", borderBottomLeftRadius: "0px" }} className={`${effect && "animate-wiggle"} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full btn-copy-add`}>
                     <AiOutlineCopy style={{marginRight: '5px'}} /> COPY ADDRESS
                   </button>
@@ -965,7 +965,6 @@ MetaFootball's professional world will be meticulously modeled and reconstructed
       }
       #copy-address-button {
         font-size: 15px;
-        width: 180px;
       }
     }
     @media screen and (max-width: 767px){
