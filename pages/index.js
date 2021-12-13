@@ -383,10 +383,10 @@ export default function Home() {
               </div>
               <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Ronaldinho Gaucho</h4>
               <div className="links">
-                <a href="https://www.linkedin.com/in//" target="_blank">
+                <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
                 </a>
-                <a href="https://twitter.com/" target="_blank">
+                <a href="https://www.instagram.com/" target="_blank">
                 <BsInstagram size={20} style={{color: '#a63494'}} />
                 </a>
               </div>
@@ -397,10 +397,10 @@ export default function Home() {
               </div>
               <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Cenk Tosun</h4>
               <div className="links">
-                <a href="https://www.linkedin.com/in//" target="_blank">
+                <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
                 </a>
-                <a href="https://twitter.com/" target="_blank">
+                <a href="https://www.instagram.com/" target="_blank">
                 <BsInstagram size={20} style={{color: '#a63494'}} />
                 </a>
               </div>
@@ -411,10 +411,10 @@ export default function Home() {
               </div>
               <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Mariano Diaz</h4>
               <div className="links">
-                <a href="https://www.linkedin.com/in//" target="_blank">
+                <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
                 </a>
-                <a href="https://twitter.com/" target="_blank">
+                <a href="https://www.instagram.com/" target="_blank">
                 <BsInstagram size={20} style={{color: '#a63494'}} />
                 </a>
               </div>
@@ -425,10 +425,10 @@ export default function Home() {
               </div>
               <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Thiago Silva</h4>
               <div className="links">
-                <a href="https://www.linkedin.com/in//" target="_blank">
+                <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
                 </a>
-                <a href="https://twitter.com/" target="_blank">
+                <a href="https://www.instagram.com/" target="_blank">
                 <BsInstagram size={20} style={{color: '#a63494'}} />
                 </a>
               </div>
@@ -439,10 +439,10 @@ export default function Home() {
               </div>
               <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Vinicius Jr.</h4>
               <div className="links">
-                <a href="https://www.linkedin.com/in//" target="_blank">
+                <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
                 </a>
-                <a href="https://twitter.com/" target="_blank">
+                <a href="https://www.instagram.com/" target="_blank">
                 <BsInstagram size={20} style={{color: '#a63494'}} />
                 </a>
               </div>
@@ -453,10 +453,10 @@ export default function Home() {
               </div>
               <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Ivan Rakitic</h4>
               <div className="links">
-                <a href="https://www.linkedin.com/in//" target="_blank">
+                <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
                 </a>
-                <a href="https://twitter.com/" target="_blank">
+                <a href="https://www.instagram.com/" target="_blank">
                 <BsInstagram size={20} style={{color: '#a63494'}} />
                 </a>
               </div>
@@ -467,10 +467,10 @@ export default function Home() {
               </div>
               <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Arda Turan</h4>
               <div className="links">
-                <a href="https://www.linkedin.com/in//" target="_blank">
+                <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
                 </a>
-                <a href="https://twitter.com/" target="_blank">
+                <a href="https://www.instagram.com/" target="_blank">
                 <BsInstagram size={20} style={{color: '#a63494'}} />
                 </a>
               </div>
@@ -481,10 +481,10 @@ export default function Home() {
               </div>
               <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Sergio Busquets</h4>
               <div className="links">
-                <a href="https://www.linkedin.com/in//" target="_blank">
+                <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
                 </a>
-                <a href="https://twitter.com/" target="_blank">
+                <a href="https://www.instagram.com/" target="_blank">
                 <BsInstagram size={20} style={{color: '#a63494'}} />
                 </a>
               </div>
@@ -495,10 +495,10 @@ export default function Home() {
               </div>
               <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Vidal</h4>
               <div className="links">
-                <a href="https://www.linkedin.com/in//" target="_blank">
+                <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
                 </a>
-                <a href="https://twitter.com/" target="_blank">
+                <a href="https://www.instagram.com/" target="_blank">
                 <BsInstagram size={20} style={{color: '#a63494'}} />
                 </a>
               </div>
@@ -509,10 +509,10 @@ export default function Home() {
               </div>
               <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Denis Suarez</h4>
               <div className="links">
-                <a href="https://www.linkedin.com/in//" target="_blank">
+                <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
                 </a>
-                <a href="https://twitter.com/" target="_blank">
+                <a href="https://www.instagram.com/" target="_blank">
                 <BsInstagram size={20} style={{color: '#a63494'}} />
                 </a>
               </div>
@@ -523,10 +523,10 @@ export default function Home() {
               </div>
               <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Rafinha</h4>
               <div className="links">
-                <a href="https://www.linkedin.com/in//" target="_blank">
+                <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
                 </a>
-                <a href="https://twitter.com/" target="_blank">
+                <a href="https://www.instagram.com/" target="_blank">
                 <BsInstagram size={20} style={{color: '#a63494'}} />
                 </a>
               </div>
@@ -537,10 +537,10 @@ export default function Home() {
               </div>
               <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Marcelo</h4>
               <div className="links">
-                <a href="https://www.linkedin.com/in//" target="_blank">
+                <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
                 </a>
-                <a href="https://twitter.com/" target="_blank">
+                <a href="https://www.instagram.com/" target="_blank">
                 <BsInstagram size={20} style={{color: '#a63494'}} />
                 </a>
               </div>
