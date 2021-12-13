@@ -8,7 +8,7 @@ import { FaDiscord } from 'react-icons/fa';
 import { FaPoo } from 'react-icons/fa';
 import { AiOutlineAreaChart } from 'react-icons/ai';
 import { AiOutlineCopy } from 'react-icons/ai';
-import { Clipboard } from 'clipboard/dist/clipboard';
+import { BsInstagram } from 'react-icons/bs';
 
 export default function Home() {
   const [effect, setEffect] = useState(false);
@@ -82,7 +82,7 @@ export default function Home() {
   return (
     <div className="">
       <Head>
-        <title>Create Next App</title>
+        <title>Meta Football</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link
@@ -146,10 +146,10 @@ export default function Home() {
               <div className="btn-group" style={{marginTop: '15px'}}>
                 <div style={{ display: "flex", justifyContent: "space-between"}}>
                   <div>
-                    <button style={{background: '#3f4b95', marginRight: '15px'}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                    <button id="button-mfts1" className="btn-on-active button-mfts bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
                       BUY $MFT
                     </button>
-                    <button style={{border: '2px solid #3f4b95'}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                    <button style={{border: '2px solid #3f4b95'}} className="button-mfts bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
                       <AiOutlineAreaChart style={{float: 'left', marginRight: '5px', position: 'relative', top: '4px'}} /> CHART
                     </button>
                   </div>
@@ -157,11 +157,11 @@ export default function Home() {
                 </div>
               </div>
               <div className="btn-group col-span-12" style={{marginTop: '15px', display: "flex"}}>
-                <div style={{width: '50%'}} id="input-div-span">
-                  <input id="copy-address" style={{pointerEvents: 'none', background: 'transparent', border: '2px solid #3f4b95', borderTopRightRadius: "0px", borderBottomRightRadius: "0px", maxWidth: "312px", overflow: "hidden", width: "100%"}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-full" defaultValue="0xd024ac1195762f6f13f8cfdf3cdd2c97b33b248b" />
+                <div id="input-div-span1">
+                  <input id="copy-address" style={{pointerEvents: 'none', background: 'transparent', border: '2px solid #3f4b95', borderTopRightRadius: "0px", borderBottomRightRadius: "0px", overflow: "hidden", width: "100%"}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-full" defaultValue="0xd024ac1195762f6f13f8cfdf3cdd2c97b33b248b" />
                 </div>
-                <div style={{width: '50%'}} >
-                  <button id="copy-address-button" onClick={() => { handleCopy(); }} style={{display: 'flex', alignItems: 'center', background: '#3f4b95', borderTopLeftRadius: "0px", borderBottomLeftRadius: "0px" }} className={`${effect && "animate-wiggle"} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded-full btn-copy-add`}>
+                <div id="input-div-span2">
+                  <button id="copy-address-button" onClick={() => { handleCopy(); }} style={{display: 'flex', width: '100%', alignItems: 'center', borderTopLeftRadius: "0px", borderBottomLeftRadius: "0px" }} className={`${effect && "animate-wiggle"} btn-on-active bg-blue-500 active:bg-blue-700 text-white font-bold py-2 px-2 rounded-full btn-copy-add`}>
                     <AiOutlineCopy style={{marginRight: '5px'}} /> COPY ADDRESS
                   </button>
                 </div>
@@ -304,8 +304,8 @@ export default function Home() {
                   <p className="m-0  font-Montserrat  text-lg font-light ">
                   </p><p className="m-0 custom-text-black font-Montserrat  text-lg font-light">
                   The entire simulation will be availible. As near as you can go to really executing the job.
-Simulation game that is unrivaled. Take command of the world's best sports teams and play the most beautiful games your way to get the closest thing to becoming a real manager. MetaFootball is a dynamic, breathing metaverse gaming environment with unrivaled realism and sports authenticity that other sports games can only dream to.
-MetaFootball's professional world will be meticulously modeled and reconstructed to provide you with all of the management power and resources you’ll need to write your own sports story and live out your goals. Purchase the players you desire. Make a list of the tactics you prefer. Take the awards you want. It's your club, your rules..
+                  Simulation game that is unrivaled. Take command of the world's best sports teams and play the most beautiful games your way to get the closest thing to becoming a real manager. MetaFootball is a dynamic, breathing metaverse gaming environment with unrivaled realism and sports authenticity that other sports games can only dream to.
+                  MetaFootball's professional world will be meticulously modeled and reconstructed to provide you with all of the management power and resources you’ll need to write your own sports story and live out your goals. Purchase the players you desire. Make a list of the tactics you prefer. Take the awards you want. It's your club, your rules..
                   </p>
                   <p></p>
                   <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className=" inline-btn  text-grey text-base shapiro-65 " href="https://meta-football.gitbook.io/metafootball-whitepaper/" target="_blank">
@@ -370,6 +370,186 @@ MetaFootball's professional world will be meticulously modeled and reconstructed
         </div>
       </section>
       
+      <section className="team py-8 xl:py-16">
+        <div className="container relative ">
+          <h2 className="text-white font-62 shapiro-85 mb-12 aos-init aos-animate" data-aos="fade-up" data-aos-offset="-300"> PROMOTED BY
+          <span className="shapiro-extd block text-yellow text-left uppercase ">MEGA STARS</span>
+          </h2>
+          
+          <div className="grid py-12 grid-cols-12 gap-4 md:gap-8 xl:gap-7 relative">
+            <div data-aos="fade-right" data-aos-delay="300" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}} className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}} >
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/ronaldinho.jpg" />
+              </div>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Ronaldinho Gaucho</h4>
+              <div className="links">
+                <a href="https://www.linkedin.com/in/mcercos/" target="_blank">
+                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://twitter.com/mcercos" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/cenk.jpg" />
+              </div>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Cenk Tosun</h4>
+              <div className="links">
+                <a href="https://www.linkedin.com/in/mcercos/" target="_blank">
+                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://twitter.com/mcercos" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/mariano.jpg" />
+              </div>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Mariano Diaz</h4>
+              <div className="links">
+                <a href="https://www.linkedin.com/in/mcercos/" target="_blank">
+                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://twitter.com/mcercos" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/thiago.jpg" />
+              </div>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Thiago Silva</h4>
+              <div className="links">
+                <a href="https://www.linkedin.com/in/mcercos/" target="_blank">
+                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://twitter.com/mcercos" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/vinicius.jpg" />
+              </div>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Vinicius Jr.</h4>
+              <div className="links">
+                <a href="https://www.linkedin.com/in/mcercos/" target="_blank">
+                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://twitter.com/mcercos" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/rakitic.jpg" />
+              </div>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Ivan Rakitic</h4>
+              <div className="links">
+                <a href="https://www.linkedin.com/in/mcercos/" target="_blank">
+                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://twitter.com/mcercos" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/arda.jpg" />
+              </div>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Arda Turan</h4>
+              <div className="links">
+                <a href="https://www.linkedin.com/in/mcercos/" target="_blank">
+                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://twitter.com/mcercos" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/sergio.jpg" />
+              </div>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Sergio Busquets</h4>
+              <div className="links">
+                <a href="https://www.linkedin.com/in/mcercos/" target="_blank">
+                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://twitter.com/mcercos" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/vidal.jpg" />
+              </div>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Vidal</h4>
+              <div className="links">
+                <a href="https://www.linkedin.com/in/mcercos/" target="_blank">
+                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://twitter.com/mcercos" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/suarez.jpg" />
+              </div>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Denis Suarez</h4>
+              <div className="links">
+                <a href="https://www.linkedin.com/in/mcercos/" target="_blank">
+                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://twitter.com/mcercos" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/rafinha.jpg" />
+              </div>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Rafinha</h4>
+              <div className="links">
+                <a href="https://www.linkedin.com/in/mcercos/" target="_blank">
+                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://twitter.com/mcercos" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/marcelo.jpg" />
+              </div>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Marcelo</h4>
+              <div className="links">
+                <a href="https://www.linkedin.com/in/mcercos/" target="_blank">
+                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://twitter.com/mcercos" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
       <section className="roadmap py-8 xl:py-16">
         <div className="container relative ">
           <h2 className="text-white font-62 shapiro-85 mb-12 aos-init" data-aos="fade-up" data-aos-offset="-300"> ROADMAP
@@ -517,7 +697,61 @@ MetaFootball's professional world will be meticulously modeled and reconstructed
       </footer>
 <style jsx>
   {
-    `#custom-tooltip {
+    `
+    .links {
+      display: flex;
+      justify-content: center;
+    }
+    .img-players-div{
+      background: rgba(63,75,149);
+      transition: border-radius 1s ease-out;
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      overflow: hidden;
+      z-index: 5;
+      margin: 0 auto;
+    }
+
+    .img-players{
+      transition: border-radius 1s ease-out;
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      animation: morph 3s ease-in-out infinite both alternate;
+      
+      position: absolute;
+      overflow: hidden;
+      z-index: 5;
+      opacity: 0.8;
+    }
+
+    @keyframes morphdiv {
+      0% {border-radius: 60% 40% 40% 60% / 30% 60% 70% 30%;} 
+      100% {border-radius: 60% 40%;} 
+    }
+    
+    @keyframes spindiv {
+      to {
+        transform: rotate(1turn);
+      }
+    }
+
+    @keyframes morph {
+      0% {border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;} 
+      100% {border-radius: 40% 60%;} 
+    }
+    
+    @keyframes spin {
+      to {
+        transform: rotate(1turn);
+      }
+    }
+
+    .btn-on-active:hover {
+      background-color: rgb(52 62 122);
+    }
+    .btn-on-active {
+      background-color: #3f4b95;
+    }
+    
+    #custom-tooltip {
       display: none;
       padding: 5px 12px;
       padding-bottom: 5px;
@@ -526,9 +760,15 @@ MetaFootball's professional world will be meticulously modeled and reconstructed
       font-weight: bold;
       color: #000000;
       max-height: 35px;
-      margin-right: 80px;
+      margin-right: 40px;
       position:relative;
       top: 8px;
+    }
+    #input-div-span1 {
+      width: 70%;
+    }
+    #input-div-span2 {
+      width: 30%;
     }
     .team-box {
       background: rgb(63,75,149);
@@ -940,6 +1180,9 @@ MetaFootball's professional world will be meticulously modeled and reconstructed
         margin-top: 20px;
       }
     }
+    #button-mfts1 {
+      margin-right: 15px;
+    }
     @media screen and (max-width: 455px){
       ul#tabs-nav {
         z-index: 9;
@@ -949,6 +1192,15 @@ MetaFootball's professional world will be meticulously modeled and reconstructed
         margin: 0 auto;
         padding: 0px 20px;
         margin-top: 20px;
+      }
+      #input-div-span1, #input-div-span2 {
+        width: 50%;
+      }
+      .button-mfts {
+        font-size: 90%;
+      }
+      #button-mfts1 {
+        margin-right: 5px;
       }
       .text-right {
         text-align: center;
@@ -961,6 +1213,7 @@ MetaFootball's professional world will be meticulously modeled and reconstructed
       }
       #custom-tooltip {
         margin-right: 0px;
+        top: 5px;
       }
       #copy-address-button {
         font-size: 15px;
