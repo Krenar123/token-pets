@@ -1,12 +1,16 @@
 import Head from 'next/head'
+import React, { useState } from "react";
 import Image from 'next/image'
 import 'tailwindcss/tailwind.css'
 import { BsTwitter } from 'react-icons/bs';
 import { FaTelegramPlane } from 'react-icons/fa';
 import { FaDiscord } from 'react-icons/fa';
-import { BsFacebook } from 'react-icons/bs';
+import { FaPoo } from 'react-icons/fa';
+import { AiOutlineAreaChart } from 'react-icons/ai';
+import { AiOutlineCopy } from 'react-icons/ai';
 
 export default function Home() {
+  const [effect, setEffect] = useState(false);
   const handleClick = (tabs) => {
     let tab1 = document.getElementById("tab1");
     let tab2 = document.getElementById("tab2");
@@ -57,6 +61,16 @@ export default function Home() {
     }
   };
 
+  const handleCopy = () => {
+    let address = document.getElementById("copy-address");
+    address.select();
+    address.setSelectionRange(0, 99999); /* For mobile devices */
+
+    /* Copy the text inside the text field */
+    navigator.clipboard.writeText(address.value);
+    setEffect(true);
+  };
+
   return (
     <div className="">
       <Head>
@@ -87,55 +101,72 @@ export default function Home() {
         />
       </Head>
 
-      <body className="bg-black ld" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
-      <header className="bg-white py-4 ">
+      <body style={{background: "rgb(0 0 0)"}} className="bg-black ld" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+      <header className="bg-white py-8 ">
         <div className="container  flex justify-between items-center ">
-          <a className=" hidden md:inline-block  text-blue  font-Montserrat  text-sm  font-bold anchor-change uppercase " href="#">HOME</a>
-          <a className="hidden md:inline-block text-blue  font-Montserrat  text-sm  font-bold anchor-change uppercase  " href="https://msu.metasoccer.com/" target="_blank">MTF TOKEN</a>
-          <a href="#"> <img style={{width: '100px'}} alt="" src="/images/logo.jpeg" /></a>
-          <a className="hidden md:inline-block text-blue  font-Montserrat  text-sm  font-bold anchor-change uppercase  " href="https://whitepaper.metasoccer.com/" target="_blank">WHITEPAPER</a>
-          <button style={{display: 'none'}} class="menu"><img src="/images/menu.svg" /></button>
-          <a className=" hidden md:inline-block text-blue  font-Montserrat  text-sm  font-bold anchor-change uppercase " href="/MetaSoccer_Deck.pdf?ts=1637949828" target="_blank">PITCH DECK</a>
+          <a className="change-on-small md:inline-block  text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase " href="#">HOME</a>
+          <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase  " href="#" target="_blank">MTF TOKEN</a>
+          
+          <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase  " href="https://meta-football.gitbook.io/metafootball-whitepaper/" target="_blank">WHITEPAPER</a>
+          <button style={{display: 'none'}} className="menu"><img src="/images/menu.svg" /></button>
+          <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase " href="" target="_blank">PITCH DECK</a>
         </div>
       </header>
       <div className="mobile-menu">
         <button className="menu-close absolute right-3 top-3 cursor-pointer">
           <img className=" w-8" src="/images/close.png" />
         </button>
-        <a className=" block py-3  text-blue  font-Montserrat  text-sm font-bold uppercase  hover:text-theme-lightblue-300 transition-all " href="#">HOME</a>
-        <a className=" block py-3  text-blue  font-Montserrat  text-sm font-bold uppercase hover:text-theme-lightblue-300 transition-all  " href="https://msu.metasoccer.com/">MTF
+        <a className=" block py-3  text-white  font-Montserrat  text-sm font-bold uppercase  hover:text-theme-lightblue-300 transition-all " href="#">HOME</a>
+        <a className=" block py-3  text-white  font-Montserrat  text-sm font-bold uppercase hover:text-theme-lightblue-300 transition-all  " href="#">MTF
         TOKEN</a>
-        <a className=" block  py-3 text-blue  font-Montserrat  text-sm font-bold uppercase   hover:text-theme-lightblue-300 transition-all" href="https://whitepaper.metasoccer.com/">WHITEPAPER</a>
-        <a className=" block  py-3  text-blue  font-Montserrat  text-sm font-bold uppercase hover:text-theme-lightblue-300 transition-all" href="/MetaSoccer_Deck.pdf?ts=1637949828" target="_blank">PITCH DECK</a>
+        <a className=" block  py-3 text-white  font-Montserrat  text-sm font-bold uppercase   hover:text-theme-lightblue-300 transition-all" href="https://meta-football.gitbook.io/metafootball-whitepaper/">WHITEPAPER</a>
+        <a className=" block  py-3  text-white  font-Montserrat  text-sm font-bold uppercase hover:text-theme-lightblue-300 transition-all" href="" target="_blank">PITCH DECK</a>
       </div>
       <section className="train-player pb-20 lg:pt-20 lg:pb-14 relative">
-        <div className="container">
-          <div className="lg:grid grid-cols-12">
-            <div style={{width: "100%"}} className="col-span-4">
-              <h1 className="first-para text-blue shapiro-85 font-82 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800"> FIND
-              TRAIN
+        <div className="container train-player2">
+          <div className="lg:grid grid-cols-12" id="top-div">
+            <div style={{width: "100%"}} className="col-span-5">
+              <h1 className="first-para text-white shapiro-85 font-82 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800"> INVEST
+              EARN
               PLAY
               <span className="text-yellow shapiro-extd aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-              EARN</span>
+              WIN</span>
               </h1>
-              <p className="mt-8 font-Montserrat custom-text-black font-22 text-theme-gray-300 leading-7 font-light opacity-70 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-              MetaSoccer is the first soccer metaverse where you can manage your own club and generate income
-              while you play
+              <p className="mt-8 mb-8 font-Montserrat custom-text-black font-22 text-theme-gray-300 leading-7 font-light opacity-70 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+              MetaFootball will be one of the most comprehensive football management games ever created, designed as a play-to-earn game for everyone who loves football and wants to earn token reflections and NFT while managing his own football team
               </p>
+              <div className="btn-group" style={{marginTop: '15px'}}>
+                <button style={{background: '#3f4b95', marginRight: '15px'}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                  BUY $MFT
+                </button>
+                <button style={{border: '2px solid #3f4b95'}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                  <AiOutlineAreaChart style={{float: 'left', marginRight: '5px', position: 'relative', top: '4px'}} /> CHART
+                </button>
+              </div>
+              <div className="btn-group col-span-12" style={{marginTop: '15px', display: "flex"}}>
+                <div className="col-span-8" style={{width: '292px'}} id="input-div-span">
+                  <input id="copy-address" style={{pointerEvents: 'none', background: 'transparent', border: '2px solid #3f4b95', borderTopRightRadius: "0px", borderBottomRightRadius: "0px", maxWidth: "312px", overflow: "hidden", width: "100%"}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" defaultValue="0xd024ac1195762f6f13f8cfdf3cdd2c97b33b248b" />
+                </div>
+                <div className="col-span-4">
+                  <button id="copy-address-button" onClick={() => { handleCopy(); }} style={{display: 'flex', alignItems: 'center', background: '#3f4b95', borderTopLeftRadius: "0px", borderBottomLeftRadius: "0px" }} className={`${effect && "animate-wiggle"} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full btn-copy-add`}>
+                    <AiOutlineCopy style={{marginRight: '5px'}} /> COPY ADDRESS
+                  </button>
+                </div>
+              </div>
             </div>
-            <div className="col-span-8 ">
-              <img alt="" className="ml-auto aos-init aos-animate" data-aos="fade-left" data-aos-duration="800" src="/images/players.png" />
+            <div className="col-span-7">
+              <img style={{width: "50%", maxWidth: "395px", maxHeight: "570px", position: "relative", top: "0px"}} alt="" id="logo-img" className="ml-auto aos-init aos-animate" data-aos="fade-left" data-aos-duration="800" src="/images/logo_opt-removebg.png" />
             </div>
           </div>
           <div className="drop-band">
             <a href="https://app.metasoccer.com/" target="_blank">
-              <div className="drop-band--main-band" ><p className="shapiro-85 text-3xl">JOIN US</p><p className="shapiro-extd text-3xl">JOIN US</p><p className="shapiro-85 text-3xl">JOIN US</p><p className="text-3xl shapiro-extd">JOIN US</p><p className="text-3xl shapiro-85">JOIN US</p><p className="last-join-us shapiro-extd">JOIN US</p></div>
+              <div className="drop-band--main-band" ><p className="shapiro-85 text-3xl">JOIN US</p><p className="shapiro-extd text-3xl">JOIN US</p><p className="shapiro-85 text-3xl">JOIN US</p><p className="text-3xl shapiro-extd">JOIN US</p><p className="text-3xl shapiro-85">JOIN US</p><p className="last-join-us shapiro-extd text-3xl">JOIN US</p></div>
               <div className="drop-band--secondary-band"></div>
             </a>
           </div>
         </div>
       </section>
-      <section className="rrss-icons py-20 lg:pt-8 lg:pb-16">
+      <section className="rrss-icons py-20 lg:pt-6 lg:pb-2">
         <div className="container justify-center items-center flex-wrap grid grid-cols-2 grid-rows-2 gap-y-16 gap-x-20 md:grid-cols-4 md:grid-rows-1 md:px-20">
           <div className="rrss-icon flex justify-end items-center md:justify-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
             <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="https://twitter.com/MetaSoccer_EN" target="_blank">
@@ -143,48 +174,49 @@ export default function Home() {
             </a>
           </div>
           <div className="rrss-icon flex justify-start items-center md:justify-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
-            <a className="inline-block hover:opacity-70 transition-all" href="https://t.me/MetaSoccerOfficial" target="_blank">
+            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="https://t.me/MetaSoccerOfficial" target="_blank">
             <FaTelegramPlane size={40} />
             </a>
           </div>
           <div className="rrss-icon flex justify-end items-center md:justify-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
-            <a className="inline-block hover:opacity-70 transition-all" href="https://discord.gg/metasoccer" target="_blank">
+            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="https://discord.gg/metasoccer" target="_blank">
             <FaDiscord size={40} />
             </a>
           </div>
           <div className="rrss-icon flex justify-start items-center md:justify-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
-            <a className="inline-block hover:opacity-70 transition-all" href="https://metasoccer.medium.com/" target="_blank">
-            <BsFacebook size={40}/>
+            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="https://metasoccer.medium.com/" target="_blank">
+            <FaPoo size={40}/>
             </a>
           </div>
         </div>
       </section>
+      {/* 
       <section className="steps relative  py-8 xl:py-16 ">
         <div className="container ">
           <div className="flow md:grid grid-cols-12 gap-12 ">
             <div className="md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="800">
-              <h2 className="text-blue font-26 shapiro-85 mb-4">FIND</h2>
+              <h2 className="text-white font-26 shapiro-85 mb-4">FIND</h2>
               <p className="custom-text-black  font-Montserrat text-base text-theme-gray-300 leading-6 font-light">Send your
               Youth Scouts
               to explore and find new promising young players for your team (NFT players)
               </p>
             </div>
             <div className="md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-              <h2 className="text-blue font-26 shapiro-85 mb-4">TRAIN</h2>
+              <h2 className="text-white font-26 shapiro-85 mb-4">TRAIN</h2>
               <p className="custom-text-black font-Montserrat text-base text-theme-gray-300 leading-6 font-light">Train your
               players
               every day and count on them to play matches to develop their full potential
               </p>
             </div>
             <div className="md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-              <h2 className="text-blue font-26 shapiro-85 mb-4">PLAY</h2>
+              <h2 className="text-white font-26 shapiro-85 mb-4">PLAY</h2>
               <p className="custom-text-black font-Montserrat text-base text-theme-gray-300 leading-6 font-light">Compete in
               official
               matches against other users and climb between divisions to reach the top
               </p>
             </div>
             <div className="md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-              <h2 className="text-blue font-26 shapiro-85 mb-4">EARN</h2>
+              <h2 className="text-white font-26 shapiro-85 mb-4">EARN</h2>
               <p className="custom-text-black font-Montserrat text-base text-theme-gray-300 leading-6 font-light">Win matches
               &amp; leagues
               and generate income with your club. There are multiple ways to earn $MTF token
@@ -193,17 +225,17 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */}
       <section className="meta-assets py-8 xl:py-16">
         <div className="container">
-          <div className="tabs p-4 md:p-12 border text-blue relative">
-            <h2 className="shapiro-95 text-blue font-62 text-right">
-              <span className="text-yellow block shapiro-extd aos-init aos-animate" data-aos="fade-up" data-aos-duration="800">METAFOOTBALL’S</span>
-              <span className="block shapiro-85 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800">EVOLVING</span>
-              <span className="block shapiro-85 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800">ASSETS</span>
+          <div  data-aos="zoom-in" className="tabs p-4 md:p-12 border text-white aos-animate relative">
+            <h2 className="shapiro-95 text-white font-62 text-right">
+              <span className="text-yellow block shapiro-extd aos-init aos-animate" data-aos="fade-up" data-aos-duration="800">METAFOOTBALL</span>
+              <span className="block shapiro-85 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800">UTILITIES</span>
             </h2>
             <ul className="md:flex   justify-end my-8" id="tabs-nav">
               <li id="tab1-option" className="mr-8 active"><a className="shapiro-65 " onClick={() => handleClick('tab1')} >NFT FANTASY FOOTBALL</a></li>
-              <li id="tab2-option"className="mr-8"><a className="shapiro-65 " onClick={() => handleClick('tab2')} >FOOTBALL MANAGER</a></li>
+              <li id="tab2-option" className="mr-8"><a className="shapiro-65 " onClick={() => handleClick('tab2')} >FOOTBALL MANAGER</a></li>
               <li id="tab3-option" className=""><a className="shapiro-65 " onClick={() => handleClick('tab3')} >METAVERSE GAME</a></li>
             </ul>
             <div id="tabs-content">
@@ -217,7 +249,7 @@ export default function Home() {
                   MetaFootball provides an advantage over traditional fantasy football leagues in that you are compensated in real money for your efforts because you own the cards you collect, win, and trade. In previous fantasy football games, you don’t own any players, so all you get for your time is the possibility to beat the thousands of other players who enter, but with MetaFootball, you get to collect cards (players) that you are given complete ownership of for the rest of your life.
                   </p>
                   <p></p>
-                  <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className="inline-btn text-grey text-base shapiro-65 aos-init aos-animate" data-aos="fade-up" href="https://whitepaper.metasoccer.com/game-assets/players" target="_blank">
+                  <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className="inline-btn text-grey text-base shapiro-65 aos-init aos-animate" data-aos="fade-up" href="https://meta-football.gitbook.io/metafootball-whitepaper/" target="_blank">
                   LEARN
                   MORE </a>
                   <p className="m-0 font-Montserrat text-base font-light aos-init aos-animate" data-aos="fade-up">
@@ -235,13 +267,12 @@ export default function Home() {
                 <div className="text-right">
                   <p className="m-0  font-Montserrat  text-lg font-light ">
                   </p><p className="m-0 custom-text-black font-Montserrat  text-lg font-light">
-                  The introduction of new players into the ecosystem (minting) falls on them. Each Youth Scout
-                  has a set of specific skills, some are better in attack, others in defense… The type of
-                  players they find will depend on these attributes, as well as their quality. Youth Scouts
-                  also improve their skills over the time and they age.
+                  The full simulation experience with high-end developments.
+                  Experience the closest thing to being a real manager by taking charge of the world’s greatest sport teams and playing the beautiful games your way.
+                  MetaFootball is a living, breathing game world for the metaverse, unparalleled realism and achieves sports authenticity that other sports games can only aspire to.
                   </p>
                   <p></p>
-                  <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className=" inline-btn  text-grey text-base shapiro-65 " href="https://whitepaper.metasoccer.com/game-assets/youth-scout" target="_blank">
+                  <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className=" inline-btn  text-grey text-base shapiro-65 " href="https://meta-football.gitbook.io/metafootball-whitepaper/" target="_blank">
                   LEARN
                   MORE </a>
                   <p className="m-0   font-Montserrat  text-base font-light ">
@@ -259,16 +290,12 @@ export default function Home() {
                 <div className="text-right">
                   <p className="m-0  font-Montserrat  text-lg font-light ">
                   </p><p className="m-0 custom-text-black font-Montserrat  text-lg font-light">
-                  The full simulation experience with high-end developments.
-
-Experience the closest thing to being a real manager by taking charge of the world’s greatest sport teams and playing the beautiful games your way.
-
- 
-
-MetaFootball is a living, breathing game world for the metaverse, unparalleled realism and achieves sports authenticity that other sports games can only aspire to.
+                  The entire simulation will be availible. As near as you can go to really executing the job.
+Simulation game that is unrivaled. Take command of the world's best sports teams and play the most beautiful games your way to get the closest thing to becoming a real manager. MetaFootball is a dynamic, breathing metaverse gaming environment with unrivaled realism and sports authenticity that other sports games can only dream to.
+MetaFootball's professional world will be meticulously modeled and reconstructed to provide you with all of the management power and resources you’ll need to write your own sports story and live out your goals. Purchase the players you desire. Make a list of the tactics you prefer. Take the awards you want. It's your club, your rules..
                   </p>
                   <p></p>
-                  <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className=" inline-btn  text-grey text-base shapiro-65 " href="https://whitepaper.metasoccer.com/game-assets/youth-scout" target="_blank">
+                  <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className=" inline-btn  text-grey text-base shapiro-65 " href="https://meta-football.gitbook.io/metafootball-whitepaper/" target="_blank">
                   LEARN
                   MORE </a>
                   <p className="m-0   font-Montserrat  text-base font-light ">
@@ -284,7 +311,7 @@ MetaFootball is a living, breathing game world for the metaverse, unparalleled r
         </div>
       </section>
       <section className="plan py-8 xl:py-16 overflow-hidden">
-        <div style={{background: "rgb(200 206 252)", display: "flex", justifyContent: 'space-between', maxWidth: '3000px'}} className="container relative ">
+        <div style={{ display: "flex", justifyContent: 'space-between'}} className="container relative ">
           <a href="https://app.metasoccer.com/" target="_blank"><img style={{width: "200px"}} className="" src="/images/poocoin.png" /></a>
           <a href="https://app.metasoccer.com/" target="_blank"><img style={{width: "200px"}} className="" src="/images/bsc_scan.png" /></a>
           <a href="https://app.metasoccer.com/" target="_blank"><img style={{width: "200px"}} className="" src="/images/coingecko.png" /></a>
@@ -292,85 +319,36 @@ MetaFootball is a living, breathing game world for the metaverse, unparalleled r
           <a href="https://app.metasoccer.com/" target="_blank"><img style={{width: "200px"}} className="" src="/images/marketcap.png" /></a>
         </div>
       </section>
-      
-      <section className="roadmap py-8 xl:py-16">
-        <div className="container relative ">
-          <h2 className="text-blue font-62 shapiro-85 mb-12 aos-init" data-aos="fade-up" data-aos-offset="-300"> ROADMAP
-          </h2>
-          <div className="md:grid grid-cols-12 border aos-init" data-aos="fade-up" data-aos-offset="-300">
-          <div className=" col-span-12 lg:col-span-3 text-center  py-12 px-6 border-r relative overflow-hidden">
-            <h3 className=" text-yellow text-3xl shapiro-65   mb-10"> Q4 21</h3>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> $MTF Private &amp; TBC Presale</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Youth Scouts private presale</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Youth Scouts public presale in own
-            marketplace
-            </p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat"> Assets purchases / sales</p>
-          </div>
-          <div className=" col-span-12 lg:col-span-3 text-center  py-12 px-6 border-r relative overflow-hidden">
-            <h3 className=" text-yellow text-3xl shapiro-65    mb-10"> Q1-Q2 22</h3>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Youth Scouts gameplay: knowledge
-            improving</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Players gameplay: training + skills
-            improving</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Players &amp; scouts aging activation</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Friendly matches (beta - match
-            comments)</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Player loans</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Youth Scouts gameplay: mentoring new
-            scouts</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-5">Career mode (beta - matches
-            comments)</p>
-          </div>
-          <div className=" col-span-12 lg:col-span-3 text-center  py-12 px-6 border-r relative overflow-hidden">
-            <h3 className=" text-yellow text-3xl shapiro-65    mb-10"> Q3-Q4 22</h3>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Multi-team: multiple teams per club</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Owner &amp; Manager roles split</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">2D match simulation</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Career mode tournaments</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat ">Up to vote (DAO)</p>
-          </div>
-          <div className=" col-span-12 lg:col-span-3 text-center  py-12 px-6 border-r relative overflow-hidden">
-            <div className="gd"></div>
-              <h3 className=" text-yellow text-3xl shapiro-65    mb-10">Up to vote (DAO)</h3>
-              <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Stadiums</p>
-              <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Stadiums tickets income</p>
-              <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Renting stadiums</p>
-              <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Betting platform</p>
-              <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Stream matches</p>
-            </div>
-          </div>
-        </div>
-      </section>
+
       <section style={{marginBottom: "40px"}} className="investor py-8 xl:py-16">
         <div  className="container relative ">
-          <h2 className="text-blue font-62 shapiro-85 mb-16 xl:mb-28 aos-init" data-aos="fade-up" data-aos-duration="400" data-aos-offset="-300">
-          BUY/SELL
-          <span className="shapiro-extd block text-yellow text-left uppercase "> &amp; TAX </span>
+          <h2 className="text-white font-62 shapiro-85 mb-16 xl:mb-28 aos-init" data-aos="fade-up" data-aos-duration="400" data-aos-offset="-300">
+          BUY/SELL &amp; TAX 
+          <span className="shapiro-extd block text-yellow text-left uppercase ">Total 13%</span>
           </h2>
           <div style={{padding: '0px 20px'}} className="container ">
           <div className="flow md:grid grid-cols-12 gap-8 ">
-            <div style={{padding: "23px", borderRadius: "10px"}} className="shadow-xl md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="800">
+            <div style={{padding: "23px", borderRadius: "10px", background: "rgb(24 24 24)"}} className="shadow-xl sm-mb-6 md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="flip-left" data-aos-duration="800">
             <img style={{width: "150px", margin: '0 auto'}} className="" src="/images/bnb.png" />
-              <h2 style={{fontSize: "14px"}} className="text-blue font-18 shapiro-85 mt-3 mb-3">INCENTIVE WALLET</h2>
+              <h2 style={{fontSize: "14px"}} className="text-white font-18 shapiro-85 mt-3 mb-3">INCENTIVE WALLET</h2>
               <p style={{fontSize: "14px"}} className="custom-text-black  font-Montserrat text-base text-theme-gray-300 leading-6 font-light">To keep our community entertained and rewarded, 6% of every transaction will go to the incentive wallet.
               </p>
             </div>
-            <div style={{padding: "23px", borderRadius: "10px"}} className="shadow-xl md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+            <div style={{padding: "23px", borderRadius: "10px", background: "rgb(24 24 24)"}} className="shadow-xl sm-mb-6 md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
             <img style={{width: "150px", margin: '0 auto'}} className="" src="/images/bunny.png" />
-              <h2 style={{fontSize: "14px"}} className="text-blue font-18 shapiro-85 mt-3 mb-3">LIQUIDITY</h2>
+              <h2 style={{fontSize: "14px"}} className="text-white font-18 shapiro-85 mt-3 mb-3">LIQUIDITY</h2>
               <p style={{fontSize: "14px"}} className="custom-text-black font-Montserrat text-base text-theme-gray-300 leading-6 font-light">3% of every transaction goes to our locked liquidity pool MTF/BNB in PancakeSwap, creating an ever rising price floor.
               </p>
             </div>
-            <div style={{padding: "23px", borderRadius: "10px"}} className="shadow-xl md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+            <div style={{padding: "23px", borderRadius: "10px", background: "rgb(24 24 24)"}} className="shadow-xl sm-mb-6 md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="flip-left" data-aos-delay="200" data-aos-duration="800">
             <img style={{width: "150px", margin: '0 auto'}} className="" src="/images/holding.png" />
-              <h2 style={{fontSize: "14px"}} className="text-blue font-18 shapiro-85 mt-3 mb-3">REFLECTIONS</h2>
+              <h2 style={{fontSize: "14px"}} className="text-white font-18 shapiro-85 mt-3 mb-3">REFLECTIONS</h2>
               <p style={{fontSize: "14px"}} className="custom-text-black font-Montserrat text-base text-theme-gray-300 leading-6 font-light">After every buy/sell 2% will be distributed among our amazing holders.
               </p>
             </div>
-            <div style={{padding: "23px", borderRadius: "10px"}} className="shadow-xl md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+            <div style={{padding: "23px", borderRadius: "10px", background: "rgb(24 24 24)"}} className="shadow-xl md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="flip-left" data-aos-delay="300" data-aos-duration="800">
             <img style={{width: "150px", margin: '0 auto'}} className="" src="/images/whale.png" />  
-              <h2 style={{fontSize: "14px"}} className="text-blue font-18 shapiro-85 mt-3 mb-3">WHALE SAFETY</h2>
+              <h2 style={{fontSize: "14px"}} className="text-white font-18 shapiro-85 mt-3 mb-3">WHALE SAFETY</h2>
               <p style={{fontSize: "14px"}} className="custom-text-black font-Montserrat text-base text-theme-gray-300 leading-6 font-light">To keep the price consistent and safeguard it from whales & paperhands, 2% will go to the buyback wallet as $MTF tokens.
               </p>
             </div>
@@ -378,14 +356,116 @@ MetaFootball is a living, breathing game world for the metaverse, unparalleled r
         </div>
         </div>
       </section>
+      
+      <section className="roadmap py-8 xl:py-16">
+        <div className="container relative ">
+          <h2 className="text-white font-62 shapiro-85 mb-12 aos-init" data-aos="fade-up" data-aos-offset="-300"> ROADMAP
+          </h2>
+          <div className="md:grid grid-cols-12 border aos-init" data-aos="fade-up" data-aos-offset="-300">
+          <div className=" col-span-12 lg:col-span-3 text-center  py-12 px-6 border-r relative overflow-hidden">
+            <h3 className=" text-yellow text-3xl shapiro-65   mb-10"> Q1</h3>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Smart Contract Deployment</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Anti-Dump Security Measures</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Website Launch
+            </p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Release Whitepaper</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Establish Mod & Admins Team</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Build out Social Medias</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Build Social media management team</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Presale and launch date announced</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Marketing push to spread awareness</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Whitelist Contest for Presale</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Audit from InterFI & QuillAudits </p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat"> $MTF Presale</p>
+          </div>
+          <div className=" col-span-12 lg:col-span-3 text-center  py-12 px-6 border-r relative overflow-hidden">
+            <h3 className=" text-yellow text-3xl shapiro-65    mb-10"> Q2</h3>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Translation of the web to other languages</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">CoinMarketCap Listing</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Coingecko Listing</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Crypto.com Listing</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Coinbase Listing</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Strategic Marketing Campaign</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">$MTF Football Prediction Telegram Group</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">$MTF Fifa Tournament - P2E</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Football Star Promotions</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Partnerships with Game developers</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-5">NFT Preview</p>
+          </div>
+          <div className=" col-span-12 lg:col-span-3 text-center  py-12 px-6 border-r relative overflow-hidden">
+            <h3 className=" text-yellow text-3xl shapiro-65    mb-10"> Q3</h3>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Merch Store</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">NFT Airdrop to Holders</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">NFT Public Sale</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Team Expansion</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Certik & Dessert Finance Audit</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">NFT Fantasy Football Development</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Exchange Listing</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Social Platform</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">$MTF Football Prediction Platform</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Partnerships with VR / AR developers</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat ">Football team Sponsorship/Partnership</p>
+          </div>
+          <div className=" col-span-12 lg:col-span-3 text-center  py-12 px-6 border-r relative overflow-hidden">
+            <div className="gd"></div>
+              <h3 className=" text-yellow text-3xl shapiro-65    mb-10">Q4</h3>
+              <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Release Fantasy Football - NFT Version</p>
+              <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">BETA Release Football Manager - $MTF</p>
+              <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Preparing for the Metaverse</p>
+              <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Metaverse Concept reveal</p>
+              <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Metaverse Partnerships</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section className="team py-8 xl:py-16">
+        <div className="container relative ">
+          <h2 className="text-white font-62 shapiro-85 mb-12 aos-init aos-animate" data-aos="fade-up" data-aos-offset="-300"> TEAM
+          </h2>
+          
+          <div className="grid  grid-cols-12 gap-4 md:gap-8 xl:gap-20 relative">
+            <div data-aos="fade-right" data-aos-delay="300" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}} className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user">
+                <img style={{maxHeight: "200px", margin: "0 auto"}} alt="" src="/images/logo_opt-removebg.png" />
+              </div>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-8 mb-3">Zer0Bug</h4>
+              <p className="text-center text-white text-md font-Montserrat font-light">LEAD DEVELOPER</p>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user">
+                <img style={{maxHeight: "200px", margin: "0 auto"}} alt="" src="/images/logo_opt-removebg.png" />
+              </div>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-8 mb-3">Sewastoz </h4>
+              <p className="text-center text-white text-md  font-Montserrat  font-light">MARKETING</p>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user">
+                <img style={{maxHeight: "200px", margin: "0 auto"}} alt="" src="/images/logo_opt-removebg.png" />
+              </div>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-8 mb-3">DannyD</h4>
+              <p className="text-center text-white text-md  font-Montserrat  font-light">DESIGNER</p>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="0" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user">
+                <img style={{maxHeight: "200px", margin: "0 auto"}} alt="" src="/images/logo_opt-removebg.png" />
+              </div>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-8 mb-3">Zer0Bug</h4>
+              <p className="text-center text-white text-md  font-Montserrat  font-light">LEAD DEVELOPER</p>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
       <footer>
         <div className="container relative">
           <div className="lg:grid grid-cols-12 gap-20 relative border-t py-8 md:py-20 items-center">
             <div className="lg:col-span-4 text-center lg:text-left mb-14 lg:mb-0">
               <a href="index.html">
-                <img alt="" src="/images/logo.jpeg" style={{width: '100px'}} className="mx-auto lg:mx-0" />
+                <img alt="" src="/images/logo_opt-removebg.png" style={{width: '100px'}} className="mx-auto lg:mx-0" />
               </a>
-              <p className="mt-4 font-Montserrat text-xs opacity-80 text-blue font-normal">
+              <p className="mt-4 font-Montserrat text-xs opacity-80 text-white font-normal">
               © 2021 Football Games. All rights reserved
               </p>
             </div>
@@ -393,30 +473,30 @@ MetaFootball is a living, breathing game world for the metaverse, unparalleled r
               <div className="grid grid-cols-10">
                 <div className="col-span-5">
                   <a className="text-theme-lightblue-300 font-Montserrat font-light  text-base block text-center mb-5 hover:opacity-70 transition-all" href="#">Home</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="https://msu.metasoccer.com/" target="_blank">MTF Token</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all mb-5" href="https://whitepaper.metasoccer.com/" target="_blank">Whitepaper</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all" href="/MetaSoccer_Deck.pdf?ts=1637949828" target="_blank">Pitch Deck</a>
+                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="#" target="_blank">MTF Token</a>
+                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all mb-5" href="https://meta-football.gitbook.io/metafootball-whitepaper/" target="_blank">Whitepaper</a>
+                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all" href="" target="_blank">Pitch Deck</a>
                 </div>
                 <div className="col-span-5">
                   <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="mailto:contact@metasoccer.com">Contact us</a>
                   <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="#">Terms &amp; Conditions</a>
                   <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="#">Privacy Policy</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all" href="https://whitepaper.metasoccer.com/tokenomics/disclaimer" target="_blank">Disclaimer</a>
+                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all" href="https://meta-football.gitbook.io/metafootball-whitepaper/tokenomics/disclaimer" target="_blank">Disclaimer</a>
                 </div>
               </div>
             </div>
             <div className="lg:col-span-4 text-center lg:text-right">
               <a className="mr-5 inline-block hover:opacity-70 transition-all" href="https://twitter.com/MetaSoccer_EN" target="_blank">
-              <BsTwitter size={30} style={{color: '#0575e5'}} />
+              <BsTwitter size={30} style={{color: '#dad8d8'}} />
               </a>
               <a className="mr-5 inline-block hover:opacity-70 transition-all" href="https://t.me/MetaSoccerOfficial" target="_blank">
-              <FaTelegramPlane size={30} style={{color: '#0575e5'}} />
+              <FaTelegramPlane size={30} style={{color: '#dad8d8'}} />
               </a>
               <a className="mr-5 inline-block hover:opacity-70 transition-all" href="https://discord.gg/metasoccer" target="_blank">
-              <FaDiscord size={30} style={{color: '#0575e5'}} />
+              <FaDiscord size={30} style={{color: '#dad8d8'}} />
               </a>
               <a className="mr-5 inline-block hover:opacity-70 transition-all" href="https://metasoccer.medium.com/" target="_blank">
-              <BsFacebook size={30} style={{color: '#0575e5'}}/>
+              <FaPoo size={30} style={{color: '#dad8d8'}}/>
               </a>
             </div>
           </div>
@@ -425,6 +505,10 @@ MetaFootball is a living, breathing game world for the metaverse, unparalleled r
 <style jsx>
   {
     `
+    .team-box {
+      background: rgb(63,75,149);
+      background: linear-gradient(0deg, rgba(63,75,149,1) 0%, rgba(41,48,94,1) 45%, rgba(0,0,0,1) 100%);
+    }
     .text-theme-gray-300 {
       color: rgba(255, 255, 255, 0.8);
     }
@@ -519,11 +603,11 @@ MetaFootball is a living, breathing game world for the metaverse, unparalleled r
       color: #F3D250;
     }
     #tabs-nav li a {
-      border-bottom: 1px solid #000;
+      border-bottom: 1px solid #024a93;
       padding-bottom: 10px;
       transition: 0.3s;
       cursor: pointer;
-      color: #4c4c4c;
+      color: white;
     }
     .inline-btn:before {
       box-shadow: 1px 1px 1px #bd9700;
@@ -533,7 +617,7 @@ MetaFootball is a living, breathing game world for the metaverse, unparalleled r
       left: 5px;
       width: 100%;
       height: 100%;
-      z-index: -1;
+      z-index: 1;
       transition: 0.3s;
     }
     #tab2, #tab3{
@@ -594,7 +678,7 @@ MetaFootball is a living, breathing game world for the metaverse, unparalleled r
       padding: 0px 85px;
     }
     .train-player {
-      /*background: url(/images/35160075862b1951f2f4.png) no-repeat center;*/
+      background: url(/images/35160075862b1951f2f4.png) no-repeat center;
       background-size: cover;
     }
     .transition-all {
@@ -691,11 +775,17 @@ MetaFootball is a living, breathing game world for the metaverse, unparalleled r
     .text-blue {
       color: #0575e5;
     }
+    .text-purple {
+      color: #a72b7f;
+    }
+    .text-white {
+      color: white;
+    }
     .text-pink {
       color: #F76C6C;
     }
     .custom-text-black {
-      color: #303030;
+      color: #dad8d8;
     }
     .text-yellow {
       color: #F3D250;
@@ -747,11 +837,43 @@ MetaFootball is a living, breathing game world for the metaverse, unparalleled r
         padding: 0px 40px;
       }
     }
+    @media screen and (min-width: 768px){
+      #logo-img {
+        left: -60px;
+      }
+      #top-div {
+        margin-bottom: 95px;
+      }
+      #copy-address-button {
+        font-size: 15px;
+      }
+      #copy-address {
+        font-size: 12px;
+      }
+    }
+    
     @media screen and (max-width: 767px){
       .train-player .font-22 {
         font-size: 18px !important;
         line-height: 30px !important;
         margin-top: 20px !important;
+      }
+      #logo-img {
+        left: 0px;
+        margin: 0 auto;
+      }
+      #top-div {
+        margin-bottom: 25px;
+      }
+      #copy-address-button {
+        font-size: 8px;
+      }
+      #copy-address {
+        font-size: 13px;
+      }
+      .player_img {
+        margin-top: 40px;
+        margin-bottom: 40px;
       }
     }
     .train-player .drop-band a {
@@ -806,12 +928,22 @@ MetaFootball is a living, breathing game world for the metaverse, unparalleled r
       .text-right {
         text-align: center;
       }
+      .sm-mb-6 {
+        margin-bottom: 15px;
+      }
+      .change-on-small {
+        font-size: 10px;
+      }
     }
     @media screen and (max-width: 767px){
       ul#tabs-nav li {
         margin: 0px;
         text-align: center;
         flex: 0 0 50%;
+      }
+      .player_img {
+        margin-top: 40px;
+        margin-bottom: 40px;
       }
     }
     @media screen and (max-width: 767px){
@@ -856,6 +988,10 @@ MetaFootball is a living, breathing game world for the metaverse, unparalleled r
       .menu {
           display: inline-block;
       }
+      .player_img {
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
     }
     .mobile-menu.show {
       transform: translateX(0px);
@@ -890,8 +1026,30 @@ MetaFootball is a living, breathing game world for the metaverse, unparalleled r
     div {
       
         /* other propertites */
-        transition: all 1s ease-in-out;
+        transition: all 3s ease-in-out;
       
+    }
+    #logo-img {
+      animation: MoveUpDown 4s linear infinite;
+    }
+    #copy-address-btn {
+      animation: wiggle 1s linear infinite;
+    }
+    @keyframes MoveUpDown {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    @keyframes wiggle {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
     }
     `
   }
@@ -899,12 +1057,7 @@ MetaFootball is a living, breathing game world for the metaverse, unparalleled r
 <script src="dist/main.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-    AOS.init();
-  </script>
-  <script>
-    var test = document.getElementById("tab1");
-    test.addEventListener("click", function() {
-    });
+      AOS.init()
   </script>
 </body>
 
