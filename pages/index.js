@@ -228,7 +228,7 @@ export default function Home() {
       */}
       <section className="meta-assets py-8 xl:py-16">
         <div className="container">
-          <div  data-aos="zoom-in" className="tabs p-4 md:p-12 border text-white aos-animate relative">
+          <div className="tabs p-4 md:p-12 border text-white aos-animate relative">
             <h2 className="shapiro-95 text-white font-62 text-right">
               <span className="text-yellow block shapiro-extd aos-init aos-animate" data-aos="fade-up" data-aos-duration="800">METAFOOTBALL</span>
               <span className="block shapiro-85 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800">UTILITIES</span>
@@ -241,7 +241,7 @@ export default function Home() {
             <div id="tabs-content">
               <div  className="tab-content lg:flex" id="tab1">
                 <div className="player_img">
-                  <img alt="" className=" mx-auto" src="/images/first_vector.png" />
+                  <img data-aos="zoom-in" alt="" className=" mx-auto" src="/images/first_vector.png" />
                 </div>
                 <div className="text-right">
                   <p className="m-0 font-Montserrat text-lg font-light aos-init aos-animate" data-aos="fade-up">
@@ -262,7 +262,7 @@ export default function Home() {
               </div>
               <div  className="tab-content lg:flex" id="tab2" >
                 <div className="player_img">
-                  <img alt="" className=" mx-auto" src="/images/fourth_vector.jpeg" />
+                  <img data-aos="zoom-in" alt="" className=" mx-auto" src="/images/fourth_vector.jpeg" />
                 </div>
                 <div className="text-right">
                   <p className="m-0  font-Montserrat  text-lg font-light ">
@@ -285,7 +285,7 @@ export default function Home() {
               </div>
               <div className="tab-content lg:flex" id="tab3" >
                 <div className="player_img">
-                  <img alt="" className=" mx-auto" src="/images/third_vector.png" />
+                  <img data-aos="zoom-in" style={{maxHeight: "400px"}} alt="" className=" mx-auto" src="/images/fifth_vector.png" />
                 </div>
                 <div className="text-right">
                   <p className="m-0  font-Montserrat  text-lg font-light ">
