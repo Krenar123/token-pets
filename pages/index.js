@@ -161,7 +161,7 @@ export default function Home() {
                   <input id="copy-address" style={{pointerEvents: 'none', background: 'transparent', border: '2px solid #3f4b95', borderTopRightRadius: "0px", borderBottomRightRadius: "0px", maxWidth: "312px", overflow: "hidden", width: "100%"}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-full" defaultValue="0xd024ac1195762f6f13f8cfdf3cdd2c97b33b248b" />
                 </div>
                 <div style={{width: '50%'}} >
-                  <button id="copy-address-button" onClick={() => { handleCopy(); }} style={{display: 'flex', alignItems: 'center', background: '#3f4b95', borderTopLeftRadius: "0px", borderBottomLeftRadius: "0px" }} className={`${effect && "animate-wiggle"} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-full btn-copy-add`}>
+                  <button id="copy-address-button" onClick={() => { handleCopy(); }} style={{display: 'flex', alignItems: 'center', background: '#3f4b95', borderTopLeftRadius: "0px", borderBottomLeftRadius: "0px" }} className={`${effect && "animate-wiggle"} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded-full btn-copy-add`}>
                     <AiOutlineCopy style={{marginRight: '5px'}} /> COPY ADDRESS
                   </button>
                 </div>
