@@ -892,7 +892,6 @@ MetaFootball's professional world will be meticulously modeled and reconstructed
       }
       #copy-address-button {
         font-size: 15px;
-        width: 163px;
       }
       #copy-address {
         font-size: 12px;
