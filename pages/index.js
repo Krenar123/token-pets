@@ -963,6 +963,10 @@ MetaFootball's professional world will be meticulously modeled and reconstructed
       #custom-tooltip {
         margin-right: 0px;
       }
+      #copy-address-button {
+        font-size: 15px;
+        width: 180px;
+      }
     }
     @media screen and (max-width: 767px){
       ul#tabs-nav li {
