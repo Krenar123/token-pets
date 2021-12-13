@@ -495,7 +495,7 @@ MetaFootball's professional world will be meticulously modeled and reconstructed
               <a className="mr-5 inline-block hover:opacity-70 transition-all" href="https://discord.gg/metasoccer" target="_blank">
               <FaDiscord size={30} style={{color: '#dad8d8'}} />
               </a>
-              <a className="mr-5 inline-block hover:opacity-70 transition-all" href="https://metasoccer.medium.com/" target="_blank">
+              <a className=" inline-block hover:opacity-70 transition-all" href="https://metasoccer.medium.com/" target="_blank">
               <FaPoo size={30} style={{color: '#dad8d8'}}/>
               </a>
             </div>
