@@ -379,9 +379,9 @@ export default function Home() {
           <div className="grid py-12 grid-cols-12 gap-4 md:gap-8 xl:gap-7 relative">
             <div data-aos="fade-right" data-aos-delay="300" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}} className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}} >
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/ronaldinho.jpg" />
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/ronaldinho_sil.png" />
               </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Ronaldinho Gaucho</h4>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Ronaldinho Gaucho</h4>
               <div className="links">
                 <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
@@ -393,9 +393,9 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/cenk.jpg" />
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/cenk_sil.png" />
               </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Cenk Tosun</h4>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Cenk Tosun</h4>
               <div className="links">
                 <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
@@ -407,9 +407,9 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/mariano.jpg" />
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/mariano_sil.png" />
               </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Mariano Diaz</h4>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Mariano Diaz</h4>
               <div className="links">
                 <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
@@ -421,9 +421,9 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/thiago.jpg" />
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/thiago_sil.png" />
               </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Thiago Silva</h4>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Thiago Silva</h4>
               <div className="links">
                 <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
@@ -435,9 +435,9 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/vinicius.jpg" />
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/vinicius_sil.png" />
               </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Vinicius Jr.</h4>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Vinicius Jr.</h4>
               <div className="links">
                 <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
@@ -449,9 +449,9 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/rakitic.jpg" />
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/rakitic_sil.png" />
               </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Ivan Rakitic</h4>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Ivan Rakitic</h4>
               <div className="links">
                 <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
@@ -463,9 +463,9 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/arda.jpg" />
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/arda_sil.png" />
               </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Arda Turan</h4>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Arda Turan</h4>
               <div className="links">
                 <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
@@ -477,9 +477,9 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/sergio.jpg" />
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/sergio_sil.png" />
               </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Sergio Busquets</h4>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Sergio Busquets</h4>
               <div className="links">
                 <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
@@ -491,9 +491,9 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/vidal.jpg" />
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/vidal_sil.png" />
               </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Vidal</h4>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Vidal</h4>
               <div className="links">
                 <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
@@ -505,9 +505,9 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/suarez.jpg" />
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/suarez_sil.png" />
               </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Denis Suarez</h4>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Denis Suarez</h4>
               <div className="links">
                 <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
@@ -519,9 +519,9 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/rafinha.jpg" />
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/rafinha_sil.png" />
               </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Rafinha</h4>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Rafinha</h4>
               <div className="links">
                 <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
@@ -533,9 +533,9 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/marcelo.jpg" />
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/marcelo_sil.png" />
               </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-3 mb-1">Marcelo</h4>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Marcelo</h4>
               <div className="links">
                 <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
@@ -699,7 +699,7 @@ export default function Home() {
   {
     `
     .links {
-      display: flex;
+      display: none; // display: flex;
       justify-content: center;
     }
     .img-players-div{
@@ -710,7 +710,9 @@ export default function Home() {
       z-index: 5;
       margin: 0 auto;
     }
-
+    .img-players-name {
+      display:none;
+    }
     .img-players{
       transition: border-radius 1s ease-out;
       border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
