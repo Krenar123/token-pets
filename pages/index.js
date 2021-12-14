@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import React, { useState } from "react";
-import Image from 'next/image'
 import 'tailwindcss/tailwind.css'
 import { BsTwitter } from 'react-icons/bs';
 import { FaTelegramPlane } from 'react-icons/fa';
