@@ -254,7 +254,7 @@ export default function Home() {
             <div id="tabs-content">
               <div  className="tab-content lg:flex" id="tab1">
                 <div className="player_img">
-                  <img data-aos="zoom-in" alt="" style={{maxHeight: "350px"}} className=" mx-auto" src="/images/first_vector.png" />
+                  <img  data-aos="zoom-in" alt="" className=" mx-auto collection-images" src="/images/first_vector.png" />
                 </div>
                 <div className="text-right">
                   <p className="m-0 font-Montserrat text-lg font-light aos-init aos-animate" data-aos="fade-up">
@@ -271,7 +271,7 @@ export default function Home() {
               </div>
               <div  className="tab-content lg:flex" id="tab2" >
                 <div className="player_img">
-                  <img data-aos="zoom-in" alt="" style={{maxHeight: "350px"}} className=" mx-auto" src="/images/fourth_vector.jpeg" />
+                  <img data-aos="zoom-in" alt="" className=" mx-auto collection-images" src="/images/fourth_vector.jpeg" />
                 </div>
                 <div className="text-right">
                   <p className="m-0  font-Montserrat  text-lg font-light ">
@@ -290,7 +290,7 @@ export default function Home() {
               </div>
               <div className="tab-content lg:flex" id="tab3" >
                 <div className="player_img">
-                  <img data-aos="zoom-in" style={{maxHeight: "350px"}} alt="" className=" mx-auto" src="/images/fifth_vector.png" />
+                  <img data-aos="zoom-in" alt="" className=" mx-auto collection-images" src="/images/fifth_vector.png" />
                 </div>
                 <div className="text-right">
                   <p className="m-0  font-Montserrat  text-lg font-light ">
@@ -690,6 +690,9 @@ export default function Home() {
 <style jsx>
   {
     `
+    .collection-images {
+      max-width: 350px;
+    }
     .links {
       display: none; // display: flex;
       justify-content: center;
@@ -807,6 +810,9 @@ export default function Home() {
     @media screen and (max-width: 767px){
       .mobile-menu {
           display: block;
+      }
+      .collection-images {
+        max-height: 208px;
       }
     }
     .mobile-menu {

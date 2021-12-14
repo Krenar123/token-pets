@@ -38,14 +38,12 @@ export default function Nft() {
           <div className="lg:grid grid-cols-12" id="top-div">
             <div style={{width: "100%"}} className="col-span-12">
               <h1 className="first-para text-center text-white shapiro-85 font-82 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800"> <span>COMING</span>
-              <span style={{position: 'relative', top: "-5px"}} className="text-yellow shapiro-extd aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+              <span id="soon" style={{position: 'relative'}} className="text-yellow shapiro-extd aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
               SOON</span>
               </h1>
               <p className="mt-6 mb-8 text-center font-Montserrat custom-text-black font-22 text-theme-gray-300 leading-7 font-light opacity-70 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
                 NFT's in Development
               </p>
-              
-              
             </div>
             <div className="col-span-12">
               <img style={{width: "50%", maxWidth: "175px", maxHeight: "250px", position: "relative", top: "0px", left: '0px', margin: "0 auto"}} alt="" id="logo-img" className="ml-auto aos-init aos-animate" data-aos="fade-left" data-aos-duration="800" src="/images/logo_opt-removebg.png" />
@@ -57,6 +55,9 @@ export default function Nft() {
       <style jsx>
   {
     `
+    #soon {
+      top: -5px;
+    }
     .links {
       display: none; // display: flex;
       justify-content: center;
@@ -436,6 +437,10 @@ export default function Nft() {
           justify-content: center;
           align-items: center;
       }
+      
+      #soon {
+        top: -1px;
+      }
     }
     @media screen and (max-width: 979px){
       .train-player .font-82 {
@@ -546,6 +551,9 @@ export default function Nft() {
         margin: 0 auto;
         padding: 0px 20px;
         margin-top: 20px;
+      }
+      .first-para, .font-82 {
+        font-size: 32px;
       }
     }
     #button-mfts1 {
