@@ -113,11 +113,11 @@ export default function Home() {
       <header className="bg-white py-8 ">
         <div className="container  flex justify-between items-center ">
           <a className="change-on-small md:inline-block  text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase " href="#">HOME</a>
-          <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase  " href="#" target="_blank">MTF TOKEN</a>
+          <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase  " href="#" target="_blank">LINKTREE</a>
           
           <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase  " href="https://meta-football.gitbook.io/metafootball-whitepaper/" target="_blank">WHITEPAPER</a>
           <button style={{display: 'none'}} className="menu"><img src="/images/menu.svg" /></button>
-          <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase " href="" target="_blank">PITCH DECK</a>
+          <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase " href={"/nft"} target="_blank">NFT</a>
         </div>
       </header>
       <div className="mobile-menu">
@@ -147,7 +147,7 @@ export default function Home() {
                 <div style={{ display: "flex", justifyContent: "space-between"}}>
                   <div>
                     <button id="button-mfts1" className="btn-on-active button-mfts bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                      BUY $MFT
+                      BUY $MTF
                     </button>
                     <button style={{border: '2px solid #3f4b95'}} className="button-mfts bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
                       <AiOutlineAreaChart style={{float: 'left', marginRight: '5px', position: 'relative', top: '4px'}} /> CHART
@@ -254,11 +254,11 @@ export default function Home() {
             <div id="tabs-content">
               <div  className="tab-content lg:flex" id="tab1">
                 <div className="player_img">
-                  <img data-aos="zoom-in" alt="" className=" mx-auto" src="/images/first_vector.png" />
+                  <img data-aos="zoom-in" alt="" style={{maxHeight: "350px"}} className=" mx-auto" src="/images/first_vector.png" />
                 </div>
                 <div className="text-right">
                   <p className="m-0 font-Montserrat text-lg font-light aos-init aos-animate" data-aos="fade-up">
-                  </p><p className="m-0  font-Montserrat custom-text-black text-lg font-light">
+                  </p><p className="m-0 para-in-utilities font-Montserrat custom-text-black text-lg font-light">
                   MetaFootball provides an advantage over traditional fantasy football leagues in that you are compensated in real money for your efforts because you own the cards you collect, win, and trade. In previous fantasy football games, you don’t own any players, so all you get for your time is the possibility to beat the thousands of other players who enter, but with MetaFootball, you get to collect cards (players) that you are given complete ownership of for the rest of your life.
                   </p>
                   <p></p>
@@ -266,20 +266,16 @@ export default function Home() {
                   LEARN
                   MORE </a>
                   <p className="m-0 font-Montserrat text-base font-light aos-init aos-animate" data-aos="fade-up">
-                  </p><p className="opacity-80 font-Montserrat custom-text-black text-base font-light">All assets are
-                  procedurally
-                  generated and live
-                  on the blockchain (under the ERC-721 standard). You will be their true owner and you can
-                  sell or buy new items in the MetaSoccer marketplace or in other NFT marketplaces.</p><p></p>
+                  </p><p className="opacity-80 font-Montserrat custom-text-black text-base font-light"></p><p></p>
                 </div>
               </div>
               <div  className="tab-content lg:flex" id="tab2" >
                 <div className="player_img">
-                  <img data-aos="zoom-in" alt="" className=" mx-auto" src="/images/fourth_vector.jpeg" />
+                  <img data-aos="zoom-in" alt="" style={{maxHeight: "350px"}} className=" mx-auto" src="/images/fourth_vector.jpeg" />
                 </div>
                 <div className="text-right">
                   <p className="m-0  font-Montserrat  text-lg font-light ">
-                  </p><p className="m-0 custom-text-black font-Montserrat  text-lg font-light">
+                  </p><p className="m-0 para-in-utilities custom-text-black font-Montserrat  text-lg font-light">
                   The full simulation experience with high-end developments.
                   Experience the closest thing to being a real manager by taking charge of the world’s greatest sport teams and playing the beautiful games your way.
                   MetaFootball is a living, breathing game world for the metaverse, unparalleled realism and achieves sports authenticity that other sports games can only aspire to.
@@ -289,20 +285,16 @@ export default function Home() {
                   LEARN
                   MORE </a>
                   <p className="m-0   font-Montserrat  text-base font-light ">
-                  </p><p className="opacity-80 font-Montserrat custom-text-black text-base font-light">All assets are
-                  procedurally
-                  generated and live
-                  on the blockchain (under the ERC-721 standard). You will be their true owner and you can
-                  sell or buy new items in the MetaSoccer marketplace or in other NFT marketplaces.</p><p></p>
+                  </p><p className="opacity-80 font-Montserrat custom-text-black text-base font-light"></p><p></p>
                 </div>
               </div>
               <div className="tab-content lg:flex" id="tab3" >
                 <div className="player_img">
-                  <img data-aos="zoom-in" style={{maxHeight: "400px"}} alt="" className=" mx-auto" src="/images/fifth_vector.png" />
+                  <img data-aos="zoom-in" style={{maxHeight: "350px"}} alt="" className=" mx-auto" src="/images/fifth_vector.png" />
                 </div>
                 <div className="text-right">
                   <p className="m-0  font-Montserrat  text-lg font-light ">
-                  </p><p className="m-0 custom-text-black font-Montserrat  text-lg font-light">
+                  </p><p className="m-0 para-in-utilities custom-text-black font-Montserrat  text-lg font-light">
                   The entire simulation will be availible. As near as you can go to really executing the job.
                   Simulation game that is unrivaled. Take command of the world's best sports teams and play the most beautiful games your way to get the closest thing to becoming a real manager. MetaFootball is a dynamic, breathing metaverse gaming environment with unrivaled realism and sports authenticity that other sports games can only dream to.
                   MetaFootball's professional world will be meticulously modeled and reconstructed to provide you with all of the management power and resources you’ll need to write your own sports story and live out your goals. Purchase the players you desire. Make a list of the tactics you prefer. Take the awards you want. It's your club, your rules..
@@ -312,11 +304,7 @@ export default function Home() {
                   LEARN
                   MORE </a>
                   <p className="m-0   font-Montserrat  text-base font-light ">
-                  </p><p className="opacity-80 font-Montserrat custom-text-black text-base font-light">All assets are
-                  procedurally
-                  generated and live
-                  on the blockchain (under the ERC-721 standard). You will be their true owner and you can
-                  sell or buy new items in the MetaSoccer marketplace or in other NFT marketplaces.</p><p></p>
+                  </p><p className="opacity-80 font-Montserrat custom-text-black text-base font-light"></p><p></p>
                 </div>
               </div>
             </div>
@@ -336,7 +324,7 @@ export default function Home() {
       <section style={{marginBottom: "40px"}} className="investor py-8 xl:py-16">
         <div  className="container relative ">
           <h2 className="text-white font-62 shapiro-85 mb-16 xl:mb-28 aos-init" data-aos="fade-up" data-aos-duration="400" data-aos-offset="-300">
-          BUY/SELL &amp; TAX 
+          BUY/SELL{/*&amp;*/} TAX 
           <span className="shapiro-extd block text-yellow text-left uppercase ">Total 13%</span>
           </h2>
           <div style={{padding: '0px 20px'}} className="container ">
@@ -372,53 +360,12 @@ export default function Home() {
       
       <section className="team py-8 xl:py-16">
         <div className="container relative ">
-          <h2 className="text-white font-62 shapiro-85 mb-12 aos-init aos-animate" data-aos="fade-up" data-aos-offset="-300"> PROMOTED BY
-          <span className="shapiro-extd block text-yellow text-left uppercase ">MEGA STARS</span>
+          <h2 className="text-white font-62 shapiro-85 mb-12 aos-init aos-animate" data-aos="fade-up" data-aos-offset="-300"> PROMOTIONS BY
+          <span className="shapiro-extd block text-yellow text-left uppercase ">FOOTBALL STARS</span>
           </h2>
           
           <div className="grid py-12 grid-cols-12 gap-4 md:gap-8 xl:gap-7 relative">
-            <div data-aos="fade-right" data-aos-delay="300" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}} className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}} >
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/ronaldinho_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Ronaldinho Gaucho</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/cenk_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Cenk Tosun</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/mariano_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Mariano Diaz</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
+            {/*
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
                 <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/thiago_sil.png" />
@@ -433,6 +380,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
+            
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
                 <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/vinicius_sil.png" />
@@ -447,20 +395,8 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/rakitic_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Ivan Rakitic</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
+            */}
+            
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
                 <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/arda_sil.png" />
@@ -503,25 +439,11 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+            <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/suarez_sil.png" />
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/alves_sil.png" />
               </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Denis Suarez</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/rafinha_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Rafinha</h4>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Dani Alves</h4>
               <div className="links">
                 <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
@@ -536,6 +458,76 @@ export default function Home() {
                 <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/marcelo_sil.png" />
               </div>
               <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Marcelo</h4>
+              <div className="links">
+                <a href="https://www.twitter.com" target="_blank">
+                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/benzema_sil.png" />
+              </div>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Karim Benzema</h4>
+              <div className="links">
+                <a href="https://www.twitter.com" target="_blank">
+                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="300" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}} className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}} >
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/ronaldinho_sil.png" />
+              </div>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Ronaldinho Gaucho</h4>
+              <div className="links">
+                <a href="https://www.twitter.com" target="_blank">
+                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/mbappe_sil.png" />
+              </div>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Kilian Mbappe</h4>
+              <div className="links">
+                <a href="https://www.twitter.com" target="_blank">
+                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/ronaldo_sil.png" />
+              </div>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Cristiano Ronaldo</h4>
+              <div className="links">
+                <a href="https://www.twitter.com" target="_blank">
+                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
+                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/messi_sil.png" />
+              </div>
+              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Lionel Messi</h4>
               <div className="links">
                 <a href="https://www.twitter.com" target="_blank">
                 <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
@@ -939,6 +931,11 @@ export default function Home() {
         max-width: 640px;
       }
     }
+    @media (min-width: 1240px){
+      .para-in-utilities {
+        height: 310px;
+      }
+    }
     .container {
       max-width: 1440px;
       margin: 0 auto;
@@ -1185,42 +1182,7 @@ export default function Home() {
     #button-mfts1 {
       margin-right: 15px;
     }
-    @media screen and (max-width: 455px){
-      ul#tabs-nav {
-        z-index: 9;
-        width: 82%;
-        left: 0px;
-        right: 0px;
-        margin: 0 auto;
-        padding: 0px 20px;
-        margin-top: 20px;
-      }
-      #input-div-span1, #input-div-span2 {
-        width: 50%;
-      }
-      .button-mfts {
-        font-size: 90%;
-      }
-      #button-mfts1 {
-        margin-right: 5px;
-      }
-      .text-right {
-        text-align: center;
-      }
-      .sm-mb-6 {
-        margin-bottom: 15px;
-      }
-      .change-on-small {
-        font-size: 10px;
-      }
-      #custom-tooltip {
-        margin-right: 0px;
-        top: 5px;
-      }
-      #copy-address-button {
-        font-size: 15px;
-      }
-    }
+    
     @media screen and (max-width: 767px){
       ul#tabs-nav li {
         margin: 0px;
@@ -1303,6 +1265,51 @@ export default function Home() {
     @media screen and (max-width: 900px){
       .font-62 {
         font-size: 40px;
+      }
+    }
+    @media screen and (max-width: 455px){
+      ul#tabs-nav {
+        z-index: 9;
+        width: 82%;
+        left: 0px;
+        right: 0px;
+        margin: 0 auto;
+        padding: 0px 20px;
+        margin-top: 20px;
+      }
+      #input-div-span1, #input-div-span2 {
+        width: 50%;
+      }
+      .button-mfts {
+        font-size: 90%;
+      }
+      #button-mfts1 {
+        margin-right: 5px;
+      }
+      .text-right {
+        text-align: center;
+      }
+      .sm-mb-6 {
+        margin-bottom: 15px;
+      }
+      .change-on-small {
+        font-size: 10px;
+      }
+      #custom-tooltip {
+        margin-right: 0px;
+        top: 5px;
+      }
+      #copy-address-button {
+        font-size: 15px;
+      }
+      .meta-assets .font-62 {
+        font-size: 19px;
+        line-height: 38px;
+        word-break: break-word;
+        text-align: center;
+      }
+      .font-62 {
+        font-size: 24px;
       }
     }
     #tab1, #tab2, #tab3{
