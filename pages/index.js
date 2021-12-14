@@ -691,7 +691,7 @@ export default function Home() {
   {
     `
     .collection-images {
-      max-width: 350px;
+      height: 316px;
     }
     .links {
       display: none; // display: flex;
