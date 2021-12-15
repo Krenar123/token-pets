@@ -56,7 +56,7 @@ export default function Nft() {
   {
     `
     #soon {
-      top: -5px;
+      
     }
     .links {
       display: none; // display: flex;

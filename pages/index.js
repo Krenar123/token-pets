@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import 'tailwindcss/tailwind.css'
 import { BsTwitter } from 'react-icons/bs';
 import { FaTelegramPlane } from 'react-icons/fa';
@@ -8,9 +8,33 @@ import { FaPoo } from 'react-icons/fa';
 import { AiOutlineAreaChart } from 'react-icons/ai';
 import { AiOutlineCopy } from 'react-icons/ai';
 import { BsInstagram } from 'react-icons/bs';
+import Countdown from 'react-countdown';
+
+const targetTime = new Date("2021-12-22").getTime();
 
 export default function Home() {
   const [effect, setEffect] = useState(false);
+
+  const [timerDays, setTimerDays] = useState('00');
+  const [timerHours, setTimerHours] = useState('00');
+  const [timerMinutes, setTimerMinutes] = useState('00');
+  const [timerSeconds, setTimerSeconds] = useState('00');
+
+  const [currentTime, setCurrentTime] = useState(Date.now());
+
+  const timeBetween = targetTime - currentTime;
+  const seconds = Math.floor((timeBetween / 1000) % 60);
+  const minutes = Math.floor((timeBetween / 1000 / 60) % 60);
+  const hours = Math.floor((timeBetween / (1000 * 60 * 60)) % 24);
+  const days = Math.floor(timeBetween / (1000 * 60 * 60 * 24));
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(Date.now());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleClick = (tabs) => {
     let tab1 = document.getElementById("tab1");
@@ -116,7 +140,7 @@ export default function Home() {
           
           <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase  " href="https://meta-football.gitbook.io/metafootball-whitepaper/" target="_blank">WHITEPAPER</a>
           <button style={{display: 'none'}} className="menu"><img src="/images/menu.svg" /></button>
-          <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase " href={"/nft"} target="_blank">NFT</a>
+          <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase " href={"/nft.html"} target="_blank">NFT</a>
         </div>
       </header>
       <div className="mobile-menu">
@@ -140,8 +164,10 @@ export default function Home() {
               WIN</span>
               </h1>
               <p className="mt-8 mb-8 font-Montserrat custom-text-black font-22 text-theme-gray-300 leading-7 font-light opacity-70 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-              MetaFootball will be one of the most comprehensive football management games ever created, designed as a play-to-earn game for everyone who loves football and wants to earn token reflections and NFT while managing his own football team
+              MetaFootball will be one of the most comprehensive football management games ever created, designed as a play-to-earn game for everyone who loves football and wants to earn token reflections and NFT while managing their own football team.
               </p>
+              
+              {/* 
               <div className="btn-group" style={{marginTop: '15px'}}>
                 <div style={{ display: "flex", justifyContent: "space-between"}}>
                   <div>
@@ -165,14 +191,15 @@ export default function Home() {
                   </button>
                 </div>
               </div>
+              */}
             </div>
             <div className="col-span-7">
               <img style={{width: "50%", maxWidth: "395px", maxHeight: "570px", position: "relative", top: "0px"}} alt="" id="logo-img" className="ml-auto aos-init aos-animate" data-aos="fade-left" data-aos-duration="800" src="/images/logo_opt-removebg.png" />
             </div>
           </div>
           <div className="drop-band">
-            <a href="https://app.metasoccer.com/" target="_blank">
-              <div className="drop-band--main-band" ><p className="shapiro-85 text-3xl">JOIN US</p><p className="shapiro-extd text-3xl">JOIN US</p><p className="shapiro-85 text-3xl">JOIN US</p><p className="text-3xl shapiro-extd">JOIN US</p><p className="text-3xl shapiro-85">JOIN US</p><p className="last-join-us shapiro-extd text-3xl">JOIN US</p></div>
+            <a href="" target="_blank">
+              <div className="drop-band--main-band" ><p className="shapiro-85 text-3xl">JOIN PRESALE</p><p className="shapiro-extd text-3xl">JOIN PRESALE</p><p className="shapiro-85 text-3xl">JOIN PRESALE</p><p className="text-3xl shapiro-extd">JOIN PRESALE</p><p className="text-3xl shapiro-85">JOIN PRESALE</p><p className="last-join-us shapiro-extd text-3xl">JOIN PRESALE</p></div>
               <div className="drop-band--secondary-band"></div>
             </a>
           </div>
@@ -181,22 +208,22 @@ export default function Home() {
       <section className="rrss-icons py-20 lg:pt-6 lg:pb-2">
         <div className="container justify-center items-center flex-wrap grid grid-cols-2 grid-rows-2 gap-y-16 gap-x-20 md:grid-cols-4 md:grid-rows-1 md:px-20">
           <div className="rrss-icon flex justify-end items-center md:justify-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
-            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="https://twitter.com/MetaSoccer_EN" target="_blank">
+            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="https://twitter.com/metafootballbsc" target="_blank">
             <BsTwitter size={40} />
             </a>
           </div>
           <div className="rrss-icon flex justify-start items-center md:justify-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
-            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="https://t.me/MetaSoccerOfficial" target="_blank">
+            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="https://t.me/metafootballbsc" target="_blank">
             <FaTelegramPlane size={40} />
             </a>
           </div>
           <div className="rrss-icon flex justify-end items-center md:justify-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
-            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="https://discord.gg/metasoccer" target="_blank">
+            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="" target="_blank">
             <FaDiscord size={40} />
             </a>
           </div>
           <div className="rrss-icon flex justify-start items-center md:justify-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
-            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="https://metasoccer.medium.com/" target="_blank">
+            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="" target="_blank">
             <FaPoo size={40}/>
             </a>
           </div>
@@ -253,7 +280,7 @@ export default function Home() {
             <div id="tabs-content">
               <div  className="tab-content lg:flex" id="tab1">
                 <div className="player_img">
-                  <img  data-aos="zoom-in" alt="" className=" mx-auto collection-images" src="/images/first_vector.png" />
+                  <img  data-aos="zoom-in" alt="" className=" mx-auto collection-images" src="/images/4.png" />
                 </div>
                 <div className="text-right">
                   <p className="m-0 font-Montserrat text-lg font-light aos-init aos-animate" data-aos="fade-up">
@@ -270,14 +297,12 @@ export default function Home() {
               </div>
               <div  className="tab-content lg:flex" id="tab2" >
                 <div className="player_img">
-                  <img data-aos="zoom-in" alt="" className=" mx-auto collection-images" src="/images/fourth_vector.jpeg" />
+                  <img data-aos="zoom-in" alt="" className=" mx-auto collection-images" src="/images/2.png" />
                 </div>
                 <div className="text-right">
                   <p className="m-0  font-Montserrat  text-lg font-light ">
                   </p><p className="m-0 para-in-utilities custom-text-black font-Montserrat  text-lg font-light">
-                  The full simulation experience with high-end developments.
-                  Experience the closest thing to being a real manager by taking charge of the world’s greatest sport teams and playing the beautiful games your way.
-                  MetaFootball is a living, breathing game world for the metaverse, unparalleled realism and achieves sports authenticity that other sports games can only aspire to.
+                  MetaFootball is a game that allows you to play as a manager of a multiplayer, community-driven football game in which players can select from a variety of play styles.
                   </p>
                   <p></p>
                   <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className=" inline-btn  text-grey text-base shapiro-65 " href="https://meta-football.gitbook.io/metafootball-whitepaper/" target="_blank">
@@ -294,9 +319,7 @@ export default function Home() {
                 <div className="text-right">
                   <p className="m-0  font-Montserrat  text-lg font-light ">
                   </p><p className="m-0 para-in-utilities custom-text-black font-Montserrat  text-lg font-light">
-                  The entire simulation will be availible. As near as you can go to really executing the job.
-                  Simulation game that is unrivaled. Take command of the world's best sports teams and play the most beautiful games your way to get the closest thing to becoming a real manager. MetaFootball is a dynamic, breathing metaverse gaming environment with unrivaled realism and sports authenticity that other sports games can only dream to.
-                  MetaFootball's professional world will be meticulously modeled and reconstructed to provide you with all of the management power and resources you’ll need to write your own sports story and live out your goals. Purchase the players you desire. Make a list of the tactics you prefer. Take the awards you want. It's your club, your rules..
+                  The entire simulation will be availible,as near as you can go to really executing the job, a simulation game that is unrivaled. Take command of the world's best sports teams and play the most beautiful games your way to get the closest thing to becoming a real manager. MetaFootball is a dynamic, breathing metaverse gaming environment with unrivaled realism and football authenticity that other football games can only dream to. MetaFootball's professional world will be meticulously modeled and reconstructed to provide you with all of the management power and resources you'll need to write your own football story and live out your goals. Purchase the players you desire, make a list of the tactics you prefer. Take the awards you want. It's your club, your rules.
                   </p>
                   <p></p>
                   <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className=" inline-btn  text-grey text-base shapiro-65 " href="https://meta-football.gitbook.io/metafootball-whitepaper/" target="_blank">
@@ -312,11 +335,11 @@ export default function Home() {
       </section>
       <section className="plan py-8 xl:py-16 overflow-hidden">
         <div style={{ display: "flex", justifyContent: 'space-between'}} className="container relative ">
-          <a href="https://app.metasoccer.com/" target="_blank"><img style={{width: "200px"}} className="" src="/images/poocoin.png" /></a>
-          <a href="https://app.metasoccer.com/" target="_blank"><img style={{width: "200px"}} className="" src="/images/bsc_scan.png" /></a>
-          <a href="https://app.metasoccer.com/" target="_blank"><img style={{width: "200px"}} className="" src="/images/coingecko.png" /></a>
-          <a href="https://app.metasoccer.com/" target="_blank"><img style={{width: "200px"}} className="" src="/images/dextools.png" /></a>
-          <a href="https://app.metasoccer.com/" target="_blank"><img style={{width: "200px"}} className="" src="/images/marketcap.png" /></a>
+          <a href="/" target="_blank"><img style={{width: "200px"}} className="" src="/images/poocoin.png" /></a>
+          <a href="/" target="_blank"><img style={{width: "200px"}} className="" src="/images/bsc_scan.png" /></a>
+          <a href="/" target="_blank"><img style={{width: "200px"}} className="" src="/images/coingecko.png" /></a>
+          <a href="/" target="_blank"><img style={{width: "200px"}} className="" src="/images/dextools.png" /></a>
+          <a href="/" target="_blank"><img style={{width: "200px"}} className="" src="/images/marketcap.png" /></a>
         </div>
       </section>
 
@@ -613,8 +636,15 @@ export default function Home() {
               <div className="user">
                 <img style={{maxHeight: "200px", margin: "0 auto"}} alt="" src="/images/logo_opt-removebg.png" />
               </div>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-8 mb-3">ArkAngle</h4>
+              <p className="text-center text-white text-md font-Montserrat font-light">CEO</p>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="0" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user">
+                <img style={{maxHeight: "200px", margin: "0 auto"}} alt="" src="/images/logo_opt-removebg.png" />
+              </div>
               <h4 className="text-center text-white text-xl shapiro-65 mt-8 mb-3">Zer0Bug</h4>
-              <p className="text-center text-white text-md font-Montserrat font-light">LEAD DEVELOPER</p>
+              <p className="text-center text-white text-md  font-Montserrat  font-light">LEAD DEVELOPER</p>
             </div>
             <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user">
@@ -630,13 +660,7 @@ export default function Home() {
               <h4 className="text-center text-white text-xl shapiro-65 mt-8 mb-3">DannyD</h4>
               <p className="text-center text-white text-md  font-Montserrat  font-light">DESIGNER</p>
             </div>
-            <div data-aos="fade-right" data-aos-delay="0" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user">
-                <img style={{maxHeight: "200px", margin: "0 auto"}} alt="" src="/images/logo_opt-removebg.png" />
-              </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-8 mb-3">Zer0Bug</h4>
-              <p className="text-center text-white text-md  font-Montserrat  font-light">LEAD DEVELOPER</p>
-            </div>
+            
             
           </div>
         </div>
@@ -662,7 +686,7 @@ export default function Home() {
                   <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all" href="" target="_blank">Pitch Deck</a>
                 </div>
                 <div className="col-span-5">
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="mailto:contact@metasoccer.com">Contact us</a>
+                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="">Contact us</a>
                   <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="#">Terms &amp; Conditions</a>
                   <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="#">Privacy Policy</a>
                   <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all" href="https://meta-football.gitbook.io/metafootball-whitepaper/tokenomics/disclaimer" target="_blank">Disclaimer</a>
@@ -670,16 +694,16 @@ export default function Home() {
               </div>
             </div>
             <div className="lg:col-span-4 text-center lg:text-right">
-              <a className="mr-5 inline-block hover:opacity-70 transition-all" href="https://twitter.com/MetaSoccer_EN" target="_blank">
+              <a className="mr-5 inline-block hover:opacity-70 transition-all" href="https://twitter.com/metafootballbsc" target="_blank">
               <BsTwitter size={30} style={{color: '#dad8d8'}} />
               </a>
-              <a className="mr-5 inline-block hover:opacity-70 transition-all" href="https://t.me/MetaSoccerOfficial" target="_blank">
+              <a className="mr-5 inline-block hover:opacity-70 transition-all" href="https://t.me/metafootballbsc" target="_blank">
               <FaTelegramPlane size={30} style={{color: '#dad8d8'}} />
               </a>
-              <a className="mr-5 inline-block hover:opacity-70 transition-all" href="https://discord.gg/metasoccer" target="_blank">
+              <a className="mr-5 inline-block hover:opacity-70 transition-all" href="" target="_blank">
               <FaDiscord size={30} style={{color: '#dad8d8'}} />
               </a>
-              <a className=" inline-block hover:opacity-70 transition-all" href="https://metasoccer.medium.com/" target="_blank">
+              <a className=" inline-block hover:opacity-70 transition-all" href="" target="_blank">
               <FaPoo size={30} style={{color: '#dad8d8'}}/>
               </a>
             </div>
