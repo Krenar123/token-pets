@@ -164,7 +164,7 @@ export default function Home() {
               <p className="mt-8 mb-8 font-Montserrat custom-text-black font-22 text-theme-gray-300 leading-7 font-light opacity-70 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
               MetaFootball will be one of the most comprehensive football management games ever created, designed as a play-to-earn game for everyone who loves football and wants to earn token reflections and NFT while managing their own football team.
               </p>
-              {/* 
+              
               <div className="btn-group" style={{marginTop: '15px'}}>
                 <div style={{display: 'flex', flexDirection: 'column'}}>
                   <div style={{textAlign: "center", padding: "20px"}} className='text-white text-center'>
@@ -199,7 +199,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              */}
+              
               {/* 
               <div className="btn-group" style={{marginTop: '15px'}}>
                 <div style={{ display: "flex", justifyContent: "space-between"}}>
@@ -746,6 +746,9 @@ export default function Home() {
 <style jsx>
   {
     `
+    .text-2xl {
+      font-size: 1.3rem;
+    }
     .collection-images {
       height: 316px;
     }
