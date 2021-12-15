@@ -10,19 +10,17 @@ import { AiOutlineCopy } from 'react-icons/ai';
 import { BsInstagram } from 'react-icons/bs';
 import Countdown from 'react-countdown';
 
-const targetTime = new Date("2021-12-22").getTime();
+const targetTime = new Date("12 22 2021 18:00:00");
+var now_utc =  Date.UTC(targetTime.getUTCFullYear(), targetTime.getUTCMonth(), targetTime.getUTCDate(),
+targetTime.getUTCHours(), targetTime.getUTCMinutes(), targetTime.getUTCSeconds());
 
 export default function Home() {
   const [effect, setEffect] = useState(false);
 
-  const [timerDays, setTimerDays] = useState('00');
-  const [timerHours, setTimerHours] = useState('00');
-  const [timerMinutes, setTimerMinutes] = useState('00');
-  const [timerSeconds, setTimerSeconds] = useState('00');
 
   const [currentTime, setCurrentTime] = useState(Date.now());
 
-  const timeBetween = targetTime - currentTime;
+  const timeBetween = now_utc - currentTime;
   const seconds = Math.floor((timeBetween / 1000) % 60);
   const minutes = Math.floor((timeBetween / 1000 / 60) % 60);
   const hours = Math.floor((timeBetween / (1000 * 60 * 60)) % 24);
@@ -166,7 +164,42 @@ export default function Home() {
               <p className="mt-8 mb-8 font-Montserrat custom-text-black font-22 text-theme-gray-300 leading-7 font-light opacity-70 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
               MetaFootball will be one of the most comprehensive football management games ever created, designed as a play-to-earn game for everyone who loves football and wants to earn token reflections and NFT while managing their own football team.
               </p>
-              
+              {/* 
+              <div className="btn-group" style={{marginTop: '15px'}}>
+                <div style={{display: 'flex', flexDirection: 'column'}}>
+                  <div style={{textAlign: "center", padding: "20px"}} className='text-white text-center'>
+                    <p className="shapiro-65" style={{color: 'rgba(63, 75, 149)'}}>PRESALE STARTS IN:</p>
+                  </div>
+                  <div style={{ display: "flex", justifyContent: "space-between"}}>
+                    <div style={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
+                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "28px"}}><span id="days_left">0{days}</span></p>
+                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "10px"}}><span>DAYS</span></p>
+                    </div>
+                    <div style={{display: "flex", justifyContent:"center", alignItems: "center"}}>
+                      <p className="shapiro-65" style={{color: "white", textAlign: "center"}}>:</p>
+                    </div>
+                    <div>
+                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "28px"}}><span>{hours}</span></p>
+                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "10px"}}><span>HOURS</span></p>
+                    </div>
+                    <div style={{display: "flex", justifyContent:"center", alignItems: "center"}}>
+                      <p className="shapiro-65" style={{color: "white", textAlign: "center"}}>:</p>
+                    </div>
+                    <div>
+                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "28px"}}><span>{minutes}</span></p>
+                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "10px"}}><span>MINUTES</span></p>
+                    </div>
+                    <div style={{display: "flex", justifyContent:"center", alignItems: "center"}}>
+                      <p className="shapiro-65" style={{color: "white", textAlign: "center"}}>:</p>
+                    </div>
+                    <div>
+                      <p className="shapiro-65 text-yellow" style={{ textAlign: "center", fontSize: "28px"}}><span>{seconds}</span></p>
+                      <p className="shapiro-65 text-yellow" style={{ textAlign: "center", fontSize: "10px"}}><span>SECONDS</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              */}
               {/* 
               <div className="btn-group" style={{marginTop: '15px'}}>
                 <div style={{ display: "flex", justifyContent: "space-between"}}>
@@ -199,7 +232,7 @@ export default function Home() {
           </div>
           <div className="drop-band">
             <a href="" target="_blank">
-              <div className="drop-band--main-band" ><p className="shapiro-85 text-3xl">JOIN US</p><p className="shapiro-extd text-3xl">JOIN US</p><p className="shapiro-85 text-3xl">JOIN US</p><p className="text-3xl shapiro-extd">JOIN US</p><p className="text-3xl shapiro-85">JOIN US</p><p className="last-join-us shapiro-extd text-3xl">JOIN US</p></div>
+              <div className="drop-band--main-band" ><p className="shapiro-85 text-2xl">JOIN PRESALE</p><p className="shapiro-extd text-2xl">JOIN PRESALE</p><p className="shapiro-85 text-2xl">JOIN PRESALE</p><p className="last-join-us shapiro-extd text-2xl">JOIN PRESALE</p></div>
               <div className="drop-band--secondary-band"></div>
             </a>
           </div>
@@ -218,12 +251,12 @@ export default function Home() {
             </a>
           </div>
           <div className="rrss-icon flex justify-end items-center md:justify-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
-            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="" target="_blank">
+            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="">
             <FaDiscord size={40} />
             </a>
           </div>
           <div className="rrss-icon flex justify-start items-center md:justify-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
-            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="" target="_blank">
+            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="">
             <FaPoo size={40}/>
             </a>
           </div>
@@ -636,24 +669,24 @@ export default function Home() {
               <div className="user">
                 <img style={{maxHeight: "200px", margin: "0 auto"}} alt="" src="/images/logo_opt-removebg.png" />
               </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-8 mb-3">ArkAngle</h4>
+              <h4 className="text-center text-white text-xl shapiro-65 mt-8 mb-3">ArkAngel</h4>
               <p className="text-center text-white text-md font-Montserrat font-light">CEO</p>
             </div>
-            <div data-aos="fade-right" data-aos-delay="0" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+            <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user">
                 <img style={{maxHeight: "200px", margin: "0 auto"}} alt="" src="/images/logo_opt-removebg.png" />
               </div>
               <h4 className="text-center text-white text-xl shapiro-65 mt-8 mb-3">Zer0Bug</h4>
               <p className="text-center text-white text-md  font-Montserrat  font-light">LEAD DEVELOPER</p>
             </div>
-            <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user">
                 <img style={{maxHeight: "200px", margin: "0 auto"}} alt="" src="/images/logo_opt-removebg.png" />
               </div>
               <h4 className="text-center text-white text-xl shapiro-65 mt-8 mb-3">Sewastoz </h4>
               <p className="text-center text-white text-md  font-Montserrat  font-light">MARKETING</p>
             </div>
-            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+            <div data-aos="fade-right" data-aos-delay="0" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user">
                 <img style={{maxHeight: "200px", margin: "0 auto"}} alt="" src="/images/logo_opt-removebg.png" />
               </div>
@@ -1174,6 +1207,7 @@ export default function Home() {
       position: relative;
       width: 100%;
       height: 100%;
+      overflow: hidden;
     }
     @media screen and (max-width: 767px){
       .steps .text-center {
@@ -1305,6 +1339,10 @@ export default function Home() {
         margin: 0 auto;
         padding: 0px 20px;
         margin-top: 20px;
+      }
+
+      .text-2xl{
+        font-size: 0.7rem;
       }
       #input-div-span1, #input-div-span2 {
         width: 50%;
