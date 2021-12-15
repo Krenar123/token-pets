@@ -199,7 +199,7 @@ export default function Home() {
           </div>
           <div className="drop-band">
             <a href="" target="_blank">
-              <div className="drop-band--main-band" ><p className="shapiro-85 text-3xl">JOIN PRESALE</p><p className="shapiro-extd text-3xl">JOIN PRESALE</p><p className="shapiro-85 text-3xl">JOIN PRESALE</p><p className="text-3xl shapiro-extd">JOIN PRESALE</p><p className="text-3xl shapiro-85">JOIN PRESALE</p><p className="last-join-us shapiro-extd text-3xl">JOIN PRESALE</p></div>
+              <div className="drop-band--main-band" ><p className="shapiro-85 text-3xl">JOIN US</p><p className="shapiro-extd text-3xl">JOIN US</p><p className="shapiro-85 text-3xl">JOIN US</p><p className="text-3xl shapiro-extd">JOIN US</p><p className="text-3xl shapiro-85">JOIN US</p><p className="last-join-us shapiro-extd text-3xl">JOIN US</p></div>
               <div className="drop-band--secondary-band"></div>
             </a>
           </div>
