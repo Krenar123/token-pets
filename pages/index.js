@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
 import 'tailwindcss/tailwind.css'
 import { BsTwitter } from 'react-icons/bs';
 import { FaTelegramPlane } from 'react-icons/fa';
@@ -25,7 +25,20 @@ export default function Home() {
   const hours = Math.floor((timeBetween / (1000 * 60 * 60)) % 24);
   const days = Math.floor(timeBetween / (1000 * 60 * 60 * 24));
 
-  useEffect(() => {
+  
+  /* 
+    useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(Date.now());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+  */
+  // This will work in Safari
+  var useIsomorphicEffectPatched = typeof document !== 'undefined' ? React.useLayoutEffect : React.useEffect;
+
+  useIsomorphicEffectPatched(function () {
     const interval = setInterval(() => {
       setCurrentTime(Date.now());
     }, 1000);
