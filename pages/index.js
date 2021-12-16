@@ -13,7 +13,7 @@ import Countdown from 'react-countdown';
 
 
 export default function Home() {
-  const targetTime = new Date(2021, 12, 22, 18, 00, 00).getTime();
+  const targetTime = new Date("12/22/2021 18:00:00").getTime();
   const [effect, setEffect] = useState(false);
 
 
@@ -1435,6 +1435,7 @@ export default function Home() {
   }
 </style>
 <script src="dist/main.js"></script>
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en"></script> 
 <script src="dist/clipboard.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
