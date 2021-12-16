@@ -10,7 +10,7 @@ import { AiOutlineCopy } from 'react-icons/ai';
 import { BsInstagram } from 'react-icons/bs';
 import Countdown from 'react-countdown';
 
-const targetTime = new Date("12 22 2021 18:00:00").getTime();
+const targetTime = new Date("2021-12-22 18:00:00").getTime();
 
 export default function Home() {
   const [effect, setEffect] = useState(false);
