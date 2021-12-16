@@ -13,7 +13,7 @@ import Countdown from 'react-countdown';
 
 
 export default function Home() {
-  const targetTime = new Date("2021/12/22 18:00:00").getTime();
+  const targetTime = new Date(2021, 12, 22, 18, 00, 00).getTime();
   const [effect, setEffect] = useState(false);
 
 
