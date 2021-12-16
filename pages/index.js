@@ -10,9 +10,7 @@ import { AiOutlineCopy } from 'react-icons/ai';
 import { BsInstagram } from 'react-icons/bs';
 import Countdown from 'react-countdown';
 
-const targetTime = new Date("12 22 2021 18:00:00");
-var now_utc =  Date.UTC(targetTime.getUTCFullYear(), targetTime.getUTCMonth(), targetTime.getUTCDate(),
-targetTime.getUTCHours(), targetTime.getUTCMinutes(), targetTime.getUTCSeconds());
+const targetTime = new Date("12 22 2021 18:00:00").getTime();
 
 export default function Home() {
   const [effect, setEffect] = useState(false);
@@ -20,7 +18,7 @@ export default function Home() {
 
   const [currentTime, setCurrentTime] = useState(Date.now());
 
-  const timeBetween = now_utc - currentTime;
+  const timeBetween = targetTime - currentTime;
   const seconds = Math.floor((timeBetween / 1000) % 60);
   const minutes = Math.floor((timeBetween / 1000 / 60) % 60);
   const hours = Math.floor((timeBetween / (1000 * 60 * 60)) % 24);
@@ -158,7 +156,7 @@ export default function Home() {
               <h1 className="first-para text-white shapiro-85 font-82 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800"> INVEST
               EARN
               PLAY
-              <span className="text-yellow shapiro-extd aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+              <span id="win-text" className="text-yellow shapiro-extd aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
               WIN</span>
               </h1>
               <p className="mt-8 mb-8 font-Montserrat custom-text-black font-22 text-theme-gray-300 leading-7 font-light opacity-70 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
@@ -714,15 +712,15 @@ export default function Home() {
               <div className="grid grid-cols-10">
                 <div className="col-span-5">
                   <a className="text-theme-lightblue-300 font-Montserrat font-light  text-base block text-center mb-5 hover:opacity-70 transition-all" href="#">Home</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="#" target="_blank">MTF Token</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all mb-5" href="https://meta-football.gitbook.io/metafootball-whitepaper/" target="_blank">Whitepaper</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all" href="" target="_blank">Pitch Deck</a>
+                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="https://meta-football.gitbook.io/metafootball-whitepaper/" target="_blank">Whitepaper</a>
+                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all mb-5" href="https://meta-football.gitbook.io/metafootballtoken/tokenomics/token-allocations" target="_blank">Tokenomics</a>
+                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all" href={"/nft.html"} target="_blank">NFT</a>
                 </div>
                 <div className="col-span-5">
                   <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="">Contact us</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="#">Terms &amp; Conditions</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="#">Privacy Policy</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all" href="https://meta-football.gitbook.io/metafootball-whitepaper/tokenomics/disclaimer" target="_blank">Disclaimer</a>
+                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" target="_blank" href="https://meta-football.gitbook.io/metafootballtoken/metafootballtoken.com/terms-and-conditions">Terms &amp; Conditions</a>
+                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" target="_blank" href="https://meta-football.gitbook.io/metafootballtoken/metafootballtoken.com/privacy-policy">Privacy Policy</a>
+                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all" href="https://meta-football.gitbook.io/metafootballtoken/metafootballtoken.com/disclaimer" target="_blank">Disclaimer</a>
                 </div>
               </div>
             </div>
@@ -746,6 +744,9 @@ export default function Home() {
 <style jsx>
   {
     `
+    #win-text {
+      margin-left:10px;
+    }
     .text-2xl {
       font-size: 1.3rem;
     }
@@ -1343,7 +1344,9 @@ export default function Home() {
         padding: 0px 20px;
         margin-top: 20px;
       }
-
+      #win-text {
+        margin-left: 0px;
+      }
       .text-2xl{
         font-size: 0.7rem;
       }
