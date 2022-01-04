@@ -13,11 +13,26 @@ import Countdown from 'react-countdown';
 
 
 export default function Home() {
-  const targetTime = new Date("12/22/2021 18:00:00").getTime();
   const [effect, setEffect] = useState(false);
+  
+  let url = "http://worldtimeapi.org/api/timezone/Europe/Skopje";
+  const targetTime = new Date(Date.UTC(2021, 12, 22, 18, 0, 0)).getTime();
+
+  function getTime(url) {
+    return new Promise((resolve, reject) => {
+        const req = new XMLHttpRequest();
+        req.open("GET", url);
+        req.onload = () =>
+            req.status === 200
+                ? resolve(req.response)
+                : reject(Error(req.statusText));
+        req.onerror = (e) => reject(Error(`Network Error: ${e}`));
+        req.send();
+    });
+  }
 
 
-  const [currentTime, setCurrentTime] = useState(Date.now());
+  const [currentTime, setCurrentTime] = useState(Date.UTC());
 
   const timeBetween = targetTime - currentTime;
   const seconds = Math.floor((timeBetween / 1000) % 60);
@@ -146,9 +161,9 @@ export default function Home() {
       <header className="bg-white py-8 ">
         <div className="container  flex justify-between items-center ">
           <a className="change-on-small md:inline-block  text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase " href="#">HOME</a>
-          <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase  " href="#" target="_blank">LINKTREE</a>
+          <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase  " href="https://linktr.ee/metafootballbsc" target="_blank">LINKTREE</a>
           
-          <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase  " href="https://meta-football.gitbook.io/metafootball-whitepaper/" target="_blank">WHITEPAPER</a>
+          <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase  " href="https://meta-football.gitbook.io/whitepaper" target="_blank">WHITEPAPER</a>
           <button style={{display: 'none'}} className="menu"><img src="/images/menu.svg" /></button>
           <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase " href={"/nft.html"} target="_blank">NFT</a>
         </div>
@@ -176,59 +191,63 @@ export default function Home() {
               <p className="mt-8 mb-8 font-Montserrat custom-text-black font-22 text-theme-gray-300 leading-7 font-light opacity-70 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
               MetaFootball will be one of the most comprehensive football management games ever created, designed as a play-to-earn game for everyone who loves football and wants to earn token reflections and NFT while managing their own football team.
               </p>
-              
+              {/* 
               <div className="btn-group" style={{marginTop: '15px'}}>
                 <div style={{display: 'flex', flexDirection: 'column'}}>
                   <div style={{textAlign: "center", padding: "20px"}} className='text-white text-center'>
-                    <p className="shapiro-65" style={{color: 'rgba(63, 75, 149)'}}>PRESALE STARTS IN:</p>
+                    <p className="shapiro-65" style={{color: 'rgba(63, 75, 149)'}}>PRESALE ENDED</p>
                   </div>
                   <div style={{ display: "flex", justifyContent: "space-between"}}>
                     <div style={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
-                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "28px"}}><span id="days_left">0{days}</span></p>
+                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "28px"}}><span id="days_left">0</span></p>
                       <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "10px"}}><span>DAYS</span></p>
                     </div>
                     <div style={{display: "flex", justifyContent:"center", alignItems: "center"}}>
                       <p className="shapiro-65" style={{color: "white", textAlign: "center"}}>:</p>
                     </div>
                     <div>
-                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "28px"}}><span>{hours}</span></p>
+                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "28px"}}><span>0</span></p>
                       <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "10px"}}><span>HOURS</span></p>
                     </div>
                     <div style={{display: "flex", justifyContent:"center", alignItems: "center"}}>
                       <p className="shapiro-65" style={{color: "white", textAlign: "center"}}>:</p>
                     </div>
                     <div>
-                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "28px"}}><span>{minutes}</span></p>
+                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "28px"}}><span>0</span></p>
                       <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "10px"}}><span>MINUTES</span></p>
                     </div>
                     <div style={{display: "flex", justifyContent:"center", alignItems: "center"}}>
                       <p className="shapiro-65" style={{color: "white", textAlign: "center"}}>:</p>
                     </div>
                     <div>
-                      <p className="shapiro-65 text-yellow" style={{ textAlign: "center", fontSize: "28px"}}><span>{seconds}</span></p>
+                      <p className="shapiro-65 text-yellow" style={{ textAlign: "center", fontSize: "28px"}}><span>0</span></p>
                       <p className="shapiro-65 text-yellow" style={{ textAlign: "center", fontSize: "10px"}}><span>SECONDS</span></p>
                     </div>
                   </div>
                 </div>
               </div>
+              */}
               
-              {/* 
               <div className="btn-group" style={{marginTop: '15px'}}>
                 <div style={{ display: "flex", justifyContent: "space-between"}}>
                   <div>
-                    <button id="button-mfts1" className="btn-on-active button-mfts bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                      BUY $MTF
-                    </button>
-                    <button style={{border: '2px solid #3f4b95'}} className="button-mfts bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                      <AiOutlineAreaChart style={{float: 'left', marginRight: '5px', position: 'relative', top: '4px'}} /> CHART
-                    </button>
+                    <a href="https://pancakeswap.finance/swap?outputCurrency=0x12de91acb5f544b37b1e66438324b8db26a91d8a" target="_blank"> 
+                      <button id="button-mfts1" className="btn-on-active button-mfts bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                        BUY $MTF
+                      </button>
+                    </a>
+                    <a target="_blank" href="https://poocoin.app/tokens/0x12de91acb5f544b37b1e66438324b8db26a91d8a">
+                      <button style={{border: '2px solid #3f4b95'}} className="button-mfts bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                        <AiOutlineAreaChart style={{float: 'left', marginRight: '5px', position: 'relative', top: '4px'}} /> CHART
+                      </button>
+                    </a>
                   </div>
                   <span id="custom-tooltip">Copied</span>
                 </div>
               </div>
               <div className="btn-group col-span-12" style={{marginTop: '15px', display: "flex"}}>
                 <div id="input-div-span1">
-                  <input id="copy-address" style={{pointerEvents: 'none', background: 'transparent', border: '2px solid #3f4b95', borderTopRightRadius: "0px", borderBottomRightRadius: "0px", overflow: "hidden", width: "100%"}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-full" defaultValue="0xd024ac1195762f6f13f8cfdf3cdd2c97b33b248b" />
+                  <input id="copy-address" style={{pointerEvents: 'none', background: 'transparent', border: '2px solid #3f4b95', borderTopRightRadius: "0px", borderBottomRightRadius: "0px", overflow: "hidden", width: "100%"}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-full" defaultValue="0x12de91acb5f544b37b1e66438324b8db26a91d8a" />
                 </div>
                 <div id="input-div-span2">
                   <button id="copy-address-button" onClick={() => { handleCopy(); }} style={{display: 'flex', width: '100%', alignItems: 'center', borderTopLeftRadius: "0px", borderBottomLeftRadius: "0px" }} className={`${effect && "animate-wiggle"} btn-on-active bg-blue-500 active:bg-blue-700 text-white font-bold py-2 px-2 rounded-full btn-copy-add`}>
@@ -236,15 +255,15 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-              */}
+              
             </div>
             <div className="col-span-7">
               <img style={{width: "50%", maxWidth: "395px", maxHeight: "570px", position: "relative", top: "0px"}} alt="" id="logo-img" className="ml-auto aos-init aos-animate" data-aos="fade-left" data-aos-duration="800" src="/images/logo_opt-removebg_opt-min.png" />
             </div>
           </div>
           <div className="drop-band">
-            <a href="" target="_blank">
-              <div className="drop-band--main-band" ><p className="shapiro-85 text-2xl">JOIN PRESALE</p><p className="shapiro-extd text-2xl">JOIN PRESALE</p><p className="shapiro-85 text-2xl">JOIN PRESALE</p><p className="last-join-us shapiro-extd text-2xl">JOIN PRESALE</p></div>
+            <a href="https://t.me/metafootballbsc" target="_blank">
+              <div className="drop-band--main-band" ><p className="shapiro-85 text-2xl">JOIN US</p><p className="shapiro-extd text-2xl">JOIN US</p><p className="shapiro-85 text-2xl">JOIN US</p><p className="shapiro-extd text-2xl">JOIN US</p><p className="last-join-us shapiro-85 text-2xl">JOIN US</p></div>
               <div className="drop-band--secondary-band"></div>
             </a>
           </div>
@@ -263,12 +282,12 @@ export default function Home() {
             </a>
           </div>
           <div className="rrss-icon flex justify-end items-center md:justify-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
-            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="">
+            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="https://discord.gg/32WBak7D" target="_blank">
             <FaDiscord size={40} />
             </a>
           </div>
           <div className="rrss-icon flex justify-start items-center md:justify-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
-            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="">
+            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="https://poocoin.app/tokens/0x12de91acb5f544b37b1e66438324b8db26a91d8a" target="_blank">
             <FaPoo size={40}/>
             </a>
           </div>
@@ -333,7 +352,7 @@ export default function Home() {
                   MetaFootball provides an advantage over traditional fantasy football leagues in that you are compensated in real money for your efforts because you own the cards you collect, win, and trade. In previous fantasy football games, you don’t own any players, so all you get for your time is the possibility to beat the thousands of other players who enter, but with MetaFootball, you get to collect cards (players) that you are given complete ownership of for the rest of your life.
                   </p>
                   <p></p>
-                  <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className="inline-btn text-grey text-base shapiro-65 aos-init aos-animate" data-aos="fade-up" href="https://meta-football.gitbook.io/metafootball-whitepaper/" target="_blank">
+                  <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className="inline-btn text-grey text-base shapiro-65 aos-init aos-animate" data-aos="fade-up" href="https://meta-football.gitbook.io/whitepaper" target="_blank">
                   LEARN
                   MORE </a>
                   <p className="m-0 font-Montserrat text-base font-light aos-init aos-animate" data-aos="fade-up">
@@ -352,7 +371,7 @@ export default function Home() {
                   Experience a vibrant football economy powered by blockchain technology, which provides you with complete realism, asset ownership, and ultimate control.
                   </p>
                   <p></p>
-                  <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className=" inline-btn  text-grey text-base shapiro-65 " href="https://meta-football.gitbook.io/metafootball-whitepaper/" target="_blank">
+                  <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className=" inline-btn  text-grey text-base shapiro-65 " href="https://meta-football.gitbook.io/whitepaper" target="_blank">
                   LEARN
                   MORE </a>
                   <p className="m-0   font-Montserrat  text-base font-light ">
@@ -366,10 +385,10 @@ export default function Home() {
                 <div className="text-right">
                   <p className="m-0  font-Montserrat  text-lg font-light ">
                   </p><p className="m-0 para-in-utilities custom-text-black font-Montserrat  text-lg font-light">
-                  The entire simulation will be availible,as near as you can go to really executing the job, a simulation game that is unrivaled. Take command of the world's best sports teams and play the most beautiful games your way to get the closest thing to becoming a real manager. MetaFootball is a dynamic, breathing metaverse gaming environment with unrivaled realism and football authenticity that other football games can only dream to. MetaFootball's professional world will be meticulously modeled and reconstructed to provide you with all of the management power and resources you'll need to write your own football story and live out your goals. Purchase the players you desire, make a list of the tactics you prefer. Take the awards you want. It's your club, your rules.
+                  The entire simulation will be available,as near as you can go to really executing the job, a simulation game that is unrivaled. Take command of the world's best sports teams and play the most beautiful games your way to get the closest thing to becoming a real manager. MetaFootball is a dynamic, breathing metaverse gaming environment with unrivaled realism and football authenticity that other football games can only dream to. MetaFootball's professional world will be meticulously modeled and reconstructed to provide you with all of the management power and resources you'll need to write your own football story and live out your goals. Purchase the players you desire, make a list of the tactics you prefer. Take the awards you want. It's your club, your rules.
                   </p>
                   <p></p>
-                  <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className=" inline-btn  text-grey text-base shapiro-65 " href="https://meta-football.gitbook.io/metafootball-whitepaper/" target="_blank">
+                  <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className=" inline-btn  text-grey text-base shapiro-65 " href="https://meta-football.gitbook.io/whitepaper" target="_blank">
                   LEARN
                   MORE </a>
                   <p className="m-0   font-Montserrat  text-base font-light ">
@@ -382,11 +401,11 @@ export default function Home() {
       </section>
       <section className="plan py-8 xl:py-16 overflow-hidden">
         <div style={{ display: "flex", justifyContent: 'space-between'}} className="container relative ">
-          <a href="/" target="_blank"><img style={{width: "200px"}} className="" src="/images/poocoin.png" /></a>
-          <a href="/" target="_blank"><img style={{width: "200px"}} className="" src="/images/bsc_scan.png" /></a>
-          <a href="/" target="_blank"><img style={{width: "200px"}} className="" src="/images/coingecko.png" /></a>
-          <a href="/" target="_blank"><img style={{width: "200px"}} className="" src="/images/dextools.png" /></a>
-          <a href="/" target="_blank"><img style={{width: "200px"}} className="" src="/images/marketcap.png" /></a>
+          <a href="https://poocoin.app/tokens/0x12de91acb5f544b37b1e66438324b8db26a91d8a" target="_blank"><img style={{width: "200px"}} className="" src="/images/poocoin.png" /></a>
+          <a href="https://bscscan.com/token/0x12DE91ACb5f544b37b1e66438324b8dB26A91D8a" target="_blank"><img style={{width: "200px"}} className="" src="/images/bsc_scan.png" /></a>
+          <a href="/" ><img style={{width: "200px"}} className="" src="/images/coingecko.png" /></a>
+          <a href="/" ><img style={{width: "200px"}} className="" src="/images/dextools.png" /></a>
+          <a href="/" ><img style={{width: "200px"}} className="" src="/images/marketcap.png" /></a>
         </div>
       </section>
 
@@ -465,10 +484,23 @@ export default function Home() {
               </div>
             </div>
             */}
-            
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/arda_sil.png" />
+                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/vidal.jpg" />
+              </div>
+              <h4 className=" text-center text-white text-xl shapiro-65 mt-3 mb-1">Arturo Vidal</h4>
+              <div style={{display: 'flex'}} className="links">
+                <a href="https://www.twitter.com" target="_blank">
+                <BsTwitter size={20} style={{display: 'none', color: '#1d9bf0', marginRight: "10px"}} />
+                </a>
+                <a href="https://instagram.com/kingarturo23oficial?utm_medium=copy_link" target="_blank">
+                <BsInstagram size={20} style={{color: '#a63494'}} />
+                </a>
+              </div>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
+              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
+                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player2_sil.png" />
               </div>
               <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Arda Turan</h4>
               <div className="links">
@@ -482,7 +514,7 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/sergio_sil.png" />
+                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player12_sil.png" />
               </div>
               <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Sergio Busquets</h4>
               <div className="links">
@@ -494,23 +526,9 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/vidal_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Vidal</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
             <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/alves_sil.png" />
+                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player1_sil.png" />
               </div>
               <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Dani Alves</h4>
               <div className="links">
@@ -524,7 +542,7 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/marcelo_sil.png" />
+                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player4_sil.png" />
               </div>
               <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Marcelo</h4>
               <div className="links">
@@ -538,7 +556,7 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/halaand_sil.png" />
+                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player3_sil.png" />
               </div>
               <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Erling Halaand</h4>
               <div className="links">
@@ -552,7 +570,7 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/pogba_sil.png" />
+                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player8_sil.png" />
               </div>
               <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Paul Pogba</h4>
               <div className="links">
@@ -566,7 +584,7 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/ramos_sil.png" />
+                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player9_sil.png" />
               </div>
               <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Sergio Ramos</h4>
               <div className="links">
@@ -580,7 +598,7 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/benzema_sil.png" />
+                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/benzema_sil.png" />
               </div>
               <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Karim Benzema</h4>
               <div className="links">
@@ -594,7 +612,7 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/sterling_sil.png" />
+                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player13_sil.png" />
               </div>
               <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Raheem Sterling</h4>
               <div className="links">
@@ -608,7 +626,7 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="300" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}} className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}} >
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/ronaldinho_sil.png" />
+                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player10_sil.png" />
               </div>
               <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Ronaldinho Gaucho</h4>
               <div className="links">
@@ -622,7 +640,7 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/mbappe_sil.png" />
+                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player6_sil.png" />
               </div>
               <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Kilian Mbappe</h4>
               <div className="links">
@@ -636,7 +654,7 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/ronaldo_sil.png" />
+                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player11_sil.png" />
               </div>
               <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Cristiano Ronaldo</h4>
               <div className="links">
@@ -650,7 +668,7 @@ export default function Home() {
             </div>
             <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/messi_sil.png" />
+                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player7_sil.png" />
               </div>
               <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Lionel Messi</h4>
               <div className="links">
@@ -674,27 +692,27 @@ export default function Home() {
           <div className="md:grid grid-cols-12 border aos-init" data-aos="fade-up" data-aos-offset="-300">
           <div className=" col-span-12 lg:col-span-3 text-center  py-12 px-6 border-r relative overflow-hidden">
             <h3 className=" text-yellow text-3xl shapiro-65   mb-10"> Q1</h3>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Smart Contract Deployment</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Anti-Dump Security Measures</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Website Launch
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Smart Contract Deployment</strike></p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Anti-Dump Security Measures</strike></p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Website Launch</strike>
             </p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Release Whitepaper</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Establish Mod & Admins Team</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Build out Social Medias</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Build Social media management team</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Presale and launch date announced</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Marketing push to spread awareness</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Whitelist Contest for Presale</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> Audit from InterFI & QuillAudits </p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat"> $MTF Presale</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Release Whitepaper</strike></p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Establish Mod & Admins Team</strike></p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Build out Social Medias</strike></p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Build Social media management team</strike></p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Presale and launch date announced</strike></p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Marketing push to spread awareness</strike></p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Whitelist Contest for Presale</strike></p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Audit from InterFI & QuillAudits </strike></p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat"> <strike>$MTF Presale</strike></p>
           </div>
           <div className=" col-span-12 lg:col-span-3 text-center  py-12 px-6 border-r relative overflow-hidden">
             <h3 className=" text-yellow text-3xl shapiro-65    mb-10"> Q2</h3>
             <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Translation of the web to other languages</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">CoinMarketCap Listing</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Coingecko Listing</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Crypto.com Listing</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Coinbase Listing</p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"><strike>CoinMarketCap Listing</strike></p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8"><strike>Coingecko Listing</strike></p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8"><strike>Crypto.com Listing</strike></p>
+            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8"><strike>Coinbase Listing</strike></p>
             <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Strategic Marketing Campaign</p>
             <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">$MTF Football Prediction Telegram Group</p>
             <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">$MTF Fifa Tournament - P2E</p>
@@ -731,13 +749,13 @@ export default function Home() {
       
       <section className="team py-8 xl:py-16">
         <div className="container relative ">
-          <h2 className="text-white font-62 shapiro-85 mb-12 aos-init aos-animate" data-aos="fade-up" data-aos-offset="-300"> TEAM
+          <h2 className="text-white font-62 shapiro-85 mb-12 aos-init aos-animate" data-aos="fade-up" data-aos-offset="-300"> CORE TEAM
           </h2>
           
           <div className="grid  grid-cols-12 gap-4 md:gap-8 xl:gap-20 relative">
             <div data-aos="fade-right" data-aos-delay="300" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}} className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
               <div className="user">
-                <img style={{maxHeight: "200px", margin: "0 auto"}} alt="" src="/images/logo_opt-removebg_opt-min.png" />
+                <img style={{maxHeight: "200px", margin: "0 auto", borderRadius: "60px"}} alt="" src="/images/arkangel.jpg" />
               </div>
               <h4 className="text-center text-white text-xl shapiro-65 mt-8 mb-3">ArkAngel</h4>
               <p className="text-center text-white text-md font-Montserrat font-light">CEO</p>
@@ -781,18 +799,12 @@ export default function Home() {
               </p>
             </div>
             <div className="mb-14 lg:mb-0 lg:col-span-4">
-              <div className="grid grid-cols-10">
-                <div className="col-span-5">
+              <div className="grid ">
+                <div className="col-span-10">
                   <a className="text-theme-lightblue-300 font-Montserrat font-light  text-base block text-center mb-5 hover:opacity-70 transition-all" href="#">Home</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="https://meta-football.gitbook.io/metafootball-whitepaper/" target="_blank">Whitepaper</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all mb-5" href="https://meta-football.gitbook.io/metafootballtoken/tokenomics/token-allocations" target="_blank">Tokenomics</a>
+                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="https://meta-football.gitbook.io/whitepaper" target="_blank">Whitepaper</a>
+                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all mb-5" href="https://meta-football.gitbook.io/metafootballtoken/tokenomics" target="_blank">Tokenomics</a>
                   <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all" href={"/nft.html"} target="_blank">NFT</a>
-                </div>
-                <div className="col-span-5">
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="">Contact us</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" target="_blank" href="https://meta-football.gitbook.io/metafootballtoken/metafootballtoken.com/terms-and-conditions">Terms &amp; Conditions</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" target="_blank" href="https://meta-football.gitbook.io/metafootballtoken/metafootballtoken.com/privacy-policy">Privacy Policy</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all" href="https://meta-football.gitbook.io/metafootballtoken/metafootballtoken.com/disclaimer" target="_blank">Disclaimer</a>
                 </div>
               </div>
             </div>
@@ -803,10 +815,10 @@ export default function Home() {
               <a className="mr-5 inline-block hover:opacity-70 transition-all" href="https://t.me/metafootballbsc" target="_blank">
               <FaTelegramPlane size={30} style={{color: '#dad8d8'}} />
               </a>
-              <a className="mr-5 inline-block hover:opacity-70 transition-all" href="" target="_blank">
+              <a className="mr-5 inline-block hover:opacity-70 transition-all" href="https://discord.gg/32WBak7D" target="_blank">
               <FaDiscord size={30} style={{color: '#dad8d8'}} />
               </a>
-              <a className=" inline-block hover:opacity-70 transition-all" href="" target="_blank">
+              <a className=" inline-block hover:opacity-70 transition-all" href="https://poocoin.app/tokens/0x12de91acb5f544b37b1e66438324b8db26a91d8a" target="_blank">
               <FaPoo size={30} style={{color: '#dad8d8'}}/>
               </a>
             </div>
@@ -821,6 +833,14 @@ export default function Home() {
     }
     .text-2xl {
       font-size: 1.3rem;
+    }
+    .selector {
+      user-drag: none;
+      -webkit-user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
     }
     .collection-images {
       height: 316px;
@@ -1417,8 +1437,10 @@ export default function Home() {
         margin-top: 20px;
       }
       #mf-sec-para {
+        /*
         max-width: 230px;
         margin: 0 auto;
+        */
       }
       #win-text {
         margin-left: 0px;
