@@ -1,20 +1,27 @@
 import Head from 'next/head'
 import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
 import 'tailwindcss/tailwind.css'
+import Layout from '../components/layout'
+
 import { BsTwitter } from 'react-icons/bs';
 import { FaTelegramPlane } from 'react-icons/fa';
 import { FaDiscord } from 'react-icons/fa';
+import { AiOutlineGithub } from 'react-icons/ai';
+import { BsReddit } from 'react-icons/bs';
+/* 
 import { FaPoo } from 'react-icons/fa';
 import { AiOutlineAreaChart } from 'react-icons/ai';
 import { AiOutlineCopy } from 'react-icons/ai';
 import { BsInstagram } from 'react-icons/bs';
 import Countdown from 'react-countdown';
-
+*/
+import { Canvas, useFrame } from '@react-three/fiber'
 
 
 export default function Home() {
   const [effect, setEffect] = useState(false);
   
+  /*
   let url = "http://worldtimeapi.org/api/timezone/Europe/Skopje";
   const targetTime = new Date(Date.UTC(2021, 12, 22, 18, 0, 0)).getTime();
 
@@ -40,7 +47,7 @@ export default function Home() {
   const hours = Math.floor((timeBetween / (1000 * 60 * 60)) % 24);
   const days = Math.floor(timeBetween / (1000 * 60 * 60 * 24));
 
-  
+  */
   /* 
     useEffect(() => {
     const interval = setInterval(() => {
@@ -49,74 +56,12 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, []);
-  */
-  // This will work in Safari
-  var useIsomorphicEffectPatched = typeof document !== 'undefined' ? React.useLayoutEffect : React.useEffect;
-
-  useIsomorphicEffectPatched(function () {
-    const interval = setInterval(() => {
-      setCurrentTime(Date.now());
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleClick = (tabs) => {
-    let tab1 = document.getElementById("tab1");
-    let tab2 = document.getElementById("tab2");
-    let tab3 = document.getElementById("tab3");
-    const tab1option = document.getElementById("tab1-option");
-    const tab2option = document.getElementById("tab2-option");
-    const tab3option = document.getElementById("tab3-option");
-    var w = window.innerWidth;
-
-    if (tabs === "tab1") {
-      tab1option.classList.add("active");
-      tab2option.classList.remove("active");
-      tab3option.classList.remove("active");
-      if (w <= 800 ) {
-        tab1.style.display = 'block';
-      }else {
-        tab1.style.display = 'flex';
-      }
-      tab2.style.display = 'none';
-      tab3.style.display = 'none';
-      console.log("I clicked on the About Page1");
-    }
-    if (tabs === "tab2") {
-      tab2option.classList.add("active");
-      tab1option.classList.remove("active");
-      tab3option.classList.remove("active");
-      if (w <= 800 ) {
-        tab2.style.display = 'block';
-      }else {
-        tab2.style.display = 'flex';
-      }
-      tab1.style.display = 'none';
-      tab3.style.display = 'none';
-      console.log("I clicked on the Posts Page2");
-    }
-    if (tabs === "tab3") {
-      tab3option.classList.add("active");
-      tab2option.classList.remove("active");
-      tab1option.classList.remove("active");
-      if (w <= 800 ) {
-        tab3.style.display = 'block';
-      }else {
-        tab3.style.display = 'flex';
-      }
-      tab2.style.display = 'none';
-      tab1.style.display = 'none';
-      console.log("I clicked on the Posts Page3");
-    }
-  };
-
   const handleCopy = () => {
     let address = document.getElementById("copy-address");
     address.select();
-    address.setSelectionRange(0, 99999); /* For mobile devices */
-
-    /* Copy the text inside the text field */
+    address.setSelectionRange(0, 99999); For mobile devices 
+ 
+     Copy the text inside the text field 
     navigator.clipboard.writeText(address.value);
     setEffect(true);
     address.blur();
@@ -126,803 +71,1037 @@ export default function Home() {
     }, 1000);
     
   };
+  */
+  // This will work in Safari
 
   return (
     <div className="">
       <Head>
-        <title>Meta Football</title>
+        <title>MetaPets - a new world a new pet</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link
           rel="preload"
-          href="/fonts/Shapiro/Shapiro 65 Light Heavy Wide.ttf"
+          href="/fonts/Shapiro/Revamped.ttf"
           as="font"
           crossOrigin=""
         />
         <link
           rel="preload"
-          href="/fonts/Shapiro/Shapiro 85 Super Heavy Extd.ttf"
+          href="/fonts/Shapiro/RocketRinder.ttf"
           as="font"
           crossOrigin=""
         />
-        <link
-          rel="preload"
-          href="/fonts/Shapiro/Shapiro 97 Air Extd.ttf"
-          as="font"
-          crossOrigin=""
-        />
+        
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
           rel="stylesheet"
         />
       </Head>
 
-      <body style={{background: "rgb(0 0 0)"}} className="bg-black ld" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
-      <header className="bg-white py-8 ">
-        <div className="container  flex justify-between items-center ">
-          <a className="change-on-small md:inline-block  text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase " href="#">HOME</a>
-          <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase  " href="https://linktr.ee/metafootballbsc" target="_blank">LINKTREE</a>
-          
-          <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase  " href="https://meta-football.gitbook.io/whitepaper" target="_blank">WHITEPAPER</a>
-          <button style={{display: 'none'}} className="menu"><img src="/images/menu.svg" /></button>
-          <a className="change-on-small md:inline-block text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase " href={"/nft.html"} target="_blank">NFT</a>
+      <body style={{background: "#0E0D17"}} className="bg-black ld" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+      <header style={{backgroundColor: '#1A1A22'}} className="bg-white">
+        <div style={{paddingLeft: "0px", marginLeft: "0"}}  className="container  flex justify-between items-center ">
+          <a style={{padding: "10px 30px", paddingLeft: "5%"}} className="rhomboid change-on-small md:inline-block  text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase " href="#"><img style={{maxWidth: "55px"}} src="/images/logo.png" /></a>
         </div>
       </header>
-      <div className="mobile-menu">
-        <button className="menu-close absolute right-3 top-3 cursor-pointer">
-          <img className=" w-8" src="/images/close.png" />
-        </button>
-        <a className=" block py-3  text-white  font-Montserrat  text-sm font-bold uppercase  hover:text-theme-lightblue-300 transition-all " href="#">HOME</a>
-        <a className=" block py-3  text-white  font-Montserrat  text-sm font-bold uppercase hover:text-theme-lightblue-300 transition-all  " href="#">MTF
-        TOKEN</a>
-        <a className=" block  py-3 text-white  font-Montserrat  text-sm font-bold uppercase   hover:text-theme-lightblue-300 transition-all" href="https://meta-football.gitbook.io/metafootball-whitepaper/">WHITEPAPER</a>
-        <a className=" block  py-3  text-white  font-Montserrat  text-sm font-bold uppercase hover:text-theme-lightblue-300 transition-all" href="" target="_blank">PITCH DECK</a>
+      <div id="section-body" style={{position:"relative"}} className=" flex flex-row bg-gray-100">
+      <div className="lines">
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
       </div>
-      <section className="train-player pb-20 lg:pt-20 lg:pb-14 relative">
-        <div className="container train-player2">
-          <div className="lg:grid grid-cols-12" id="top-div">
-            <div style={{width: "100%"}} className="col-span-5">
-              <h1 className="first-para text-white shapiro-85 font-82 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800"> INVEST
-              EARN
-              PLAY
-              <span id="win-text" className="text-yellow shapiro-extd aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-              WIN</span>
-              </h1>
-              <p className="mt-8 mb-8 font-Montserrat custom-text-black font-22 text-theme-gray-300 leading-7 font-light opacity-70 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-              MetaFootball will be one of the most comprehensive football management games ever created, designed as a play-to-earn game for everyone who loves football and wants to earn token reflections and NFT while managing their own football team.
-              </p>
-              {/* 
-              <div className="btn-group" style={{marginTop: '15px'}}>
-                <div style={{display: 'flex', flexDirection: 'column'}}>
-                  <div style={{textAlign: "center", padding: "20px"}} className='text-white text-center'>
-                    <p className="shapiro-65" style={{color: 'rgba(63, 75, 149)'}}>PRESALE ENDED</p>
-                  </div>
-                  <div style={{ display: "flex", justifyContent: "space-between"}}>
-                    <div style={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
-                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "28px"}}><span id="days_left">0</span></p>
-                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "10px"}}><span>DAYS</span></p>
-                    </div>
-                    <div style={{display: "flex", justifyContent:"center", alignItems: "center"}}>
-                      <p className="shapiro-65" style={{color: "white", textAlign: "center"}}>:</p>
-                    </div>
-                    <div>
-                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "28px"}}><span>0</span></p>
-                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "10px"}}><span>HOURS</span></p>
-                    </div>
-                    <div style={{display: "flex", justifyContent:"center", alignItems: "center"}}>
-                      <p className="shapiro-65" style={{color: "white", textAlign: "center"}}>:</p>
-                    </div>
-                    <div>
-                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "28px"}}><span>0</span></p>
-                      <p className="shapiro-65" style={{color: "white", textAlign: "center", fontSize: "10px"}}><span>MINUTES</span></p>
-                    </div>
-                    <div style={{display: "flex", justifyContent:"center", alignItems: "center"}}>
-                      <p className="shapiro-65" style={{color: "white", textAlign: "center"}}>:</p>
-                    </div>
-                    <div>
-                      <p className="shapiro-65 text-yellow" style={{ textAlign: "center", fontSize: "28px"}}><span>0</span></p>
-                      <p className="shapiro-65 text-yellow" style={{ textAlign: "center", fontSize: "10px"}}><span>SECONDS</span></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              */}
-              
-              <div className="btn-group" style={{marginTop: '15px'}}>
-                <div style={{ display: "flex", justifyContent: "space-between"}}>
-                  <div>
-                    <a href="https://pancakeswap.finance/swap?outputCurrency=0x12de91acb5f544b37b1e66438324b8db26a91d8a" target="_blank"> 
-                      <button id="button-mfts1" className="btn-on-active button-mfts bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                        BUY $MTF
-                      </button>
-                    </a>
-                    <a target="_blank" href="https://poocoin.app/tokens/0x12de91acb5f544b37b1e66438324b8db26a91d8a">
-                      <button style={{border: '2px solid #3f4b95'}} className="button-mfts bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                        <AiOutlineAreaChart style={{float: 'left', marginRight: '5px', position: 'relative', top: '4px'}} /> CHART
-                      </button>
-                    </a>
-                  </div>
-                  <span id="custom-tooltip">Copied</span>
-                </div>
-              </div>
-              <div className="btn-group col-span-12" style={{marginTop: '15px', display: "flex"}}>
-                <div id="input-div-span1">
-                  <input id="copy-address" style={{pointerEvents: 'none', background: 'transparent', border: '2px solid #3f4b95', borderTopRightRadius: "0px", borderBottomRightRadius: "0px", overflow: "hidden", width: "100%"}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-full" defaultValue="0x12de91acb5f544b37b1e66438324b8db26a91d8a" />
-                </div>
-                <div id="input-div-span2">
-                  <button id="copy-address-button" onClick={() => { handleCopy(); }} style={{display: 'flex', width: '100%', alignItems: 'center', borderTopLeftRadius: "0px", borderBottomLeftRadius: "0px" }} className={`${effect && "animate-wiggle"} btn-on-active bg-blue-500 active:bg-blue-700 text-white font-bold py-2 px-2 rounded-full btn-copy-add`}>
-                    <AiOutlineCopy style={{marginRight: '5px'}} /> COPY ADDRESS
-                  </button>
-                </div>
-              </div>
-              
-            </div>
-            <div className="col-span-7">
-              <img style={{width: "50%", maxWidth: "395px", maxHeight: "570px", position: "relative", top: "0px"}} alt="" id="logo-img" className="ml-auto aos-init aos-animate" data-aos="fade-left" data-aos-duration="800" src="/images/logo_opt-removebg_opt-min.png" />
-            </div>
-          </div>
-          <div className="drop-band">
-            <a href="https://t.me/metafootballbsc" target="_blank">
-              <div className="drop-band--main-band" ><p className="shapiro-85 text-2xl">JOIN US</p><p className="shapiro-extd text-2xl">JOIN US</p><p className="shapiro-85 text-2xl">JOIN US</p><p className="shapiro-extd text-2xl">JOIN US</p><p className="last-join-us shapiro-85 text-2xl">JOIN US</p></div>
-              <div className="drop-band--secondary-band"></div>
-            </a>
-          </div>
+        <div style={{backgroundColor: '#1A1A22', borderBottomRightRadius: "0rem", display:"none"}} className="flex flex-col w-56 bg-white rounded-r-2xl overflow-hidden">
+          <ul className="flex flex-col py-4">
+            <li>
+              <a href="#" className="flex flex-row  h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-gray-800">
+                <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i className="bx bx-home"></i></span>
+                <span className="text-sm font-medium">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="flex flex-row  h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-gray-800">
+                <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i className="bx bx-music"></i></span>
+                <span className="text-sm font-medium">Music</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="flex flex-row  h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-gray-800">
+                <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i className="bx bx-drink"></i></span>
+                <span className="text-sm font-medium">Drink</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="flex flex-row h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-gray-800">
+                <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i className="bx bx-shopping-bag"></i></span>
+                <span className="text-sm font-medium">Shopping</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="flex flex-row h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-gray-800">
+                <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i className="bx bx-chat"></i></span>
+                <span className="text-sm font-medium">Chat</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="flex flex-row h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white hover:text-gray-800">
+                <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i className="bx bx-user"></i></span>
+                <span className="text-sm font-medium">Profile</span>
+              </a>
+            </li>
+          </ul>
         </div>
-      </section>
-      <section className="rrss-icons py-20 lg:pt-6 lg:pb-2">
-        <div className="container justify-center items-center flex-wrap grid grid-cols-2 grid-rows-2 gap-y-16 gap-x-20 md:grid-cols-4 md:grid-rows-1 md:px-20">
-          <div className="rrss-icon flex justify-end items-center md:justify-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
-            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="https://twitter.com/metafootballbsc" target="_blank">
-            <BsTwitter size={40} />
-            </a>
-          </div>
-          <div className="rrss-icon flex justify-start items-center md:justify-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
-            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="https://t.me/metafootballbsc" target="_blank">
-            <FaTelegramPlane size={40} />
-            </a>
-          </div>
-          <div className="rrss-icon flex justify-end items-center md:justify-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
-            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="https://discord.gg/32WBak7D" target="_blank">
-            <FaDiscord size={40} />
-            </a>
-          </div>
-          <div className="rrss-icon flex justify-start items-center md:justify-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
-            <a className="inline-block custom-text-black hover:opacity-70 transition-all" href="https://poocoin.app/tokens/0x12de91acb5f544b37b1e66438324b8db26a91d8a" target="_blank">
-            <FaPoo size={40}/>
-            </a>
-          </div>
-        </div>
-      </section>
-      {/* 
-      <section className="steps relative  py-8 xl:py-16 ">
-        <div className="container ">
-          <div className="flow md:grid grid-cols-12 gap-12 ">
-            <div className="md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="800">
-              <h2 className="text-white font-26 shapiro-85 mb-4">FIND</h2>
-              <p className="custom-text-black  font-Montserrat text-base text-theme-gray-300 leading-6 font-light">Send your
-              Youth Scouts
-              to explore and find new promising young players for your team (NFT players)
-              </p>
-            </div>
-            <div className="md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-              <h2 className="text-white font-26 shapiro-85 mb-4">TRAIN</h2>
-              <p className="custom-text-black font-Montserrat text-base text-theme-gray-300 leading-6 font-light">Train your
-              players
-              every day and count on them to play matches to develop their full potential
-              </p>
-            </div>
-            <div className="md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-              <h2 className="text-white font-26 shapiro-85 mb-4">PLAY</h2>
-              <p className="custom-text-black font-Montserrat text-base text-theme-gray-300 leading-6 font-light">Compete in
-              official
-              matches against other users and climb between divisions to reach the top
-              </p>
-            </div>
-            <div className="md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-              <h2 className="text-white font-26 shapiro-85 mb-4">EARN</h2>
-              <p className="custom-text-black font-Montserrat text-base text-theme-gray-300 leading-6 font-light">Win matches
-              &amp; leagues
-              and generate income with your club. There are multiple ways to earn $MTF token
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      */}
-      <section className="meta-assets py-8 xl:py-16">
-        <div className="container">
-          <div className="tabs p-4 md:p-12 border text-white aos-animate relative">
-            <h2 className="shapiro-95 text-white font-62 text-right">
-              <span className="text-yellow block shapiro-extd aos-init aos-animate" data-aos="fade-up" data-aos-duration="800">METAFOOTBALL</span>
-              <span className="block shapiro-85 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800">UTILITIES</span>
-            </h2>
-            <ul className="md:flex   justify-end my-8" id="tabs-nav">
-              <li id="tab1-option" className="mr-8 active"><a className="shapiro-65 " onClick={() => handleClick('tab1')} >NFT FANTASY FOOTBALL</a></li>
-              <li id="tab2-option" className="mr-8"><a className="shapiro-65 " onClick={() => handleClick('tab2')} >FOOTBALL MANAGER</a></li>
-              <li id="tab3-option" className=""><a className="shapiro-65 " onClick={() => handleClick('tab3')} >METAVERSE GAME</a></li>
-            </ul>
-            <div id="tabs-content">
-              <div  className="tab-content lg:flex" id="tab1">
-                <div className="player_img">
-                  <img  data-aos="zoom-in" alt="" className=" mx-auto collection-images" src="/images/4.png" />
+        <div style={{width: "100%"}}>
+          <section id="triangle-pic" style={{width: "100%", height: "50%", display:"flex", justifyContent: "center"}}>
+          <div className="wrapper" id="wrapper-mobile">
+                <div className="hero-container">
+                  <div className="environment"></div>
+                  <h2 className="hero glitch layers text-white" data-text="METAPETS">
+                  <div className="text-center revamped" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100" >METAPETS</div>
+                  </h2>
                 </div>
-                <div className="text-right">
-                  <p className="m-0 font-Montserrat text-lg font-light aos-init aos-animate" data-aos="fade-up">
-                  </p><p className="m-0 para-in-utilities font-Montserrat custom-text-black text-lg font-light">
-                  MetaFootball provides an advantage over traditional fantasy football leagues in that you are compensated in real money for your efforts because you own the cards you collect, win, and trade. In previous fantasy football games, you don’t own any players, so all you get for your time is the possibility to beat the thousands of other players who enter, but with MetaFootball, you get to collect cards (players) that you are given complete ownership of for the rest of your life.
-                  </p>
-                  <p></p>
-                  <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className="inline-btn text-grey text-base shapiro-65 aos-init aos-animate" data-aos="fade-up" href="https://meta-football.gitbook.io/whitepaper" target="_blank">
-                  LEARN
-                  MORE </a>
-                  <p className="m-0 font-Montserrat text-base font-light aos-init aos-animate" data-aos="fade-up">
-                  </p><p className="opacity-80 font-Montserrat custom-text-black text-base font-light"></p><p></p>
+                <div>
+                  <p className="text-center text-white revamped" data-aos="fade-left" data-aos-duration="500" data-aos-delay="100">NEW WEBSITE COMING SOON</p>
                 </div>
-              </div>
-              <div  className="tab-content lg:flex" id="tab2" >
-                <div className="player_img">
-                  <img data-aos="zoom-in" alt="" className=" mx-auto collection-images" src="/images/2.png" />
+                <div id="icons-section" className="flex justify-center">
+                  <a href="https://twitter.com/Metapetscoin" target="_blank"><BsTwitter style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100" /></a>
+                  <a href="https://discord.gg/NQKR42dVmm" target="_blank"><FaDiscord style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150" /></a>
+                  <a href="https://t.me/metapets" target="_blank"><FaTelegramPlane style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200" /></a>
+                  <a href="" target="_blank"><AiOutlineGithub style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="250" /></a>
+                  <a href="https://www.reddit.com/user/Metapets" target="_blank"><BsReddit style={{color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300" /></a>
                 </div>
-                <div className="text-right">
-                  <p className="m-0  font-Montserrat  text-lg font-light ">
-                  </p><p id="mf-sec-para" className="m-0 para-in-utilities custom-text-black font-Montserrat  text-lg font-light">
-                  MetaFootball is a game that allows you to play as a manager of a A multiplayer, community-driven football game in which players can select from a variety of play styles.
-                  In one massive persistent, open-ended gaming universe, play as a manager, agent, club owner, stock trader, speculator, or any combination of these against thousands of players.
-                  Experience a vibrant football economy powered by blockchain technology, which provides you with complete realism, asset ownership, and ultimate control.
-                  </p>
-                  <p></p>
-                  <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className=" inline-btn  text-grey text-base shapiro-65 " href="https://meta-football.gitbook.io/whitepaper" target="_blank">
-                  LEARN
-                  MORE </a>
-                  <p className="m-0   font-Montserrat  text-base font-light ">
-                  </p><p className="opacity-80 font-Montserrat custom-text-black text-base font-light"></p><p></p>
-                </div>
-              </div>
-              <div className="tab-content lg:flex" id="tab3" >
-                <div className="player_img">
-                  <img data-aos="zoom-in" alt="" className=" mx-auto collection-images" src="/images/fifth_vector.png" />
-                </div>
-                <div className="text-right">
-                  <p className="m-0  font-Montserrat  text-lg font-light ">
-                  </p><p className="m-0 para-in-utilities custom-text-black font-Montserrat  text-lg font-light">
-                  The entire simulation will be available,as near as you can go to really executing the job, a simulation game that is unrivaled. Take command of the world's best sports teams and play the most beautiful games your way to get the closest thing to becoming a real manager. MetaFootball is a dynamic, breathing metaverse gaming environment with unrivaled realism and football authenticity that other football games can only dream to. MetaFootball's professional world will be meticulously modeled and reconstructed to provide you with all of the management power and resources you'll need to write your own football story and live out your goals. Purchase the players you desire, make a list of the tactics you prefer. Take the awards you want. It's your club, your rules.
-                  </p>
-                  <p></p>
-                  <a style={{background: '#F3D250', color: 'white', width: '100%', maxWidth: "200px"}} className=" inline-btn  text-grey text-base shapiro-65 " href="https://meta-football.gitbook.io/whitepaper" target="_blank">
-                  LEARN
-                  MORE </a>
-                  <p className="m-0   font-Montserrat  text-base font-light ">
-                  </p><p className="opacity-80 font-Montserrat custom-text-black text-base font-light"></p><p></p>
-                </div>
-              </div>
             </div>
-          </div>
+          </section>
+          <section id="section-canvas" className=" relative" style={{width: "100%", height: "50%"}}>
+            <Layout>
+            </Layout>
+          </section>
         </div>
-      </section>
-      <section className="plan py-8 xl:py-16 overflow-hidden">
-        <div style={{ display: "flex", justifyContent: 'space-between'}} className="container relative ">
-          <a href="https://poocoin.app/tokens/0x12de91acb5f544b37b1e66438324b8db26a91d8a" target="_blank"><img style={{width: "200px"}} className="" src="/images/poocoin.png" /></a>
-          <a href="https://bscscan.com/token/0x12DE91ACb5f544b37b1e66438324b8dB26A91D8a" target="_blank"><img style={{width: "200px"}} className="" src="/images/bsc_scan.png" /></a>
-          <a href="/" ><img style={{width: "200px"}} className="" src="/images/coingecko.png" /></a>
-          <a href="/" ><img style={{width: "200px"}} className="" src="/images/dextools.png" /></a>
-          <a href="/" ><img style={{width: "200px"}} className="" src="/images/marketcap.png" /></a>
-        </div>
-      </section>
-
-      <section style={{marginBottom: "40px"}} className="investor py-8 xl:py-16">
-        <div  className="container relative ">
-          <h2 className="text-white font-62 shapiro-85 mb-16 xl:mb-28 aos-init" data-aos="fade-up" data-aos-duration="400" data-aos-offset="-300">
-          BUY/SELL{/*&amp;*/} TAX 
-          <span className="shapiro-extd block text-yellow text-left uppercase ">Total 13%</span>
-          </h2>
-          <div style={{padding: '0px 20px'}} className="container ">
-          <div className="flow md:grid grid-cols-12 gap-8 ">
-            <div style={{padding: "23px", borderRadius: "10px", background: "rgb(24 24 24)"}} className="shadow-xl sm-mb-6 md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="flip-left" data-aos-duration="800">
-            <img style={{width: "150px", margin: '0 auto'}} className="" src="/images/bnb.png" />
-              <h2 style={{fontSize: "14px"}} className="text-white font-18 shapiro-85 mt-3 mb-3">INCENTIVE WALLET</h2>
-              <p style={{fontSize: "14px"}} className="custom-text-black  font-Montserrat text-base text-theme-gray-300 leading-6 font-light">To keep our community entertained and rewarded, 6% of every transaction will go to the incentive wallet.
-              </p>
-            </div>
-            <div style={{padding: "23px", borderRadius: "10px", background: "rgb(24 24 24)"}} className="shadow-xl sm-mb-6 md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
-            <img style={{width: "150px", margin: '0 auto'}} className="" src="/images/bunny.png" />
-              <h2 style={{fontSize: "14px"}} className="text-white font-18 shapiro-85 mt-3 mb-3">LIQUIDITY</h2>
-              <p style={{fontSize: "14px"}} className="custom-text-black font-Montserrat text-base text-theme-gray-300 leading-6 font-light">3% of every transaction goes to our locked liquidity pool MTF/BNB in PancakeSwap, creating an ever rising price floor.
-              </p>
-            </div>
-            <div style={{padding: "23px", borderRadius: "10px", background: "rgb(24 24 24)"}} className="shadow-xl sm-mb-6 md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="flip-left" data-aos-delay="200" data-aos-duration="800">
-            <img style={{width: "150px", margin: '0 auto'}} className="" src="/images/holding.png" />
-              <h2 style={{fontSize: "14px"}} className="text-white font-18 shapiro-85 mt-3 mb-3">REFLECTIONS</h2>
-              <p style={{fontSize: "14px"}} className="custom-text-black font-Montserrat text-base text-theme-gray-300 leading-6 font-light">After every buy/sell 2% will be distributed among our amazing holders.
-              </p>
-            </div>
-            <div style={{padding: "23px", borderRadius: "10px", background: "rgb(24 24 24)"}} className="shadow-xl md:col-span-6 lg:col-span-3 text-center aos-init aos-animate" data-aos="flip-left" data-aos-delay="300" data-aos-duration="800">
-            <img style={{width: "150px", margin: '0 auto'}} className="" src="/images/whale.png" />  
-              <h2 style={{fontSize: "14px"}} className="text-white font-18 shapiro-85 mt-3 mb-3">WHALE SAFETY</h2>
-              <p style={{fontSize: "14px"}} className="custom-text-black font-Montserrat text-base text-theme-gray-300 leading-6 font-light">To keep the price consistent and safeguard it from whales & paperhands, 2% will go to the buyback wallet as $MTF tokens.
-              </p>
-            </div>
-          </div>
-        </div>
-        </div>
-      </section>
+      </div>
       
-      <section className="team py-8 xl:py-16">
-        <div className="container relative ">
-          <h2 className="text-white font-62 shapiro-85 mb-12 aos-init aos-animate" data-aos="fade-up" data-aos-offset="-300"> PROMOTIONS BY
-          <span className="shapiro-extd block text-yellow text-left uppercase ">FOOTBALL STARS</span>
-          </h2>
-          
-          <div className="grid py-12 grid-cols-12 gap-4 md:gap-8 xl:gap-7 relative">
-            {/*
-            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/thiago_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Thiago Silva</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            
-            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/vinicius_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Vinicius Jr.</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            */}
-            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/vidal.jpg" />
-              </div>
-              <h4 className=" text-center text-white text-xl shapiro-65 mt-3 mb-1">Arturo Vidal</h4>
-              <div style={{display: 'flex'}} className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{display: 'none', color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://instagram.com/kingarturo23oficial?utm_medium=copy_link" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player2_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Arda Turan</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player12_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Sergio Busquets</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player1_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Dani Alves</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player4_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Marcelo</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player3_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Erling Halaand</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player8_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Paul Pogba</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player9_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Sergio Ramos</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/benzema_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Karim Benzema</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player13_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Raheem Sterling</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="300" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}} className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}} >
-                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player10_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Ronaldinho Gaucho</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player6_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Kilian Mbappe</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player11_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Cristiano Ronaldo</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user img-players-div" style={{height: "100px", width: "100px"}}>
-                <img className="img-players selector" style={{ height: "100px", width: "100px", margin: "0 auto", borderRadius: "50%"}} alt="" src="/images/player7_sil.png" />
-              </div>
-              <h4 className="img-players-name text-center text-white text-xl shapiro-65 mt-3 mb-1">Lionel Messi</h4>
-              <div className="links">
-                <a href="https://www.twitter.com" target="_blank">
-                <BsTwitter size={20} style={{color: '#1d9bf0', marginRight: "10px"}} />
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                <BsInstagram size={20} style={{color: '#a63494'}} />
-                </a>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </section>
-
-      <section className="roadmap py-8 xl:py-16">
-        <div className="container relative ">
-          <h2 className="text-white font-62 shapiro-85 mb-12 aos-init" data-aos="fade-up" data-aos-offset="-300"> ROADMAP
-          </h2>
-          <div className="md:grid grid-cols-12 border aos-init" data-aos="fade-up" data-aos-offset="-300">
-          <div className=" col-span-12 lg:col-span-3 text-center  py-12 px-6 border-r relative overflow-hidden">
-            <h3 className=" text-yellow text-3xl shapiro-65   mb-10"> Q1</h3>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Smart Contract Deployment</strike></p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Anti-Dump Security Measures</strike></p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Website Launch</strike>
-            </p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Release Whitepaper</strike></p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Establish Mod & Admins Team</strike></p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Build out Social Medias</strike></p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Build Social media management team</strike></p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Presale and launch date announced</strike></p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Marketing push to spread awareness</strike></p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Whitelist Contest for Presale</strike></p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"> <strike>Audit from InterFI & QuillAudits </strike></p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat"> <strike>$MTF Presale</strike></p>
-          </div>
-          <div className=" col-span-12 lg:col-span-3 text-center  py-12 px-6 border-r relative overflow-hidden">
-            <h3 className=" text-yellow text-3xl shapiro-65    mb-10"> Q2</h3>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Translation of the web to other languages</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8"><strike>CoinMarketCap Listing</strike></p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8"><strike>Coingecko Listing</strike></p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8"><strike>Crypto.com Listing</strike></p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8"><strike>Coinbase Listing</strike></p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Strategic Marketing Campaign</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">$MTF Football Prediction Telegram Group</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">$MTF Fifa Tournament - P2E</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Football Star Promotions</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Partnerships with Game developers</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-5">NFT Preview</p>
-          </div>
-          <div className=" col-span-12 lg:col-span-3 text-center  py-12 px-6 border-r relative overflow-hidden">
-            <h3 className=" text-yellow text-3xl shapiro-65    mb-10"> Q3</h3>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Merch Store</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">NFT Airdrop to Holders</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">NFT Public Sale</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Team Expansion</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Certik & Dessert Finance Audit</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">NFT Fantasy Football Development</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Exchange Listing</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Social Platform</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">$MTF Football Prediction Platform</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Partnerships with VR / AR developers</p>
-            <p className="custom-text-black text-md opacity-80  font-Montserrat ">Football team Sponsorship/Partnership</p>
-          </div>
-          <div className=" col-span-12 lg:col-span-3 text-center  py-12 px-6 border-r relative overflow-hidden">
-            <div className="gd"></div>
-              <h3 className=" text-yellow text-3xl shapiro-65    mb-10">Q4</h3>
-              <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">Release Fantasy Football - NFT Version</p>
-              <p className="custom-text-black text-md opacity-80  font-Montserrat   mb-8">BETA Release Football Manager - $MTF</p>
-              <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Preparing for the Metaverse</p>
-              <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Metaverse Concept reveal</p>
-              <p className="custom-text-black text-md opacity-80  font-Montserrat  mb-8">Metaverse Partnerships</p>
-            </div>
-          </div>
-        </div>
-      </section>
       
-      <section className="team py-8 xl:py-16">
-        <div className="container relative ">
-          <h2 className="text-white font-62 shapiro-85 mb-12 aos-init aos-animate" data-aos="fade-up" data-aos-offset="-300"> CORE TEAM
-          </h2>
-          
-          <div className="grid  grid-cols-12 gap-4 md:gap-8 xl:gap-20 relative">
-            <div data-aos="fade-right" data-aos-delay="300" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}} className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user">
-                <img style={{maxHeight: "200px", margin: "0 auto", borderRadius: "60px"}} alt="" src="/images/arkangel.jpg" />
-              </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-8 mb-3">ArkAngel</h4>
-              <p className="text-center text-white text-md font-Montserrat font-light">CEO</p>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user">
-                <img style={{maxHeight: "200px", margin: "0 auto"}} alt="" src="/images/logo_opt-removebg_opt-min.png" />
-              </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-8 mb-3">Zer0Bug</h4>
-              <p className="text-center text-white text-md  font-Montserrat  font-light">LEAD DEVELOPER</p>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user">
-                <img style={{maxHeight: "200px", margin: "0 auto"}} alt="" src="/images/logo_opt-removebg_opt-min.png" />
-              </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-8 mb-3">Sewastoz </h4>
-              <p className="text-center text-white text-md  font-Montserrat  font-light">MARKETING</p>
-            </div>
-            <div data-aos="fade-right" data-aos-delay="0" data-aos-duration="800" style={{padding: '10px', borderRadius: "10px"}}  className="team-box box col-span-6 md:col-span-4 aos-animate lg:col-span-3 ">
-              <div className="user">
-                <img style={{maxHeight: "200px", margin: "0 auto"}} alt="" src="/images/logo_opt-removebg_opt-min.png" />
-              </div>
-              <h4 className="text-center text-white text-xl shapiro-65 mt-8 mb-3">DannyD</h4>
-              <p className="text-center text-white text-md  font-Montserrat  font-light">DESIGNER</p>
-            </div>
-            
-            
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        <div className="container relative">
-          <div className="lg:grid grid-cols-12 gap-20 relative border-t py-8 md:py-20 items-center">
-            <div className="lg:col-span-4 text-center lg:text-left mb-14 lg:mb-0">
-              <a href="index.html">
-                <img alt="" src="/images/logo_opt-removebg_opt-min.png" style={{width: '100px'}} className="mx-auto lg:mx-0" />
-              </a>
-              <p className="mt-4 font-Montserrat text-xs opacity-80 text-white font-normal">
-              © 2021 MetaFootball. All rights reserved
-              </p>
-            </div>
-            <div className="mb-14 lg:mb-0 lg:col-span-4">
-              <div className="grid ">
-                <div className="col-span-10">
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light  text-base block text-center mb-5 hover:opacity-70 transition-all" href="#">Home</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center mb-5 hover:opacity-70 transition-all" href="https://meta-football.gitbook.io/whitepaper" target="_blank">Whitepaper</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all mb-5" href="https://meta-football.gitbook.io/metafootballtoken/tokenomics" target="_blank">Tokenomics</a>
-                  <a className="text-theme-lightblue-300 font-Montserrat font-light text-base block text-center hover:opacity-70 transition-all" href={"/nft.html"} target="_blank">NFT</a>
-                </div>
-              </div>
-            </div>
-            <div className="lg:col-span-4 text-center lg:text-right">
-              <a className="mr-5 inline-block hover:opacity-70 transition-all" href="https://twitter.com/metafootballbsc" target="_blank">
-              <BsTwitter size={30} style={{color: '#dad8d8'}} />
-              </a>
-              <a className="mr-5 inline-block hover:opacity-70 transition-all" href="https://t.me/metafootballbsc" target="_blank">
-              <FaTelegramPlane size={30} style={{color: '#dad8d8'}} />
-              </a>
-              <a className="mr-5 inline-block hover:opacity-70 transition-all" href="https://discord.gg/32WBak7D" target="_blank">
-              <FaDiscord size={30} style={{color: '#dad8d8'}} />
-              </a>
-              <a className=" inline-block hover:opacity-70 transition-all" href="https://poocoin.app/tokens/0x12de91acb5f544b37b1e66438324b8db26a91d8a" target="_blank">
-              <FaPoo size={30} style={{color: '#dad8d8'}}/>
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
 <style jsx>
   {
     `
-    #win-text {
-      margin-left:10px;
+    @media only screen and (min-width: 550px) {
+      #wrapper-mobile {
+        position: relative;
+        top: 10px;
+      }
+      #triangle-pic {
+        background-image: url("/images/triangle.png");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        align-items: end;
+      }
+      #icons-section {
+        position: relative;
+        top: 90px;
+        z-index: 12222;
+      }
+      #section-body {
+        min-height: 95vh;
+      }
+      #section-canvas {
+        position: absolute;
+        bottom: -2px;
+      }
+    }
+    @media only screen and (max-width: 549px) {
+      
+      #triangle-pic {
+        background-image: url("/images/triangle.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        align-items: center;
+      }
+      #icons-section {
+        position: relative;
+        top: 130px;
+        z-index: 12222;
+      }
+      #section-canvas {
+        position: absolute;
+        bottom: -2px;
+      }
+      #section-body {
+        min-height: 92vh;
+      }
+    }
+    
+    .lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      margin: auto;
+      width: 90vw; }
+    
+    .line {
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      top: 0;
+      left: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      overflow: hidden; }
+      .line::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 15vh;
+        width: 100%;
+        top: -50%;
+        left: 0;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+        animation: drop 7s 0s infinite;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97); }
+      .line:nth-child(1) {
+        margin-left: -25%; }
+        .line:nth-child(1)::after {
+          animation-delay: 2s; }
+      .line:nth-child(3) {
+        margin-left: 25%; }
+        .line:nth-child(3)::after {
+          animation-delay: 2.5s; }
+      .line:nth-child(4) {
+        margin-left: 35%; }
+        .line:nth-child(3)::after {
+          animation-delay: 2.5s; }
+      .line:nth-child(5) {
+        margin-left: 45%; }
+        .line:nth-child(3)::after {
+          animation-delay: 2.5s; }
+      .line:nth-child(6) {
+        margin-left: 55%; }
+        .line:nth-child(3)::after {
+          animation-delay: 2.5s; }
+      .line:nth-child(7) {
+        margin-left: 65%; }
+        .line:nth-child(3)::after {
+          animation-delay: 2.5s; }
+      .line:nth-child(8) {
+        margin-left: 75%; }
+        .line:nth-child(3)::after {
+          animation-delay: 2.5s; }
+      .line:nth-child(9) {
+        margin-left: 85%; }
+        .line:nth-child(3)::after {
+          animation-delay: 2.5s; }
+      .line:nth-child(10) {
+        margin-left: 95%; }
+        .line:nth-child(3)::after {
+          animation-delay: 2.5s; }
+    
+    @keyframes drop {
+      0% {
+        top: -50%; }
+      100% {
+        top: 110%; } }
+    .glitch {
+      position: relative;
+      color: #fff;
+      font-size: 80px;
+   }
+    .line:not(:first-child) {
+      position: absolute;
+      top: 0;
+      left: 0;
+   }
+    .line:nth-child(1) {
+      animation: clip 3000ms -300ms linear infinite, glitch1 500ms -477ms linear infinite;
+   }
+    @keyframes glitch1 {
+      0% {
+        transform: translateX(0);
+     }
+      80% {
+        transform: translateX(0);
+        color: #fff;
+     }
+      85% {
+        transform: translateX(-1px);
+        color: #4e9a26;
+     }
+      90% {
+        transform: translateX(1px);
+        color: #ac1212;
+     }
+      95% {
+        transform: translateX(0px);
+        color: #fff;
+     }
+      100% {
+        transform: translateX(0);
+     }
+   }
+    .line:nth-child(2) {
+      animation: clip 3000ms -600ms linear infinite, glitch2 500ms -85ms linear infinite;
+   }
+    @keyframes glitch2 {
+      0% {
+        transform: translateX(0);
+     }
+      80% {
+        transform: translateX(0);
+        color: #fff;
+     }
+      85% {
+        transform: translateX(-2px);
+        color: #4e9a26;
+     }
+      90% {
+        transform: translateX(3px);
+        color: #ac1212;
+     }
+      95% {
+        transform: translateX(-1px);
+        color: #fff;
+     }
+      100% {
+        transform: translateX(0);
+     }
+   }
+    .line:nth-child(3) {
+      animation: clip 3000ms -900ms linear infinite, glitch3 500ms -778ms linear infinite;
+   }
+    @keyframes glitch3 {
+      0% {
+        transform: translateX(0);
+     }
+      80% {
+        transform: translateX(0);
+        color: #fff;
+     }
+      85% {
+        transform: translateX(-2px);
+        color: #4e9a26;
+     }
+      90% {
+        transform: translateX(4px);
+        color: #ac1212;
+     }
+      95% {
+        transform: translateX(4px);
+        color: #fff;
+     }
+      100% {
+        transform: translateX(0);
+     }
+   }
+    .line:nth-child(4) {
+      animation: clip 3000ms -1200ms linear infinite, glitch4 500ms -860ms linear infinite;
+   }
+    @keyframes glitch4 {
+      0% {
+        transform: translateX(0);
+     }
+      80% {
+        transform: translateX(0);
+        color: #fff;
+     }
+      85% {
+        transform: translateX(-4px);
+        color: #4e9a26;
+     }
+      90% {
+        transform: translateX(4px);
+        color: #ac1212;
+     }
+      95% {
+        transform: translateX(2px);
+        color: #fff;
+     }
+      100% {
+        transform: translateX(0);
+     }
+   }
+    .line:nth-child(5) {
+      animation: clip 3000ms -1500ms linear infinite, glitch5 500ms -476ms linear infinite;
+   }
+    @keyframes glitch5 {
+      0% {
+        transform: translateX(0);
+     }
+      80% {
+        transform: translateX(0);
+        color: #fff;
+     }
+      85% {
+        transform: translateX(1px);
+        color: #4e9a26;
+     }
+      90% {
+        transform: translateX(-1px);
+        color: #ac1212;
+     }
+      95% {
+        transform: translateX(-3px);
+        color: #fff;
+     }
+      100% {
+        transform: translateX(0);
+     }
+   }
+    .line:nth-child(6) {
+      animation: clip 3000ms -1800ms linear infinite, glitch6 500ms -348ms linear infinite;
+   }
+    @keyframes glitch6 {
+      0% {
+        transform: translateX(0);
+     }
+      80% {
+        transform: translateX(0);
+        color: #fff;
+     }
+      85% {
+        transform: translateX(1px);
+        color: #4e9a26;
+     }
+      90% {
+        transform: translateX(1px);
+        color: #ac1212;
+     }
+      95% {
+        transform: translateX(5px);
+        color: #fff;
+     }
+      100% {
+        transform: translateX(0);
+     }
+   }
+    .line:nth-child(7) {
+      animation: clip 3000ms -2100ms linear infinite, glitch7 500ms -578ms linear infinite;
+   }
+    @keyframes glitch7 {
+      0% {
+        transform: translateX(0);
+     }
+      80% {
+        transform: translateX(0);
+        color: #fff;
+     }
+      85% {
+        transform: translateX(-2px);
+        color: #4e9a26;
+     }
+      90% {
+        transform: translateX(-1px);
+        color: #ac1212;
+     }
+      95% {
+        transform: translateX(2px);
+        color: #fff;
+     }
+      100% {
+        transform: translateX(0);
+     }
+   }
+    .line:nth-child(8) {
+      animation: clip 3000ms -2400ms linear infinite, glitch8 500ms -296ms linear infinite;
+   }
+    @keyframes glitch8 {
+      0% {
+        transform: translateX(0);
+     }
+      80% {
+        transform: translateX(0);
+        color: #fff;
+     }
+      85% {
+        transform: translateX(-4px);
+        color: #4e9a26;
+     }
+      90% {
+        transform: translateX(0px);
+        color: #ac1212;
+     }
+      95% {
+        transform: translateX(-1px);
+        color: #fff;
+     }
+      100% {
+        transform: translateX(0);
+     }
+   }
+    .line:nth-child(9) {
+      animation: clip 3000ms -2700ms linear infinite, glitch9 500ms -863ms linear infinite;
+   }
+    @keyframes glitch9 {
+      0% {
+        transform: translateX(0);
+     }
+      80% {
+        transform: translateX(0);
+        color: #fff;
+     }
+      85% {
+        transform: translateX(-1px);
+        color: #4e9a26;
+     }
+      90% {
+        transform: translateX(-3px);
+        color: #ac1212;
+     }
+      95% {
+        transform: translateX(-1px);
+        color: #fff;
+     }
+      100% {
+        transform: translateX(0);
+     }
+   }
+    .line:nth-child(10) {
+      animation: clip 3000ms -3000ms linear infinite, glitch10 500ms -462ms linear infinite;
+   }
+    @keyframes glitch10 {
+      0% {
+        transform: translateX(0);
+     }
+      80% {
+        transform: translateX(0);
+        color: #fff;
+     }
+      85% {
+        transform: translateX(-1px);
+        color: #4e9a26;
+     }
+      90% {
+        transform: translateX(0px);
+        color: #ac1212;
+     }
+      95% {
+        transform: translateX(2px);
+        color: #fff;
+     }
+      100% {
+        transform: translateX(0);
+     }
+   }
+    @keyframes clip {
+      0% {
+        clip-path: polygon(0 100%, 100% 100%, 100% 120%, 0 120%);
+     }
+      100% {
+        clip-path: polygon(0 -20%, 100% -20%, 100% 0%, 0 0);
+     }
+   }
+    .hero {
+      font-size: clamp(40px, 10vw, 100px);
+      line-height: 1;
+      display: inline-block;
+      color: #fff;
+      z-index: 2;
+      letter-spacing: 10px;
+    
+      /* Bright things in dark environments usually cast that light, giving off a glow */
+      filter: drop-shadow(0 1px 3px);
+    }
+    
+    
+    .layers {
+      position: relative;
+    }
+    
+    .layers::before,
+    .layers::after {
+      content: attr(data-text);
+      position: absolute;
+      width: 110%;
+      z-index: -1;
+    }
+    
+    .layers::before {
+      top: 10px;
+      left: 15px;
+      color: #e0287d;
+    }
+    
+    .layers::after {
+      top: 5px;
+      left: -10px;
+      color: #1bc7fb;
+    }
+    
+    .single-path {
+      clip-path: polygon(
+        0% 12%,
+        53% 12%,
+        53% 26%,
+        25% 26%,
+        25% 86%,
+        31% 86%,
+        31% 0%,
+        53% 0%,
+        53% 84%,
+        92% 84%,
+        92% 82%,
+        70% 82%,
+        70% 29%,
+        78% 29%,
+        78% 65%,
+        69% 65%,
+        69% 66%,
+        77% 66%,
+        77% 45%,
+        85% 45%,
+        85% 26%,
+        97% 26%,
+        97% 28%,
+        84% 28%,
+        84% 34%,
+        54% 34%,
+        54% 89%,
+        30% 89%,
+        30% 58%,
+        83% 58%,
+        83% 5%,
+        68% 5%,
+        68% 36%,
+        62% 36%,
+        62% 1%,
+        12% 1%,
+        12% 34%,
+        60% 34%,
+        60% 57%,
+        98% 57%,
+        98% 83%,
+        1% 83%,
+        1% 53%,
+        91% 53%,
+        91% 84%,
+        8% 84%,
+        8% 83%,
+        4% 83%
+      );
+    }
+    
+    
+    @keyframes paths {
+      0% {
+        clip-path: polygon(
+          0% 43%,
+          83% 43%,
+          83% 22%,
+          23% 22%,
+          23% 24%,
+          91% 24%,
+          91% 26%,
+          18% 26%,
+          18% 83%,
+          29% 83%,
+          29% 17%,
+          41% 17%,
+          41% 39%,
+          18% 39%,
+          18% 82%,
+          54% 82%,
+          54% 88%,
+          19% 88%,
+          19% 4%,
+          39% 4%,
+          39% 14%,
+          76% 14%,
+          76% 52%,
+          23% 52%,
+          23% 35%,
+          19% 35%,
+          19% 8%,
+          36% 8%,
+          36% 31%,
+          73% 31%,
+          73% 16%,
+          1% 16%,
+          1% 56%,
+          50% 56%,
+          50% 8%
+        );
+      }
+    
+      5% {
+        clip-path: polygon(
+          0% 29%,
+          44% 29%,
+          44% 83%,
+          94% 83%,
+          94% 56%,
+          11% 56%,
+          11% 64%,
+          94% 64%,
+          94% 70%,
+          88% 70%,
+          88% 32%,
+          18% 32%,
+          18% 96%,
+          10% 96%,
+          10% 62%,
+          9% 62%,
+          9% 84%,
+          68% 84%,
+          68% 50%,
+          52% 50%,
+          52% 55%,
+          35% 55%,
+          35% 87%,
+          25% 87%,
+          25% 39%,
+          15% 39%,
+          15% 88%,
+          52% 88%
+        );
+      }
+    
+      30% {
+        clip-path: polygon(
+          0% 53%,
+          93% 53%,
+          93% 62%,
+          68% 62%,
+          68% 37%,
+          97% 37%,
+          97% 89%,
+          13% 89%,
+          13% 45%,
+          51% 45%,
+          51% 88%,
+          17% 88%,
+          17% 54%,
+          81% 54%,
+          81% 75%,
+          79% 75%,
+          79% 76%,
+          38% 76%,
+          38% 28%,
+          61% 28%,
+          61% 12%,
+          55% 12%,
+          55% 62%,
+          68% 62%,
+          68% 51%,
+          0% 51%,
+          0% 92%,
+          63% 92%,
+          63% 4%,
+          65% 4%
+        );
+      }
+    
+      45% {
+        clip-path: polygon(
+          0% 33%,
+          2% 33%,
+          2% 69%,
+          58% 69%,
+          58% 94%,
+          55% 94%,
+          55% 25%,
+          33% 25%,
+          33% 85%,
+          16% 85%,
+          16% 19%,
+          5% 19%,
+          5% 20%,
+          79% 20%,
+          79% 96%,
+          93% 96%,
+          93% 50%,
+          5% 50%,
+          5% 74%,
+          55% 74%,
+          55% 57%,
+          96% 57%,
+          96% 59%,
+          87% 59%,
+          87% 65%,
+          82% 65%,
+          82% 39%,
+          63% 39%,
+          63% 92%,
+          4% 92%,
+          4% 36%,
+          24% 36%,
+          24% 70%,
+          1% 70%,
+          1% 43%,
+          15% 43%,
+          15% 28%,
+          23% 28%,
+          23% 71%,
+          90% 71%,
+          90% 86%,
+          97% 86%,
+          97% 1%,
+          60% 1%,
+          60% 67%,
+          71% 67%,
+          71% 91%,
+          17% 91%,
+          17% 14%,
+          39% 14%,
+          39% 30%,
+          58% 30%,
+          58% 11%,
+          52% 11%,
+          52% 83%,
+          68% 83%
+        );
+      }
+    
+      76% {
+        clip-path: polygon(
+          0% 26%,
+          15% 26%,
+          15% 73%,
+          72% 73%,
+          72% 70%,
+          77% 70%,
+          77% 75%,
+          8% 75%,
+          8% 42%,
+          4% 42%,
+          4% 61%,
+          17% 61%,
+          17% 12%,
+          26% 12%,
+          26% 63%,
+          73% 63%,
+          73% 43%,
+          90% 43%,
+          90% 67%,
+          50% 67%,
+          50% 41%,
+          42% 41%,
+          42% 46%,
+          50% 46%,
+          50% 84%,
+          96% 84%,
+          96% 78%,
+          49% 78%,
+          49% 25%,
+          63% 25%,
+          63% 14%
+        );
+      }
+    
+      90% {
+        clip-path: polygon(
+          0% 41%,
+          13% 41%,
+          13% 6%,
+          87% 6%,
+          87% 93%,
+          10% 93%,
+          10% 13%,
+          89% 13%,
+          89% 6%,
+          3% 6%,
+          3% 8%,
+          16% 8%,
+          16% 79%,
+          0% 79%,
+          0% 99%,
+          92% 99%,
+          92% 90%,
+          5% 90%,
+          5% 60%,
+          0% 60%,
+          0% 48%,
+          89% 48%,
+          89% 13%,
+          80% 13%,
+          80% 43%,
+          95% 43%,
+          95% 19%,
+          80% 19%,
+          80% 85%,
+          38% 85%,
+          38% 62%
+        );
+      }
+    
+      1%,
+      7%,
+      33%,
+      47%,
+      78%,
+      93% {
+        clip-path: none;
+      }
+    }
+    
+    .movement {
+      /* Normally this position would be absolute & on the layers, set to relative here so we can see it on the div */
+      position: relative;
+      animation: movement 8s step-end infinite;
+    }
+    
+    @keyframes movement {
+      0% {
+        top: 0px;
+        left: -20px;
+      }
+    
+      15% {
+        top: 10px;
+        left: 10px;
+      }
+    
+      60% {
+        top: 5px;
+        left: -10px;
+      }
+    
+      75% {
+        top: -5px;
+        left: 20px;
+      }
+    
+      100% {
+        top: 10px;
+        left: 5px;
+      }
+    }
+    
+    .opacity {
+      animation: opacity 5s step-end infinite;
+    }
+    
+    @keyframes opacity {
+      0% {
+        opacity: 0.1;
+      }
+    
+      5% {
+        opacity: 0.7;
+      }
+    
+      30% {
+        opacity: 0.4;
+      }
+    
+      45% {
+        opacity: 0.6;
+      }
+    
+      76% {
+        opacity: 0.4;
+      }
+    
+      90% {
+        opacity: 0.8;
+      }
+    
+      1%,
+      7%,
+      33%,
+      47%,
+      78%,
+      93% {
+        opacity: 0;
+      }
+    }
+    
+    .font {
+      animation: font 7s step-end infinite;
+    }
+    
+    @keyframes font {
+      0% {
+        font-weight: 100;
+        color: #e0287d;
+        filter: blur(3px);
+      }
+    
+      20% {
+        font-weight: 500;
+        color: #fff;
+        filter: blur(0);
+      }
+    
+      50% {
+        font-weight: 300;
+        color: #1bc7fb;
+        filter: blur(2px);
+      }
+    
+      60% {
+        font-weight: 700;
+        color: #fff;
+        filter: blur(0);
+      }
+    
+      90% {
+        font-weight: 500;
+        color: #e0287d;
+        filter: blur(6px);
+      }
+    }
+    
+    .glitch span {
+      animation: paths 5s step-end infinite;
+    }
+    
+    .glitch::before {
+      animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+        font 8s step-end infinite, movement 10s step-end infinite;
+    }
+    
+    .glitch::after {
+      animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+        font 7s step-end infinite, movement 8s step-end infinite;
+    }
+    
+    .hero-container {
+      position: relative;
+      padding: 0 0;
+      text-align: center;
+    }
+    .typing-demo {
+      width: 12ch;
+      animation: typing 2s steps(12), blink .5s step-end infinite alternate;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid;
+      font-family: monospace;
+      font-size: 2em;
+    }
+    
+    @keyframes typing {
+      from {
+        width: 0
+      }
+    }
+        
+    @keyframes blink {
+      50% {
+        border-color: transparent
+      }
+    }
+    .rhomboid {
+      border-top-right-radius: 38px;
+      background-color: #cbc9c9;
+      box-shadow: 10px 7px 11px -3px rgb(0 0 0);
+      border-right: 3px solid #0e0e13;
+      border-bottom-right-radius: 79px;
+      border-top-left-radius: 38px;
+      border-bottom-left-radius: 69px;
+    }
+    #background {
+      z-index: -1;
     }
     .text-2xl {
       font-size: 1.3rem;
     }
-    .selector {
-      user-drag: none;
-      -webkit-user-drag: none;
-      user-select: none;
-      -moz-user-select: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;
-    }
-    .collection-images {
-      height: 316px;
-    }
-    .links {
-      display: none; // display: flex;
-      justify-content: center;
-    }
-    .img-players-div{
-      background: rgba(63,75,149);
-      transition: border-radius 1s ease-out;
-      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-      overflow: hidden;
-      z-index: 5;
-      margin: 0 auto;
-    }
-    .img-players-name {
-      display:none;
-    }
-    .img-players{
-      transition: border-radius 1s ease-out;
-      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-      animation: morph 3s ease-in-out infinite both alternate;
-      
-      position: absolute;
-      overflow: hidden;
-      z-index: 5;
-      opacity: 0.8;
-    }
-
-    @keyframes morphdiv {
-      0% {border-radius: 60% 40% 40% 60% / 30% 60% 70% 30%;} 
-      100% {border-radius: 60% 40%;} 
-    }
     
-    @keyframes spindiv {
-      to {
-        transform: rotate(1turn);
-      }
-    }
-
-    @keyframes morph {
-      0% {border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;} 
-      100% {border-radius: 40% 60%;} 
-    }
-    
-    @keyframes spin {
-      to {
-        transform: rotate(1turn);
-      }
-    }
-
-    .btn-on-active:hover {
-      background-color: rgb(52 62 122);
-    }
-    .btn-on-active {
-      background-color: #3f4b95;
-    }
-    
-    #custom-tooltip {
-      display: none;
-      padding: 5px 12px;
-      padding-bottom: 5px;
-      background-color: #F3D250;
-      border-radius: 4px;
-      font-weight: bold;
-      color: #000000;
-      max-height: 35px;
-      margin-right: 40px;
-      position:relative;
-      top: 8px;
-    }
-    #input-div-span1 {
-      width: 70%;
-    }
-    #input-div-span2 {
-      width: 30%;
-    }
-    .team-box {
-      background: rgb(63,75,149);
-      background: linear-gradient(0deg, rgba(63,75,149,1) 0%, rgba(41,48,94,1) 45%, rgba(0,0,0,1) 100%);
-    }
     .text-theme-gray-300 {
       color: rgba(255, 255, 255, 0.8);
     }
@@ -936,6 +1115,9 @@ export default function Home() {
     .shapiro-85 {
       font-family: 'Shapiro 85 Super Heavy Extd';
     }
+    .revamped {
+      font-family: 'Revamped';
+    }
     .font-22 {
         font-size: 22px;
         line-height: 30px;
@@ -943,12 +1125,7 @@ export default function Home() {
       .font-26 {
         font-size: 26px;
     }
-    @media screen and (max-width: 1279px){
-      .font-62 {
-          font-size: 40px;
-          line-height: 50px;
-      }
-    }
+    
     .text-lg {
       font-size: 1.125rem;
       line-height: 1.75rem;
@@ -959,14 +1136,7 @@ export default function Home() {
     .opacity-70 {
         opacity: 0.7;
     }
-    @media screen and (max-width: 767px){
-      .mobile-menu {
-          display: block;
-      }
-      .collection-images {
-        max-height: 208px;
-      }
-    }
+    
     .mobile-menu {
       display: none;
       position: fixed;
@@ -984,96 +1154,47 @@ export default function Home() {
       .container {
         padding: 0px 30px;
       }
-    }
-    @media screen and (max-width: 1439px){
-      .container {
-        padding: 0px 40px;
+
+      .font-62 {
+        font-size: 40px;
+        line-height: 50px;
       }
-    }
-    
-    @media screen and (max-width: 1279px){
+
       .font-82 {
         font-size: 60px;
         line-height: 70px;
       }
-      .first-para {
-        display: grid;
+
+      .text-3xl {
+        font-size: 1.275rem;
+        line-height: 1.75rem;
       }
     }
-    .inline-btn {
-      position: relative;
-      width: 293px;
-      margin: 65px 0px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      height: 50px;
-      background: #F3D250;
-      transition: 0.3s;
+
+    @media screen and (max-width: 1439px){
+      .container {
+        padding: 0px 40px;
+      }
+
+      .font-62 {
+        font-size: 50px;
+      }
     }
-    #tabs-nav li.active a {
-      border-bottom: 1px solid #EB00FF;
-      color: #F3D250;
-    }
-    #tabs-nav li.active a {
-      border-bottom: 1px solid #F3D250;
-      color: #F3D250;
-    }
-    #tabs-nav li a {
-      border-bottom: 1px solid #024a93;
-      padding-bottom: 10px;
-      transition: 0.3s;
-      cursor: pointer;
-      color: white;
-    }
-    .inline-btn:before {
-      box-shadow: 1px 1px 1px #bd9700;
-      content: "";
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      transition: 0.3s;
-    }
-    #tab2, #tab3{
-      display:none;
-    }
-    .plan ul li:before {
-      content: "";
-      background-image: url(/images/b19cb1a50c08be7f52b7.svg);
-      height: 20px;
-      background-size: 10px;
-      display: block;
-      background-repeat: no-repeat;
-      position: absolute;
-      top: 9px;
-      background-position: 0px 0px;
-      width: 20px;
-      left: -25px;
-    }
+    
     .font-82 {
       font-size: 78px;
       line-height: 86px;
     }
-    @media screen and (max-width: 1439px){
-      .font-62 {
-          font-size: 50px;
-      }
-    }
+
     .font-62 {
-        line-height: 75px;
-        font-size: 62px;
+      line-height: 75px;
+      font-size: 62px;
     }
+
     .font-Montserrat {
       font-family: 'Montserrat', sans-serif;
     }
-    .player_img {
-      max-width: 400px;
-      flex: 0 0 400px;
-      position: relative;
-    }
+    
     @media (min-width: 1024px){
       .container {
         max-width: 1024px;
@@ -1089,116 +1210,25 @@ export default function Home() {
         max-width: 640px;
       }
     }
-    @media (min-width: 1240px){
-      .para-in-utilities {
-        height: 310px;
-      }
-    }
     .container {
       max-width: 1440px;
       margin: 0 auto;
       padding: 0px 85px;
     }
-    .train-player {
-      background: url(/images/35160075862b1951f2f4.png) no-repeat center;
-      background-size: cover;
-    }
-    .transition-all {
-      transition-property: all;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
-    }
+   
     .text-theme-lightblue-300 {
         --tw-text-opacity: 1;
         color: rgba(0, 178, 255, var(--tw-text-opacity));
     }
-    .drop-band--main-band {
-      display: flex; 
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .train-player .drop-band .drop-band--main-band {
-      position: absolute;
-      z-index: 2;
-      width: 100%;
-      height: 3.5em;
-      box-shadow: -10px 10px 16px 0 rgb(0 0 0 / 40%);
-      background: #F3D250;
-      background-repeat: repeat-x;
-      background-position: center;
-      background-size: 90%;
-    }
-    @media (min-width: 980px){
-      .train-player .drop-band .drop-band--main-band {
-        height: 4em;
-        background-size: 40%;
-      }
-    }
-    @media (min-width: 980px){
-      .train-player .drop-band .drop-band--secondary-band {
-        height: 5em;
-      }
-    }
-    .train-player .drop-band .drop-band--secondary-band {
-      width: 100%;
-      height: 4.5em;
-      background: #e6e60e;
-    }
-    @media (min-width: 980px){
-      .train-player .drop-band {
-        bottom: 30px;   
-      }
-    }
-    .train-player .drop-band {
-      position: absolute;
-      width: 100%;
-      bottom: -24px;
-      left: 0;
-    }
-    .rrss-icons a img {
-      width: 100%;
-      height: 100%;
-      -o-object-fit: contain;
-      object-fit: contain;
-    }
-    .rrss-icons a {
-      display: block;
-      width: 42px;
-      height: 42px;
-    }
-    @media (min-width: 1024px){
-      .rrss-icons .container {
-        max-width: 720px;
-      }
-    }
-    @media (min-width: 980px){
-      .train-player .drop-band {
-        bottom: 30px;
-      }
-    }
-    @media (min-width: 980px){
-      .train-player .drop-band .drop-band--secondary-band {
-        height: 5em;
-      }
-    }
-    .investor .gd {
-      background: radial-gradient(50% 50% at 50% 50%, #FFFFEE 0%, rgba(255, 255, 238, 0) 100%);
-      max-width: 1440px;
-      height: 295px;
-      left: 0px;
-      right: 0;
-      margin: 0 auto;
-      top: -124px;
-      position: absolute;
-      opacity: 0.12;
-      transform: rotate(180deg);
-    }
+    
     .text-blue {
       color: #0575e5;
     }
     .text-purple {
       color: #a72b7f;
+    }
+    .text-purple-blue {
+      color: #552AE0;
     }
     .text-white {
       color: white;
@@ -1212,35 +1242,7 @@ export default function Home() {
     .text-yellow {
       color: #F3D250;
     }
-    .anchor-change {
-      width: 110px;
-      text-align: center;
-      padding-bottom: 10px;
-      border-bottom:2px solid #024a93;
-    }
-    @media screen and (max-width: 979px){
-      .train-player .grid-cols-12 {
-          display: flex;
-          flex-direction: column-reverse;
-          justify-content: center;
-          align-items: center;
-      }
-    }
-    @media screen and (max-width: 979px){
-      .train-player .font-82 {
-          text-align: center;
-      }
-    }
-    @media screen and (max-width: 1279px){
-      .font-82 {
-          font-size: 60px;
-          line-height: 70px;
-      }
-      .text-3xl {
-        font-size: 1.275rem;
-        line-height: 1.75rem;
-      }
-    }
+  
     .grid-cols-12 {
         grid-template-columns: repeat(12, minmax(0, 1fr));
     }
@@ -1248,271 +1250,25 @@ export default function Home() {
       .container {
         padding: 0px 25px;
       }
-    }
-    @media screen and (max-width: 1279px){
-      .container {
-        padding: 0px 30px;
-      }
-    }
-    @media screen and (max-width: 1439px){
-      .container {
-        padding: 0px 40px;
-      }
-    }
-    @media screen and (min-width: 768px){
-      #logo-img {
-        left: -60px;
-      }
-      #top-div {
-        margin-bottom: 95px;
-      }
-      #copy-address-button {
-        font-size: 15px;
-      }
-      #copy-address {
-        font-size: 12px;
-      }
-    }
-    
-    @media screen and (max-width: 767px){
-      .train-player .font-22 {
-        font-size: 18px !important;
-        line-height: 30px !important;
-        margin-top: 20px !important;
-      }
-      #logo-img {
-        left: 0px;
-        margin: 0 auto;
-      }
-      #top-div {
-        margin-bottom: 25px;
-      }
-      #copy-address-button {
-        font-size: 15px;
-      }
-      #copy-address {
-        font-size: 12px;
-      }
-      .player_img {
-        margin-top: 40px;
-        margin-bottom: 40px;
-      }
-    }
-    .train-player .drop-band a {
-      display: inline-block;
-      position: relative;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-    @media screen and (max-width: 767px){
-      .steps .text-center {
-        text-align: center;
-        padding: 20px;
-      }
-    }
-    @media screen and (max-width: 767px){
-      .meta-assets .font-62 {
-        font-size: 28px;
-        line-height: 38px;
-        word-break: break-word;
-        text-align: center;
-      }
-    }
-    @media screen and (max-width: 767px){
-    ul#tabs-nav {
-        top: 620px;
-        padding: 0px 15px;
-        display: flex;
-        justify-content: center;
-      }
-    }
-    @media screen and (max-width: 979px){
-      ul#tabs-nav {
-        z-index: 9;
-        width: 82%;
-        left: 0px;
-        right: 0px;
-        margin: 0 auto;
-        padding: 0px 20px;
-        margin-top: 20px;
-      }
-    }
-    #button-mfts1 {
-      margin-right: 15px;
-    }
-    
-    @media screen and (max-width: 767px){
-      ul#tabs-nav li {
-        margin: 0px;
-        text-align: center;
-        flex: 0 0 50%;
-      }
-      .player_img {
-        margin-top: 40px;
-        margin-bottom: 40px;
-      }
-    }
-    @media screen and (max-width: 767px){
-      ul#tabs-nav li {
-        margin: 0px;
-        text-align: center;
-        flex: 0 0 50%;
-      }
-    }
-    @media screen and (max-width: 767px)
-    {
-      #tabs-nav li a {
-          display: block;
-          font-size: 10px;
-      }
-    }
-    @media screen and (max-width: 979px){
-      .player_img {
-        margin-top: 0px;
-        margin-bottom: 100px;
-      }
-    }
-    @media screen and (max-width: 767px){
+
       .font-62 {
         font-size: 30px;
         line-height: 45px;
         text-align: center;
       }
     }
-    @media screen and (max-width: 767px){
-      h2.font-62, h2 span {
-        text-align: center;
-      }
-      .last-join-us {
-        display: none;
-      }
-    }
-    .menu {
-      display:none;
-    }
-    @media screen and (max-width: 767px){
-      .menu {
-          display: inline-block;
-      }
-      .player_img {
-        margin-top: 40px;
-        margin-bottom: 40px;
-      }
-    }
-    .mobile-menu.show {
-      transform: translateX(0px);
-    }
-    @media screen and (max-width: 767px){
-      .mobile-menu {
-          display: block;
-      }
-    }
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      width: calc(100% - 80px);
-      height: 100%;
-      z-index: 20;
-      background: black;
-      top: 0px;
-      left: 0px;
-      padding: 50px 15px;
-      transform: translateX(-800px);
-      transition: 0.5s;
-    }
+  
     @media screen and (max-width: 900px){
       .font-62 {
         font-size: 40px;
       }
     }
     @media screen and (max-width: 455px){
-      ul#tabs-nav {
-        z-index: 9;
-        width: 82%;
-        left: 0px;
-        right: 0px;
-        margin: 0 auto;
-        padding: 0px 20px;
-        margin-top: 20px;
-      }
-      #mf-sec-para {
-        /*
-        max-width: 230px;
-        margin: 0 auto;
-        */
-      }
-      #win-text {
-        margin-left: 0px;
-      }
       .text-2xl{
         font-size: 0.7rem;
       }
-      #input-div-span1, #input-div-span2 {
-        width: 50%;
-      }
-      .button-mfts {
-        font-size: 90%;
-      }
-      #button-mfts1 {
-        margin-right: 5px;
-      }
-      .text-right {
-        text-align: center;
-      }
-      .sm-mb-6 {
-        margin-bottom: 15px;
-      }
-      .change-on-small {
-        font-size: 10px;
-      }
-      #custom-tooltip {
-        margin-right: 0px;
-        top: 5px;
-      }
-      #copy-address-button {
-        font-size: 15px;
-      }
-      .meta-assets .font-62 {
-        font-size: 19px;
-        line-height: 38px;
-        word-break: break-word;
-        text-align: center;
-      }
       .font-62 {
         font-size: 24px;
-      }
-    }
-    #tab1, #tab2, #tab3{
-      /* other propertites */
-      transition: all 1s ease-in-out;
-    }
-    div {
-      
-        /* other propertites */
-        transition: all 3s ease-in-out;
-      
-    }
-    #logo-img {
-      animation: MoveUpDown 4s linear infinite;
-    }
-    #copy-address-btn {
-      animation: wiggle 1s linear infinite;
-    }
-    @keyframes MoveUpDown {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-    @keyframes wiggle {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
       }
     }
     `

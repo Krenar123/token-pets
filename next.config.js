@@ -1,3 +1,4 @@
+
 const withCss = require('@zeit/next-css');
 
 module.exports = {
@@ -9,7 +10,6 @@ module.exports = withCss({
     exportPathMap: function() {
         return {
             '/': { page: '/' },
-            '/nft': { page: '/nft' },
         };
     },
 });

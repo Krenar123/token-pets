@@ -10,3 +10,11 @@
     font-family: "Shapiro 97 Air Extd";
     src: url("/fonts/Shapiro/Shapiro 97 Air Extd.otf");
 }
+@font-face {
+    font-family: "Revamped";
+    src: url("/fonts/Shapiro/Revamped.ttf");
+}
+@font-face {
+    font-family: "RocketRinder";
+    src: url("/fonts/Shapiro/RocketRinder.ttf");
+}
