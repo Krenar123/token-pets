@@ -30,7 +30,7 @@
   "devDependencies": {
     "autoprefixer": "^9.8.8",
     "babel-core": "^7.0.0-bridge.0",
-    "postcss": "^7.0.39",
+    "postcss": "^8.2.13",
     "postcss-preset-env": "^7.0.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
