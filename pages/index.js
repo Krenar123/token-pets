@@ -101,11 +101,11 @@ export default function Home() {
 
       <body style={{background: "#0E0D17"}} className="bg-black ld" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
       <header style={{backgroundColor: '#1A1A22'}} className="bg-white">
-        <div style={{paddingLeft: "0px", marginLeft: "0"}}  className="container  flex justify-between items-center ">
-          <a style={{padding: "10px 30px", paddingLeft: "5%"}} className="rhomboid change-on-small md:inline-block  text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase " href="#"><img style={{maxWidth: "55px"}} src="/images/logo.png" /></a>
+        <div   className="container  flex justify-between items-center ">
+          <a style={{padding: "10px 30px"}} className="rhomboid change-on-small md:inline-block  text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase " href="#"><img style={{maxWidth: "55px"}} src="/images/logo.png" /></a>
         </div>
       </header>
-      <div id="section-body" style={{position:"relative"}} className=" flex flex-row bg-gray-100">
+      <div id="section-body" style={{position:"relative", overflow: "hidden"}} className=" flex flex-row bg-gray-100">
       <div className="lines">
         <div className="line"></div>
         <div className="line"></div>
@@ -214,6 +214,7 @@ export default function Home() {
         bottom: -2px;
       }
     }
+    
     @media only screen and (max-width: 549px) {
       
       #triangle-pic {
@@ -235,7 +236,11 @@ export default function Home() {
         min-height: 92vh;
       }
     }
-    
+    @media only screen and (min-width: 1500px) {
+      #section-body {
+        min-height: 105vh;
+      }
+    }
     .lines {
       position: absolute;
       top: 0;
