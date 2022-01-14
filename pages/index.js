@@ -207,7 +207,7 @@ export default function Home() {
         z-index: 12222;
       }
       #section-body {
-        min-height: 95vh;
+        min-height: 92vh;
       }
       #section-canvas {
         position: absolute;
@@ -238,7 +238,7 @@ export default function Home() {
     }
     @media only screen and (min-width: 1500px) {
       #section-body {
-        min-height: 105vh;
+        min-height: 95vh;
       }
     }
     .lines {
