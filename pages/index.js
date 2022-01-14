@@ -275,15 +275,15 @@ export default function Home() {
         .line:nth-child(1)::after {
           animation-delay: 2s; }
       .line:nth-child(3) {
-        margin-left: 25%; }
+        margin-left: 15%; }
         .line:nth-child(3)::after {
           animation-delay: 2.5s; }
       .line:nth-child(4) {
-        margin-left: 35%; }
+        margin-left: 45%; }
         .line:nth-child(3)::after {
           animation-delay: 2.5s; }
       .line:nth-child(5) {
-        margin-left: 45%; }
+        margin-left: 35%; }
         .line:nth-child(3)::after {
           animation-delay: 2.5s; }
       .line:nth-child(6) {
@@ -291,19 +291,19 @@ export default function Home() {
         .line:nth-child(3)::after {
           animation-delay: 2.5s; }
       .line:nth-child(7) {
-        margin-left: 65%; }
-        .line:nth-child(3)::after {
-          animation-delay: 2.5s; }
-      .line:nth-child(8) {
         margin-left: 75%; }
         .line:nth-child(3)::after {
           animation-delay: 2.5s; }
+      .line:nth-child(8) {
+        margin-left: 65%; }
+        .line:nth-child(3)::after {
+          animation-delay: 2.5s; }
       .line:nth-child(9) {
-        margin-left: 85%; }
+        margin-left: 95%; }
         .line:nth-child(3)::after {
           animation-delay: 2.5s; }
       .line:nth-child(10) {
-        margin-left: 95%; }
+        margin-left: 85%; }
         .line:nth-child(3)::after {
           animation-delay: 2.5s; }
     
