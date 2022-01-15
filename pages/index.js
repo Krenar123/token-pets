@@ -58,31 +58,21 @@ export default function Home() {
   }, []);
 
   */
+ 
  const handleCopy = () => {
    let address = document.getElementById("copy-address-value");
+   let btn = document.getElementById("copy-button-a");
    address.select();
    address.setSelectionRange(0, 99999); 
 
    navigator.clipboard.writeText(address.value);
    setEffect(true);
    address.blur();
+   
+   btn.style.textDecoration = "line-through";
    setTimeout( function() {
-    var animateButton = function(e) {
-
-      e.preventDefault;
-      //reset animation
-      e.target.classList.remove('animate');
-      
-      e.target.classList.add('animate');
-      setTimeout(function(){
-        e.target.classList.remove('animate');
-      },700);
-    };
-    var bubblyButtons = document.getElementsByClassName("bubbly-button");
-
-    for (var i = 0; i < bubblyButtons.length; i++) {
-      bubblyButtons[i].addEventListener('click', animateButton, false);
-    }
+    
+    
    }, 1000);
    
  };
@@ -205,8 +195,8 @@ export default function Home() {
                     <div id="copy-address">
                       <input style={{background: "#0e0d17", border:"none", width:"100%"}}id="copy-address-value" value="0x24ce3d571fbcfd9d81dc0e1a560504636a4d046d" />
                     </div>
-                    <div id="copy-button">
-                      <a style={{cursor: "pointer"}} onClick={() => { handleCopy(); }} className="bubbly-button">COPY ADDRESS</a>
+                    <div id="copy-button" className="bubbly-button">
+                      <a id="copy-button-a" style={{cursor: "pointer"}} onClick={() => { handleCopy(); }} >COPY ADDRESS</a>
                     </div>
                   </div>
                 </div>
@@ -225,8 +215,13 @@ export default function Home() {
   {
     `
     .bubbly-button {
-	
-      transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+      -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+           
    }
     .bubbly-button:focus {
       outline: 0;
@@ -255,8 +250,8 @@ export default function Home() {
       background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
    }
     .bubbly-button:active {
-      transform: scale(0.2);
-      box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+      background: #0e0d17;
+      text-decoration: line-through;
    }
     .bubbly-button.animate:before {
       display: block;
