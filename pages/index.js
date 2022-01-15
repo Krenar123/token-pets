@@ -56,22 +56,20 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, []);
-  const handleCopy = () => {
-    let address = document.getElementById("copy-address");
-    address.select();
-    address.setSelectionRange(0, 99999); For mobile devices 
- 
-     Copy the text inside the text field 
-    navigator.clipboard.writeText(address.value);
-    setEffect(true);
-    address.blur();
-    document.getElementById("custom-tooltip").style.display = "inline";
-    setTimeout( function() {
-        document.getElementById("custom-tooltip").style.display = "none";
-    }, 1000);
-    
-  };
+
   */
+ const handleCopy = () => {
+   let address = document.getElementById("copy-address-value");
+   address.select();
+   address.setSelectionRange(0, 99999); 
+
+   navigator.clipboard.writeText(address.value);
+   setEffect(true);
+   address.blur();
+   setTimeout( function() {
+   }, 1000);
+   
+ };
   // This will work in Safari
 
   return (
@@ -100,11 +98,8 @@ export default function Home() {
       </Head>
 
       <body style={{background: "#0E0D17"}} className="bg-black ld" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
-      <header style={{backgroundColor: '#1A1A22'}} className="bg-white">
-        <div   className="container  flex justify-between items-center ">
-          <a style={{padding: "10px 30px"}} className="rhomboid change-on-small md:inline-block  text-white  font-Montserrat  text-sm  font-bold anchor-change uppercase " href="#"><img style={{maxWidth: "55px"}} src="/images/logo.png" /></a>
-        </div>
-      </header>
+      
+      
       <div id="section-body" style={{position:"relative", overflow: "hidden"}} className=" flex flex-row bg-gray-100">
       <div className="lines">
         <div className="line"></div>
@@ -159,23 +154,45 @@ export default function Home() {
           </ul>
         </div>
         <div style={{width: "100%"}}>
-          <section id="triangle-pic" style={{width: "100%", height: "50%", display:"flex", justifyContent: "center"}}>
-          <div className="wrapper" id="wrapper-mobile">
-                <div className="hero-container">
+          
+          
+          <section id="triangle-pic" style={{width: "100%", height: "50%"}}>
+          
+          <div className="wrapper" id="wrapper-mobile" style={{ height: "100%"}}>
+          <div style={{position: "relative", display: "flex", justifyContent: "center", height: "0px"}}>
+            <img id="main_photo_section" src="/images/main_photo-2.png" />
+          </div>
+                <div className="hero-container center-items" style={{position: "relative"}}>
                   <div className="environment"></div>
                   <h2 className="hero glitch layers text-white" data-text="METAPETS">
-                  <div className="text-center revamped" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100" >METAPETS</div>
+                  <div className="text-center revamped"  data-aos="fade-up" data-aos-duration="500" data-aos-delay="100" >METAPETS</div>
                   </h2>
                 </div>
-                <div>
+                
+                <div className="center-items" style={{position: "relative"}}>
                   <p className="text-center text-white revamped" data-aos="fade-left" data-aos-duration="500" data-aos-delay="100">NEW WEBSITE COMING SOON</p>
                 </div>
-                <div id="icons-section" className="flex justify-center">
-                  <a href="https://twitter.com/Metapetscoin" target="_blank"><BsTwitter style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100" /></a>
-                  <a href="https://discord.gg/NQKR42dVmm" target="_blank"><FaDiscord style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150" /></a>
-                  <a href="https://t.me/metapets" target="_blank"><FaTelegramPlane style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200" /></a>
-                  <a href="" target="_blank"><AiOutlineGithub style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="250" /></a>
-                  <a href="https://www.reddit.com/user/Metapets" target="_blank"><BsReddit style={{color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300" /></a>
+                <div className="center-items" style={{position: "relative"}}>
+                  <div id="icons-section" className="flex justify-center" >
+                    <a href="https://twitter.com/Metapetscoin" target="_blank"><BsTwitter style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100" /></a>
+                    <a href="https://discord.gg/NQKR42dVmm" target="_blank"><FaDiscord style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150" /></a>
+                    <a href="https://t.me/metapets" target="_blank"><FaTelegramPlane style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200" /></a>
+                    <a href="" target="_blank"><AiOutlineGithub style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="250" /></a>
+                    <a href="https://www.reddit.com/user/Metapets" target="_blank"><BsReddit style={{color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300" /></a>
+                  </div>
+                  <div id="buttons-section" className="flex justify-center">
+                    <a id="button-links" href="https://pancakeswap.finance/swap?inputCurrency=0x24ce3d571fbcfd9d81dc0e1a560504636a4d046d" target="_blank" style={{border: "3px solid rgb(187 80 152)", color: "white", borderRadius: "30px", fontFamily: "revamped", marginRight: "20px", textAlign: "center"}}>BUY</a>
+                    <a id="button-links" href="https://poocoin.app/tokens/0x24ce3d571fbcfd9d81dc0e1a560504636a4d046d" target="_blank" style={{border: "3px solid rgb(187 80 152)",  color: "white", borderRadius: "30px", fontFamily: "revamped"}}>CHART</a>
+                    <a id="button-links" href="https://whitebit.com/trade/MTP-DECL?utm_campaign=MTP_SMART&utm_medium=social&utm_source=medium" target="_blank" style={{border: "3px solid rgb(187 80 152)", color: "white", borderRadius: "30px", fontFamily: "revamped", marginLeft: "20px"}}>TRADE</a>
+                  </div>
+                  <div id="copy-address-section" className="flex justify-center">
+                    <div id="copy-address">
+                      <input style={{background: "#0e0d17", border:"none", width:"100%"}}id="copy-address-value" value="0x24ce3d571fbcfd9d81dc0e1a560504636a4d046d" />
+                    </div>
+                    <div id="copy-button">
+                      <a style={{cursor: "pointer"}} onClick={() => { handleCopy(); }} className={`${effect && "animate-wiggle"} `}>COPY ADDRESS</a>
+                    </div>
+                  </div>
                 </div>
             </div>
           </section>
@@ -183,6 +200,7 @@ export default function Home() {
             <Layout>
             </Layout>
           </section>
+          
         </div>
       </div>
       
@@ -190,24 +208,106 @@ export default function Home() {
 <style jsx>
   {
     `
+    
+    #copy-address-section {
+      border: 3px solid rgb(187 80 152);
+      color: white;
+      border-radius: 30px; 
+      font-family: revamped;
+      position: relative;
+      max-width: 500px;
+      margin: 0 auto;
+      z-index: 111;
+      font-size: 12px;
+    }
+    #copy-address-section::after {
+      position: absolute;
+      content: "";
+      top: calc(-1 * 3px);
+      left: calc(-1 * 3px);
+      z-index: -1;
+      width: calc(100% + 3px * 2);
+      height: calc(100% + 3px * 2);
+      background: linear-gradient(60deg, #173896, #a65ff2, #ae2f91, #8c2193, #5fa7f2, #952a74, #c614c0, #0b65b1);
+      background-size: 300% 300%;
+      background-position: 0 50%;
+      border-radius: calc(2 * 3px);
+      animation: moveGradient 4s alternate infinite;
+    }
+    @keyframes moveGradient {
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+    #copy-address-section a, #copy-address-section div {
+      padding: 10px 15px;
+    }
+    #copy-address {
+      margin: 1px;
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      background: #0e0d17;
+      border: 3px solid #0e0d17;
+      margin-right: 0px;
+      width: 70%;
+      overflow: hidden;
+    }
+    #copy-button {
+      /* background: rgb(187, 80, 152); */
+      width: 40%;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+      /* border-top: 1px solid rgb(187, 80, 152); */
+      margin: 1px;
+      margin-left: 0px;
+      border: 3px solid #0e0d17;
+    }
+    #button-links {
+      box-shadow: 0px 0px 17px 0px rgb(124 86 131);
+
+    }
     @media only screen and (min-width: 550px) {
+      #copy-address-section { 
+        top: 160px;
+      }
+      .center-items {
+        top: 34%;
+      }
+      #button-links {
+        width: 130px;
+        padding: 10px 30px;
+      }
       #wrapper-mobile {
         position: relative;
-        top: 10px;
+      }
+      #main_photo_section {
+        width: 200px;
+        height: 200px;
+        border-radius: 80%;
+        position: relative;
+        top: 9px;
+        z-index: 1;
+        left: 20px;
       }
       #triangle-pic {
         background-image: url("/images/triangle.png");
         background-repeat: no-repeat;
-        background-position: bottom;
-        align-items: end;
+        background-position: center;
+        align-items: center;
+        position: relative;
       }
       #icons-section {
         position: relative;
-        top: 90px;
+        top: 65px;
+        z-index: 12222;
+      }
+      #buttons-section {
+        position: relative;
+        top: 130px;
         z-index: 12222;
       }
       #section-body {
-        min-height: 92vh;
+        min-height: 100vh;
       }
       #section-canvas {
         position: absolute;
@@ -216,16 +316,49 @@ export default function Home() {
     }
     
     @media only screen and (max-width: 549px) {
-      
+      .center-items {
+        top: 40%;
+      }
+      #button-links {
+        width: 90px;
+        padding: 10px 20px;
+        font-size: 11px;
+      }
+      #copy-address-section {
+        max-width: 315px;
+        font-size: 9px;
+      }
+      #copy-address-section a, #copy-address-section div {
+        padding: 10px 5px;
+        padding-bottom: 9px;
+      }
+      #main_photo_section {
+        width: 175px;
+        height: 190px;
+        border-radius: 80%;
+        position: relative;
+        top: 25px;
+        z-index: 1;
+        left: 26px;
+      }
       #triangle-pic {
         background-image: url("/images/triangle.png");
         background-repeat: no-repeat;
         background-position: center;
-        align-items: center;
+        align-items: end;
+        position:relative;
+      }
+      #buttons-section {
+        position: relative;
+        top: 145px;
+        z-index: 111;
+      }
+      #copy-address-section {
+        top: 175px;
       }
       #icons-section {
         position: relative;
-        top: 130px;
+        top: 90px;
         z-index: 12222;
       }
       #section-canvas {
@@ -233,12 +366,12 @@ export default function Home() {
         bottom: -2px;
       }
       #section-body {
-        min-height: 92vh;
+        min-height: 100vh;
       }
     }
     @media only screen and (min-width: 1500px) {
       #section-body {
-        min-height: 95vh;
+        min-height: 100vh;
       }
     }
     .lines {
@@ -1122,6 +1255,9 @@ export default function Home() {
     }
     .revamped {
       font-family: 'Revamped';
+    }
+    .rocket {
+      font-family: 'RocketRinder';
     }
     .font-22 {
         font-size: 22px;
