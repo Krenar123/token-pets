@@ -230,6 +230,7 @@ export default function Home() {
                       <a href="https://www.coingecko.com/en/coins/metafootball" target="_blank"><img style={{width: "200px"}} className="" src="/images/coingecko.png" /></a>
                       <a href="https://www.dextools.io/app/bsc/pair-explorer/0xd06f58e07756c4977478d706bd60e38e22e6b6aa" target="_blank"><img style={{width: "200px"}} className="" src="/images/dextools.png" /></a>
                       <a href="https://coinmarketcap.com/currencies/metafootball/" target="_blank" ><img style={{width: "200px"}} className="" src="/images/marketcap.png" /></a>
+                      <a style={{display: "flex", alignItems: "center"}} href="https://whitebit.com/" target="_blank" ><img style={{width: "200px"}} className="" src="/images/whitebit_logo.png" /></a>
                     </div>
                   </section>
                 </div>
