@@ -408,7 +408,7 @@ export default function Home() {
       }
       .sponsorship {
         position:relative;
-        top: 135px;
+        top: 130px;
         z-index: 1111;
       }
       .center-items {
@@ -483,6 +483,7 @@ export default function Home() {
         padding: 5px 15px;
         font-size: 12px;
         margin-left: 0px;
+        margin-top: 10px;
       }
       #copy-address-section a, #copy-address-section div {
         padding: 5px 5px;
@@ -506,12 +507,12 @@ export default function Home() {
       }
       #buttons-section {
         position: relative;
-        top: 145px;
+        top: 135px;
         z-index: 111;
       }
       #copy-address-section-main {
         position:relative;
-        top: 175px;
+        top: 165px;
         z-index: 111;
       }
       #icons-section {
@@ -527,7 +528,7 @@ export default function Home() {
         min-height: 120vh;
       }
     }
-    @media only screen and (max-width: 630px) {
+    @media (min-width:550px) and (max-width: 630px) {
       #certik-button {
         margin-left: 10px;
       }
