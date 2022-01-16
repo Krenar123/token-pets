@@ -254,11 +254,7 @@ export default function Home() {
       border-radius: 5px;
       font-family: revamped;
     }
-    @media only screen and (max-width: 630px) {
-      #certik-button {
-        margin-top: 10px;
-      }
-    }
+    
     .bubbly-button {
       -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -519,6 +515,11 @@ export default function Home() {
       }
       #section-body {
         min-height: 120vh;
+      }
+    }
+    @media only screen and (max-width: 630px) {
+      #certik-button {
+        margin-left: 10px;
       }
     }
     @media only screen and (min-width: 1500px) {
