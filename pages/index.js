@@ -247,6 +247,13 @@ export default function Home() {
 <style jsx>
   {
     `
+    #copy-address-section-main {
+      flex-wrap: wrap;
+    }
+    .py-16 {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
     #certik-button {
       border: 2px dashed #bb5098;
       padding: 10px 15px;
