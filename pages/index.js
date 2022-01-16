@@ -247,6 +247,9 @@ export default function Home() {
 <style jsx>
   {
     `
+    .sponsorship {
+      z-index: 1111;
+    }
     #copy-address-section-main {
       flex-wrap: wrap;
     }
