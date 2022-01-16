@@ -525,7 +525,7 @@ export default function Home() {
         bottom: -2px;
       }
       #section-body {
-        min-height: 120vh;
+        min-height: 130vh;
       }
     }
     @media (min-width:550px) and (max-width: 630px) {
