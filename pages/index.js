@@ -466,7 +466,7 @@ export default function Home() {
       }
       .sponsorship {
         position:relative;
-        top: 135px;
+        top: 125px;
         z-index: 1111;
       }
       #button-links {
