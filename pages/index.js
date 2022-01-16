@@ -8,6 +8,12 @@ import { FaTelegramPlane } from 'react-icons/fa';
 import { FaDiscord } from 'react-icons/fa';
 import { AiOutlineGithub } from 'react-icons/ai';
 import { BsReddit } from 'react-icons/bs';
+import { SiLinktree } from 'react-icons/si';
+import { CgFileDocument } from  'react-icons/cg';
+import { CgArrowsExchangeAltV } from  'react-icons/cg';
+import { AiOutlineBarChart } from  'react-icons/ai';
+import { BsCurrencyExchange } from  'react-icons/bs';
+import { AiFillLock } from  'react-icons/ai';
 /* 
 import { FaPoo } from 'react-icons/fa';
 import { AiOutlineAreaChart } from 'react-icons/ai';
@@ -184,21 +190,48 @@ export default function Home() {
                     <a href="https://discord.gg/NQKR42dVmm" target="_blank"><FaDiscord style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150" /></a>
                     <a href="https://t.me/metapets" target="_blank"><FaTelegramPlane style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200" /></a>
                     <a href="" target="_blank"><AiOutlineGithub style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="250" /></a>
-                    <a href="https://www.reddit.com/user/Metapets" target="_blank"><BsReddit style={{color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300" /></a>
+                    <a href="https://www.reddit.com/user/Metapets" target="_blank"><BsReddit style={{marginRight: "15px",color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300" /></a>
+                    <a href="https://linktr.ee/metapets" target="_blank"><SiLinktree style={{color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="350" /></a>
+                    
                   </div>
-                  <div id="buttons-section" className="flex justify-center">
-                    <a id="button-links" href="https://pancakeswap.finance/swap?inputCurrency=0x24ce3d571fbcfd9d81dc0e1a560504636a4d046d" target="_blank" style={{border: "3px solid rgb(187 80 152)", color: "white", borderRadius: "30px", fontFamily: "revamped", marginRight: "20px", textAlign: "center"}}>BUY</a>
-                    <a id="button-links" href="https://poocoin.app/tokens/0x24ce3d571fbcfd9d81dc0e1a560504636a4d046d" target="_blank" style={{border: "3px solid rgb(187 80 152)",  color: "white", borderRadius: "30px", fontFamily: "revamped"}}>CHART</a>
-                    <a id="button-links" href="https://whitebit.com/trade/MTP-DECL?utm_campaign=MTP_SMART&utm_medium=social&utm_source=medium" target="_blank" style={{border: "3px solid rgb(187 80 152)", color: "white", borderRadius: "30px", fontFamily: "revamped", marginLeft: "20px"}}>TRADE</a>
+                  <div id="buttons-section" className="flex justify-center " style={{flexWrap: "wrap", justifyContent: "space-evenly"}}>
+                  
+                    <a id="button-links" href="https://www.dropbox.com/s/ejnajgj67c578ne/MetaPets%20WhitePaper%20-%20V1.pdf?dl=0" target="_blank" style={{border: "3px solid rgb(187 80 152)", color: "white", borderRadius: "30px", fontFamily: "revamped", textAlign: "center", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "10px"}}><CgFileDocument size={15} style={{color: "rgb(187 80 152)", marginRight: "2px"}} /> WHITEPAPER</a>
+                    <a id="button-links" href="https://pancakeswap.finance/swap?inputCurrency=0x24ce3d571fbcfd9d81dc0e1a560504636a4d046d" target="_blank" style={{border: "3px solid rgb(187 80 152)", color: "white", borderRadius: "30px", fontFamily: "revamped", textAlign: "center", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "10px"}}><CgArrowsExchangeAltV size={20} style={{color: "rgb(187 80 152)"}} /> PANCAKESWAP</a>
+                    <a id="button-links" href="https://poocoin.app/tokens/0x24ce3d571fbcfd9d81dc0e1a560504636a4d046d" target="_blank" style={{border: "3px solid rgb(187 80 152)",  color: "white", borderRadius: "30px", fontFamily: "revamped", textAlign: "center", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "10px" }}><AiOutlineBarChart size={16} style={{color: "rgb(187 80 152)", marginRight: "2px"}} /> CHART</a>
+                    <a id="button-links" href="https://whitebit.com/trade/MTP-DECL?utm_campaign=MTP_SMART&utm_medium=social&utm_source=medium" target="_blank" style={{border: "3px solid rgb(187 80 152)", color: "white", borderRadius: "30px", fontFamily: "revamped", textAlign: "center", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "10px"}}><BsCurrencyExchange size={15} style={{color: "rgb(187 80 152)", marginRight: "2px"}} /> WHITEBIT</a>
                   </div>
-                  <div id="copy-address-section" className="flex justify-center">
-                    <div id="copy-address">
-                      <input style={{background: "#0e0d17", border:"none", width:"100%"}}id="copy-address-value" value="0x24ce3d571fbcfd9d81dc0e1a560504636a4d046d" />
+                  <div id="copy-address-section-main" className="flex justify-center flex-wrap">
+                    <div id="copy-address-section" className="flex justify-center">
+                      <div id="copy-address">
+                        <input style={{background: "#0e0d17", border:"none", width:"100%"}}id="copy-address-value" value="0x24ce3d571fbcfd9d81dc0e1a560504636a4d046d" />
+                      </div>
+                      <div id="copy-button" className="bubbly-button">
+                        <a id="copy-button-a" style={{cursor: "pointer"}} onClick={() => { handleCopy(); }} >COPY ADDRESS</a>
+                      </div>
+                      
                     </div>
-                    <div id="copy-button" className="bubbly-button">
-                      <a id="copy-button-a" style={{cursor: "pointer"}} onClick={() => { handleCopy(); }} >COPY ADDRESS</a>
+                    <div className="flex items-center">
+                      <a style={{cursor: "pointer"}} id="certik-button" className="flex justify-center">
+                        <div>
+                          <AiFillLock size={20} style={{color: "rgb(187 80 152)", marginRight: "5px"}} />
+                        </div>
+                        <div className="flex flex-col justify-center">
+                          <p style={{color: "rgb(187 80 152)"}}>PENDING</p>
+                          <p className="text-white">CertiK full Audit</p>
+                        </div>
+                      </a>
                     </div>
                   </div>
+                  <section className="plan py-16 overflow-hidden sponsorship">
+                    <div style={{ display: "flex", justifyContent: 'space-between'}} className="container relative ">
+                      <a href="https://poocoin.app/tokens/0x12de91acb5f544b37b1e66438324b8db26a91d8a" target="_blank"><img style={{width: "200px"}} className="" src="/images/poocoin.png" /></a>
+                      <a href="https://bscscan.com/token/0x12DE91ACb5f544b37b1e66438324b8dB26A91D8a" target="_blank"><img style={{width: "200px"}} className="" src="/images/bsc_scan.png" /></a>
+                      <a href="https://www.coingecko.com/en/coins/metafootball" target="_blank"><img style={{width: "200px"}} className="" src="/images/coingecko.png" /></a>
+                      <a href="https://www.dextools.io/app/bsc/pair-explorer/0xd06f58e07756c4977478d706bd60e38e22e6b6aa" target="_blank"><img style={{width: "200px"}} className="" src="/images/dextools.png" /></a>
+                      <a href="https://coinmarketcap.com/currencies/metafootball/" target="_blank" ><img style={{width: "200px"}} className="" src="/images/marketcap.png" /></a>
+                    </div>
+                  </section>
                 </div>
             </div>
           </section>
@@ -214,6 +247,18 @@ export default function Home() {
 <style jsx>
   {
     `
+    #certik-button {
+      border: 2px dashed #bb5098;
+      padding: 10px 15px;
+      margin-left: 20px;
+      border-radius: 5px;
+      font-family: revamped;
+    }
+    @media only screen and (max-width: 630px) {
+      #certik-button {
+        margin-top: 10px;
+      }
+    }
     .bubbly-button {
       -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -292,7 +337,6 @@ export default function Home() {
       font-family: revamped;
       position: relative;
       max-width: 500px;
-      margin: 0 auto;
       z-index: 111;
       font-size: 12px;
     }
@@ -325,33 +369,49 @@ export default function Home() {
       background: #0e0d17;
       border: 3px solid #0e0d17;
       margin-right: 0px;
-      width: 70%;
+      width: 50%;
       overflow: hidden;
+      display: flex; 
+      align-items: center;
     }
     #copy-button {
       /* background: rgb(187, 80, 152); */
-      width: 40%;
+      width: 45%;
       border-top-right-radius: 25px;
       border-bottom-right-radius: 25px;
       /* border-top: 1px solid rgb(187, 80, 152); */
       margin: 1px;
       margin-left: 0px;
       border: 3px solid #0e0d17;
+      display: flex; 
+      align-items: center;
     }
     #button-links {
       box-shadow: 0px 0px 17px 0px rgb(124 86 131);
 
     }
     @media only screen and (min-width: 550px) {
-      #copy-address-section { 
+      #certik-button {
+        padding: 15px 15px;
+        font-size: 12px;
+      }
+      #copy-address-section-main { 
+        position:relative;
         top: 160px;
+        z-index: 111;
+      }
+      .sponsorship {
+        position:relative;
+        top: 135px;
       }
       .center-items {
         top: 34%;
       }
       #button-links {
-        width: 130px;
+        width: 190px;
         padding: 10px 30px;
+        text-align: center;
+        font-size: 12px;
       }
       #wrapper-mobile {
         position: relative;
@@ -381,9 +441,11 @@ export default function Home() {
         position: relative;
         top: 130px;
         z-index: 12222;
+        max-width: 920px;
+        margin: 0 auto;
       }
       #section-body {
-        min-height: 100vh;
+        min-height: 120vh;
       }
       #section-canvas {
         position: absolute;
@@ -395,18 +457,28 @@ export default function Home() {
       .center-items {
         top: 40%;
       }
+      .sponsorship {
+        position:relative;
+        top: 135px;
+      }
       #button-links {
-        width: 90px;
+        width: 170px;
         padding: 10px 20px;
-        font-size: 11px;
+        font-size: 12px;
+        text-align: center;
       }
       #copy-address-section {
         max-width: 315px;
         font-size: 9px;
       }
+      #certik-button {
+        padding: 5px 15px;
+        font-size: 12px;
+        margin-left: 0px;
+      }
       #copy-address-section a, #copy-address-section div {
-        padding: 10px 5px;
-        padding-bottom: 9px;
+        padding: 5px 5px;
+        padding-bottom: 4px;
       }
       #main_photo_section {
         width: 175px;
@@ -429,8 +501,10 @@ export default function Home() {
         top: 145px;
         z-index: 111;
       }
-      #copy-address-section {
+      #copy-address-section-main {
+        position:relative;
         top: 175px;
+        z-index: 111;
       }
       #icons-section {
         position: relative;
@@ -442,12 +516,12 @@ export default function Home() {
         bottom: -2px;
       }
       #section-body {
-        min-height: 100vh;
+        min-height: 120vh;
       }
     }
     @media only screen and (min-width: 1500px) {
       #section-body {
-        min-height: 100vh;
+        min-height: 120vh;
       }
     }
     .lines {
