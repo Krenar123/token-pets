@@ -403,6 +403,7 @@ export default function Home() {
       .sponsorship {
         position:relative;
         top: 135px;
+        z-index: 1111;
       }
       .center-items {
         top: 34%;
@@ -460,6 +461,7 @@ export default function Home() {
       .sponsorship {
         position:relative;
         top: 135px;
+        z-index: 1111;
       }
       #button-links {
         width: 170px;
