@@ -227,8 +227,8 @@ export default function Home() {
                       <a href="https://poocoin.app/tokens/0x24ce3d571fbcfd9d81dc0e1a560504636a4d046d" target="_blank"><img style={{width: "200px"}} className="" src="/images/poocoin.png" /></a>
                       <a href="https://bscscan.com/token/0x24ce3d571fbcfd9d81dc0e1a560504636a4d046d" target="_blank"><img style={{width: "200px"}} className="" src="/images/bsc_scan.png" /></a>
                       <a href="https://www.coingecko.com/en/coins/metapets" target="_blank"><img style={{width: "200px"}} className="" src="/images/coingecko.png" /></a>
-                      <a href="https://www.dextools.io/app/bsc/pair-explorer/0x5f29d7f11737455e8e6043944bb62aec6e6e52d4" target="_blank"><img style={{width: "200px"}} className="" src="/images/dextools.png" /></a>
                       <a href="https://coinmarketcap.com/currencies/metapets/" target="_blank" ><img style={{width: "200px"}} className="" src="/images/marketcap.png" /></a>
+                      <a href="https://www.dextools.io/app/bsc/pair-explorer/0x5f29d7f11737455e8e6043944bb62aec6e6e52d4" target="_blank"><img style={{width: "200px"}} className="" src="/images/dextools.png" /></a>
                       <a style={{display: "flex", alignItems: "center"}} href="https://whitebit.com/trade/MTP-DECL?utm_campaign=MTP_SMART&utm_medium=social&utm_source=medium" target="_blank" ><img style={{width: "200px"}} className="" src="/images/whitebit_logo.png" /></a>
                     </div>
                   </section>
