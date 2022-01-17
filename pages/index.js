@@ -216,7 +216,7 @@ export default function Home() {
                           <AiFillLock size={20} style={{color: "rgb(187 80 152)", marginRight: "5px"}} />
                         </div>
                         <div className="flex flex-col justify-center">
-                          <p style={{color: "rgb(187 80 152)"}}>ONBOARDING</p>
+                          <p style={{color: "rgb(187 80 152)"}}>PENDING</p>
                           <p className="text-white">CertiK full Audit</p>
                         </div>
                       </a>
