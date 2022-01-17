@@ -213,10 +213,10 @@ export default function Home() {
                     <div className="flex items-center">
                       <a href="https://www.certik.com/projects/metapetscoin" target="_blank" style={{cursor: "pointer"}} id="certik-button" className="flex justify-center">
                         <div>
-                          <AiFillLock size={20} style={{color: "rgb(187 80 152)", marginRight: "5px"}} />
+                          <AiFillLock size={20} style={{color: "rgb(201 168 74)", marginRight: "5px"}} />
                         </div>
                         <div className="flex flex-col justify-center">
-                          <p style={{color: "rgb(187 80 152)"}}>PENDING</p>
+                          <p style={{color: "rgb(201 168 74)"}}>PENDING</p>
                           <p className="text-white">CertiK full Audit</p>
                         </div>
                       </a>
@@ -258,7 +258,7 @@ export default function Home() {
       padding-bottom: 4rem;
     }
     #certik-button {
-      border: 2px dashed #bb5098;
+      border: 2px dashed white;
       padding: 10px 15px;
       margin-left: 20px;
       border-radius: 5px;
