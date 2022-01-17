@@ -189,7 +189,6 @@ export default function Home() {
                     <a href="https://twitter.com/Metapetscoin" target="_blank"><BsTwitter style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100" /></a>
                     <a href="https://discord.gg/NQKR42dVmm" target="_blank"><FaDiscord style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150" /></a>
                     <a href="https://t.me/metapets" target="_blank"><FaTelegramPlane style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200" /></a>
-                    <a href="" target="_blank"><AiOutlineGithub style={{marginRight: "15px", color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="250" /></a>
                     <a href="https://www.reddit.com/user/Metapets" target="_blank"><BsReddit style={{marginRight: "15px",color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300" /></a>
                     <a href="https://linktr.ee/metapets" target="_blank"><SiLinktree style={{color: "rgb(187 80 152)"}} size={40} data-aos="zoom-in" data-aos-duration="500" data-aos-delay="350" /></a>
                     
@@ -212,12 +211,12 @@ export default function Home() {
                       
                     </div>
                     <div className="flex items-center">
-                      <a style={{cursor: "pointer"}} id="certik-button" className="flex justify-center">
+                      <a href="https://www.certik.com/projects/metapetscoin" target="_blank" style={{cursor: "pointer"}} id="certik-button" className="flex justify-center">
                         <div>
                           <AiFillLock size={20} style={{color: "rgb(187 80 152)", marginRight: "5px"}} />
                         </div>
                         <div className="flex flex-col justify-center">
-                          <p style={{color: "rgb(187 80 152)"}}>PENDING</p>
+                          <p style={{color: "rgb(187 80 152)"}}>ONBOARDING</p>
                           <p className="text-white">CertiK full Audit</p>
                         </div>
                       </a>
@@ -225,11 +224,11 @@ export default function Home() {
                   </div>
                   <section className="plan py-16 overflow-hidden sponsorship">
                     <div style={{ display: "flex", justifyContent: 'space-between'}} className="container relative ">
-                      <a href="https://poocoin.app/tokens/0x12de91acb5f544b37b1e66438324b8db26a91d8a" target="_blank"><img style={{width: "200px"}} className="" src="/images/poocoin.png" /></a>
-                      <a href="https://bscscan.com/token/0x12DE91ACb5f544b37b1e66438324b8dB26A91D8a" target="_blank"><img style={{width: "200px"}} className="" src="/images/bsc_scan.png" /></a>
-                      <a href="https://www.coingecko.com/en/coins/metafootball" target="_blank"><img style={{width: "200px"}} className="" src="/images/coingecko.png" /></a>
-                      <a href="https://www.dextools.io/app/bsc/pair-explorer/0xd06f58e07756c4977478d706bd60e38e22e6b6aa" target="_blank"><img style={{width: "200px"}} className="" src="/images/dextools.png" /></a>
-                      <a href="https://coinmarketcap.com/currencies/metafootball/" target="_blank" ><img style={{width: "200px"}} className="" src="/images/marketcap.png" /></a>
+                      <a href="https://poocoin.app/tokens/0x24ce3d571fbcfd9d81dc0e1a560504636a4d046d" target="_blank"><img style={{width: "200px"}} className="" src="/images/poocoin.png" /></a>
+                      <a href="https://bscscan.com/token/0x24ce3d571fbcfd9d81dc0e1a560504636a4d046d" target="_blank"><img style={{width: "200px"}} className="" src="/images/bsc_scan.png" /></a>
+                      <a href="https://www.coingecko.com/en/coins/metapets" target="_blank"><img style={{width: "200px"}} className="" src="/images/coingecko.png" /></a>
+                      <a href="https://www.dextools.io/app/bsc/pair-explorer/0x5f29d7f11737455e8e6043944bb62aec6e6e52d4" target="_blank"><img style={{width: "200px"}} className="" src="/images/dextools.png" /></a>
+                      <a href="https://coinmarketcap.com/currencies/metapets/" target="_blank" ><img style={{width: "200px"}} className="" src="/images/marketcap.png" /></a>
                       <a style={{display: "flex", alignItems: "center"}} href="https://whitebit.com/trade/MTP-DECL?utm_campaign=MTP_SMART&utm_medium=social&utm_source=medium" target="_blank" ><img style={{width: "200px"}} className="" src="/images/whitebit_logo.png" /></a>
                     </div>
                   </section>
